@@ -106,11 +106,29 @@ class AppContext:
     clients: dict
 
 
+def _runtime_stamp() -> str:
+    summary = settings_module.runtime_config_summary()
+    return (
+        f"mock={int(summary['mock_mode'])}"
+        f"|token={int(summary['token_set'])}"
+        f"|ind={int(summary['individual_live'])}"
+        f"|comb={int(summary['combined_live'])}"
+    )
+
+
 @st.cache_resource(show_spinner="Loading evaluation configuration...")
-def get_context(config_stamp: str) -> AppContext:
-    _ = config_stamp  # bust cache when config files change
+def get_context(config_stamp: str, runtime_stamp: str) -> AppContext:
+    _ = config_stamp, runtime_stamp
     app_settings = load_settings()
     logger = settings_module.configure_logging(app_settings)
+    summary = settings_module.runtime_config_summary()
+    logger.info(
+        "Runtime secrets: MOCK_MODE=%s HF_TOKEN set=%s individual live=%s combined live=%s",
+        summary["mock_mode"],
+        summary["token_set"],
+        summary["individual_live"],
+        summary["combined_live"],
+    )
     for warning in app_settings.warnings():
         logger.warning(warning)
 
@@ -240,19 +258,40 @@ def render_header() -> None:
         '<div class="app-hero-copy">'
         '<p class="app-kicker">Listening study</p>'
         f"<h1>{escape(APP_TITLE)}</h1>"
-        f'<p class="app-lede">{escape(APP_SUBTITLE)}</p>'
+        f'<p class="app-lede">{escape(APP_SUBTITLE)} — compare two speech samples and rate what you hear.</p>'
         "</div></div>",
         unsafe_allow_html=True,
     )
     st.markdown(
-        f'<div class="eval-note">{escape(INSTRUCTIONS)} '
-        "You do not have to listen to every sentence.</div>",
+        f'<div class="eval-note"><span class="eval-note-label">How it works</span>'
+        f"{escape(INSTRUCTIONS)}</div>",
         unsafe_allow_html=True,
     )
 
 
-def _section_title(text: str) -> None:
-    st.markdown(f'<div class="eval-section-title">{escape(text)}</div>', unsafe_allow_html=True)
+def render_flow_steps(trial) -> None:
+    """Three-step progress: setup, listen, rate."""
+    listen_active = trial is not None and getattr(trial, "is_ready", False)
+    steps = (
+        ("1", "Choose language & sentence", "done" if listen_active else "active"),
+        ("2", "Listen to both samples", "active" if listen_active else "pending"),
+        ("3", "Submit your ratings", "active" if listen_active else "pending"),
+    )
+    chips = "".join(
+        f'<div class="flow-step flow-step--{state}">'
+        f'<span class="flow-step-num">{num}</span>'
+        f"<span>{escape(label)}</span></div>"
+        for num, label, state in steps
+    )
+    st.markdown(f'<div class="flow-steps">{chips}</div>', unsafe_allow_html=True)
+
+
+def _section_title(text: str, *, step: str | None = None) -> None:
+    badge = f'<span class="section-step">{escape(step)}</span>' if step else ""
+    st.markdown(
+        f'<div class="eval-section-title">{badge}<span>{escape(text)}</span></div>',
+        unsafe_allow_html=True,
+    )
 
 
 def render_tester_identity(context: AppContext) -> str:
@@ -397,11 +436,14 @@ def _render_sentence_controls(context: AppContext, selection: VoiceSelection):
     index = ids.index(sentence.sentence_id)
 
     st.markdown(
-        f'<div class="eval-sentence">{escape(sentence.text)}</div>', unsafe_allow_html=True
+        f'<div class="eval-sentence"><span class="eval-sentence-label">Sentence</span>'
+        f"{escape(sentence.text)}</div>",
+        unsafe_allow_html=True,
     )
-    st.caption(
-        f"Sentence {index + 1} of {len(ids)}. Rate this pair, then try another sentence "
-        "if you want to keep going."
+    st.markdown(
+        f'<p class="sentence-nav-caption">Sentence {index + 1} of {len(ids)}. '
+        "Rate this pair, then try another sentence if you want to keep going.</p>",
+        unsafe_allow_html=True,
     )
     prev_col, next_col = st.columns(2)
     with prev_col:
@@ -482,7 +524,7 @@ def render_test_setup(
     context: AppContext, selection: VoiceSelection
 ) -> tuple[TestCondition | None, bool]:
     """Main-area controls. Returns (condition, load requested)."""
-    _section_title("This listen")
+    _section_title("Setup", step="1")
     with st.container(border=True):
         if not selection.is_usable:
             if selection.error is None:
@@ -569,7 +611,7 @@ def render_condition_panel(trial) -> None:
         chips.append(("Preset voice", condition.speaker.neutral_label))
         chips.append(("Voice mode", condition.mode_label))
 
-    _section_title("What you are rating")
+    _section_title("What you are rating", step="2")
     with st.container(border=True):
         chip_html = "".join(
             f'<span class="eval-chip"><span class="eval-chip-key">{escape(key)}</span>'
@@ -578,36 +620,41 @@ def render_condition_panel(trial) -> None:
         )
         st.markdown(f'<div class="eval-chips">{chip_html}</div>', unsafe_allow_html=True)
         st.markdown(
-            f'<div class="eval-sentence">{escape(condition.sentence.text)}</div>',
+            f'<div class="eval-sentence eval-sentence--compact">'
+            f"{escape(condition.sentence.text)}</div>",
             unsafe_allow_html=True,
         )
 
 
 def render_samples(trial) -> None:
-    _section_title("Listen to both samples")
+    _section_title("Listen to both samples", step="2")
+    st.markdown('<div class="sample-grid">', unsafe_allow_html=True)
     columns = st.columns(2, gap="large")
     for column, label in zip(columns, SAMPLE_LABELS):
         sample = trial.sample(label)
         with column:
             with st.container(border=True):
                 st.markdown(
+                    f'<div class="sample-card">'
                     f'<div class="sample-card-head">'
                     f'<span class="sample-badge">{label}</span>'
                     f'<div class="sample-card-copy">'
-                    f'<span class="sample-card-kicker">Audio</span>'
+                    f'<span class="sample-card-kicker">Blinded sample</span>'
                     f'<span class="sample-card-title">Sample {label}</span>'
                     f"</div></div>"
                     f'<div class="sample-eq" aria-hidden="true">'
-                    f"<i></i><i></i><i></i><i></i><i></i></div>",
+                    f"<i></i><i></i><i></i><i></i><i></i></div>"
+                    f"</div>",
                     unsafe_allow_html=True,
                 )
                 st.audio(sample.clip.data, format=sample.clip.mime_type)
                 st.caption("Replay as often as you like. Nothing plays automatically.")
+    st.markdown("</div>", unsafe_allow_html=True)
 
 
 def render_rating_form(context: AppContext, trial, tester_id: str, mode: str) -> None:
     trial_id = trial.trial_id
-    _section_title("Your ratings")
+    _section_title("Your ratings", step="3")
 
     with st.form(key=f"evaluation_form_{trial_id}", clear_on_submit=False, border=False):
         with st.container(border=True):
@@ -751,7 +798,7 @@ def main() -> None:
     apply_styles()
 
     try:
-        context = get_context(_config_stamp(load_settings().config_dir))
+        context = get_context(_config_stamp(load_settings().config_dir), _runtime_stamp())
     except ConfigError as exc:
         st.title(APP_TITLE)
         st.error("The evaluation configuration could not be loaded.")
@@ -762,6 +809,7 @@ def main() -> None:
     init_session(context)
 
     render_header()
+    render_flow_steps(st.session_state.get("trial"))
 
     tester_id = render_tester_identity(context)
     selection = render_voice_selection(context)
@@ -785,11 +833,15 @@ def main() -> None:
     if trial is None:
         st.markdown(
             '<div class="idle-panel">'
+            '<div class="idle-icon" aria-hidden="true">'
+            '<span class="app-hero-bars"><i></i><i></i><i></i><i></i><i></i></span>'
+            "</div>"
             "<h2>Ready when you are</h2>"
-            "<p>Both samples are prepared before you rate them. Rate one pair or as many as you like.</p>"
+            "<p>Press <strong>Play both samples</strong> above when your setup is complete. "
+            "Both clips appear here before you rate them.</p>"
             '<div class="listen-preview">'
-            '<div class="sample-ghost"><span>A</span><div class="ghost-bar"></div></div>'
-            '<div class="sample-ghost"><span>B</span><div class="ghost-bar"></div></div>'
+            '<div class="sample-ghost"><span>A</span><div class="ghost-wave"></div></div>'
+            '<div class="sample-ghost"><span>B</span><div class="ghost-wave"></div></div>'
             "</div></div>",
             unsafe_allow_html=True,
         )

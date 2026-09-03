@@ -177,16 +177,42 @@ def main() -> int:
         # the local .env happen to say (loading .env exports its values into
         # os.environ, so they have to be removed for this check).
         overridden = {
-            name: os.environ.pop(name, None) for name in ("TESTER_ID_MODE", "RANDOMIZE_AB")
+            name: os.environ.pop(name, None)
+            for name in (
+                "TESTER_ID_MODE",
+                "RANDOMIZE_AB",
+                "MOCK_MODE",
+                "HF_TOKEN",
+                "INDIVIDUAL_ENDPOINT",
+                "COMBINED_ENDPOINT",
+            )
         }
         try:
             defaults = load_settings(env_file=workdir / "no-such.env")
             check("tester identity is required by default", defaults.tester_id_mode == "required")
             check("the A/B mapping is randomised by default", defaults.randomize_ab)
+            check("MOCK_MODE defaults to on without live credentials", defaults.mock_mode)
+
+            os.environ["HF_TOKEN"] = "hf_test_token"
+            os.environ["INDIVIDUAL_ENDPOINT"] = "https://example.com/v1"
+            os.environ["COMBINED_ENDPOINT"] = "mock"
+            live_defaults = load_settings(env_file=workdir / "no-such.env")
+            check(
+                "MOCK_MODE defaults to off when a live endpoint and token are configured",
+                not live_defaults.mock_mode,
+            )
+            os.environ["MOCK_MODE"] = "false"
+            check(
+                "Streamlit-style boolean secrets are honoured",
+                not load_settings(env_file=workdir / "no-such.env").mock_mode,
+            )
         finally:
             for name, value in overridden.items():
-                if value is not None:
+                if value is None:
+                    os.environ.pop(name, None)
+                else:
                     os.environ[name] = value
+
         adapter = EndpointAdapter.load(CONFIG_DIR / "endpoint.yaml")
         condition = build_condition(
             catalog, language_key="igbo", speaker_id="IG-F-01", sentence_id="IG-003"

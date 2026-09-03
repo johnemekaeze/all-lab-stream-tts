@@ -9,6 +9,7 @@ import logging
 import os
 from dataclasses import dataclass, field, replace
 from pathlib import Path
+from typing import Any
 from urllib.parse import urlsplit
 
 from dotenv import load_dotenv
@@ -140,8 +141,55 @@ class Settings:
         return self._warnings
 
 
+def _secret_to_env(value: Any) -> str:
+    """Render a Streamlit secret value as an environment string."""
+    if isinstance(value, bool):
+        return "true" if value else "false"
+    if isinstance(value, (int, float)):
+        return str(value)
+    return str(value).strip()
+
+
+def _streamlit_secret(name: str) -> str:
+    try:
+        import streamlit as st
+
+        secrets = getattr(st, "secrets", None)
+        if secrets is None or name not in secrets:
+            return ""
+        return _secret_to_env(secrets[name])
+    except Exception:
+        return ""
+
+
+def _lookup(name: str, default: str = "") -> str:
+    """Read a setting from the process environment or Streamlit secrets."""
+    value = _env(name)
+    if value:
+        return value
+    return _streamlit_secret(name) or default
+
+
+def _lookup_bool(name: str, default: bool) -> bool:
+    raw = _lookup(name)
+    if not raw:
+        return default
+    return raw.lower() in {"1", "true", "yes", "y", "on"}
+
+
+def _lookup_int(name: str, default: int) -> int:
+    raw = _lookup(name)
+    if not raw:
+        return default
+    try:
+        return int(raw)
+    except ValueError:
+        logging.getLogger(__name__).warning("Invalid integer for %s=%r, using %s", name, raw, default)
+        return default
+
+
 def _bootstrap_streamlit_secrets() -> None:
-    """Copy Streamlit Cloud secrets into os.environ when not already set."""
+    """Mirror Streamlit Cloud secrets into os.environ for libraries that read env only."""
     try:
         import streamlit as st
 
@@ -149,12 +197,41 @@ def _bootstrap_streamlit_secrets() -> None:
         if secrets is None:
             return
         for key in secrets:
+            if _env(key):
+                continue
             value = secrets[key]
-            if isinstance(value, str) and not _env(key):
-                os.environ[key] = value
+            if isinstance(value, dict):
+                continue
+            os.environ[key] = _secret_to_env(value)
     except Exception:
-        # Local runs and offline checks use `.env` instead.
         pass
+
+
+def _endpoint_is_live(url: str) -> bool:
+    cleaned = (url or "").strip().lower()
+    return bool(cleaned) and cleaned != MOCK_URL and cleaned.startswith("http")
+
+
+def _default_mock_mode() -> bool:
+    """Default to live mode when a token and at least one real endpoint URL exist."""
+    has_live = any(
+        _endpoint_is_live(url) for url in (_lookup("INDIVIDUAL_ENDPOINT"), _lookup("COMBINED_ENDPOINT"))
+    )
+    return not (has_live and bool(_lookup("HF_TOKEN")))
+
+
+def runtime_config_summary() -> dict[str, str | bool]:
+    """Token-safe summary for logs and cache busting."""
+    mock_mode = _lookup_bool("MOCK_MODE", _default_mock_mode())
+    token_set = bool(_lookup("HF_TOKEN"))
+    individual_live = _endpoint_is_live(_lookup("INDIVIDUAL_ENDPOINT"))
+    combined_live = _endpoint_is_live(_lookup("COMBINED_ENDPOINT"))
+    return {
+        "mock_mode": mock_mode,
+        "token_set": token_set,
+        "individual_live": individual_live,
+        "combined_live": combined_live,
+    }
 
 
 def load_settings(*, env_file: Path | None = None, override: bool = False) -> Settings:
@@ -167,58 +244,58 @@ def load_settings(*, env_file: Path | None = None, override: bool = False) -> Se
 
     warnings: list[str] = []
 
-    mock_mode = _env_bool("MOCK_MODE", True)
+    mock_mode = _lookup_bool("MOCK_MODE", _default_mock_mode())
     endpoints = {
-        "individual": _env("INDIVIDUAL_ENDPOINT"),
-        "combined": _env("COMBINED_ENDPOINT"),
+        "individual": _lookup("INDIVIDUAL_ENDPOINT"),
+        "combined": _lookup("COMBINED_ENDPOINT"),
     }
-    hf_token = _env("HF_TOKEN")
+    hf_token = _lookup("HF_TOKEN")
 
-    tester_id_mode = _env("TESTER_ID_MODE", "required").lower()
+    tester_id_mode = _lookup("TESTER_ID_MODE", "required").lower()
     if tester_id_mode not in TESTER_ID_MODES:
         warnings.append(f"TESTER_ID_MODE={tester_id_mode!r} is invalid; falling back to 'required'.")
         tester_id_mode = "required"
 
-    sample_a_system = _env("SAMPLE_A_SYSTEM", SYSTEMS[0]).lower()
+    sample_a_system = _lookup("SAMPLE_A_SYSTEM", SYSTEMS[0]).lower()
     if sample_a_system not in SYSTEMS:
         warnings.append(
             f"SAMPLE_A_SYSTEM={sample_a_system!r} is not a known system; falling back to the first one."
         )
         sample_a_system = SYSTEMS[0]
-    randomize_ab = _env_bool("RANDOMIZE_AB", True)
+    randomize_ab = _lookup_bool("RANDOMIZE_AB", True)
     if not randomize_ab:
         warnings.append(
             "RANDOMIZE_AB is false: the A/B mapping is PINNED, so this run is not bias-controlled. "
             "Set it back to true for the real study."
         )
 
-    default_selection_mode = _env("DEFAULT_SELECTION_MODE", "researcher").lower()
+    default_selection_mode = _lookup("DEFAULT_SELECTION_MODE", "researcher").lower()
     if default_selection_mode not in SELECTION_MODES:
         warnings.append(
             f"DEFAULT_SELECTION_MODE={default_selection_mode!r} is invalid; falling back to 'researcher'."
         )
         default_selection_mode = "researcher"
 
-    results_db = _resolve(_env("RESULTS_DB"), "results/evaluations.db")
+    results_db = _resolve(_lookup("RESULTS_DB"), "results/evaluations.db")
 
     settings = Settings(
         mock_mode=mock_mode,
         hf_token=hf_token,
         endpoints=endpoints,
-        request_timeout=_env_int("REQUEST_TIMEOUT", 120),
-        max_retries=max(0, _env_int("MAX_RETRIES", 2)),
+        request_timeout=_lookup_int("REQUEST_TIMEOUT", 120),
+        max_retries=max(0, _lookup_int("MAX_RETRIES", 2)),
         tester_id_mode=tester_id_mode,
-        enable_random_mode=_env_bool("ENABLE_RANDOM_MODE", True),
+        enable_random_mode=_lookup_bool("ENABLE_RANDOM_MODE", True),
         default_selection_mode=default_selection_mode,
         randomize_ab=randomize_ab,
         sample_a_system=sample_a_system,
-        admin_password=_env("ADMIN_PASSWORD"),
-        config_dir=_resolve(_env("CONFIG_DIR"), "config"),
-        audio_cache_dir=_resolve(_env("AUDIO_CACHE_DIR"), "data/audio_cache"),
+        admin_password=_lookup("ADMIN_PASSWORD"),
+        config_dir=_resolve(_lookup("CONFIG_DIR"), "config"),
+        audio_cache_dir=_resolve(_lookup("AUDIO_CACHE_DIR"), "data/audio_cache"),
         results_db=results_db,
         results_dir=results_db.parent,
-        log_file=_resolve(_env("LOG_FILE"), "data/app.log"),
-        log_level=_env("LOG_LEVEL", "INFO").upper(),
+        log_file=_resolve(_lookup("LOG_FILE"), "data/app.log"),
+        log_level=_lookup("LOG_LEVEL", "INFO").upper(),
         _warnings=tuple(warnings),
     )
 

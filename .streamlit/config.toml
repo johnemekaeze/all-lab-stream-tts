@@ -2,7 +2,7 @@
 # Warm paper + ink. Deliberately not red: the submit button should not look
 # like a warning, and no colour may draw attention to one of the two samples.
 base = "light"
-primaryColor = "#1d4f7a"
+primaryColor = "#1a4a72"
 backgroundColor = "#f2eee6"
 secondaryBackgroundColor = "#fffdf8"
 textColor = "#1b1914"
