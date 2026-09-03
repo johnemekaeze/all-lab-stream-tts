@@ -167,11 +167,18 @@ def _streamlit_secret(name: str) -> str:
 
 
 def _lookup(name: str, default: str = "") -> str:
-    """Read a setting from the process environment or Streamlit secrets."""
+    """Read a setting from Streamlit secrets or the process environment.
+
+    Secrets win when present so Community Cloud settings are not shadowed by
+    empty or stale environment variables. Local development still uses `.env`.
+    """
+    secret = _streamlit_secret(name)
+    if secret:
+        return secret
     value = _env(name)
     if value:
         return value
-    return _streamlit_secret(name) or default
+    return default
 
 
 def _lookup_bool(name: str, default: bool) -> bool:
@@ -226,6 +233,7 @@ def _default_mock_mode() -> bool:
 
 def runtime_config_summary() -> dict[str, str | bool]:
     """Token-safe summary for logs and cache busting."""
+    _bootstrap_streamlit_secrets()
     mock_mode = _lookup_bool("MOCK_MODE", _default_mock_mode())
     token_set = bool(_lookup("HF_TOKEN"))
     individual_live = _endpoint_is_live(_lookup("INDIVIDUAL_ENDPOINT"))
