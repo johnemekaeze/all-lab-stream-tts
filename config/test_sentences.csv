@@ -1,381 +1,381 @@
 sentence_id,language,accent,text
-AF-001,afrikaans,,"Goeie more, ek hoop jy het gisteraand rustig geslaap en lekker uitgerus tot die son opgekom het."
-AF-002,afrikaans,,Maak asseblief die deur agter jou toe en kom sit by ons om saam tee te drink.
-AF-003,afrikaans,,Die kinders speel sokker agter die huis terwyl hul ma nog besig is om middagete voor te berei.
-AF-004,afrikaans,,Kan jy asseblief help om hierdie swaar sak mielies vanmiddag hele pad na die mark toe te dra?
-AF-005,afrikaans,,My jonger suster kom môre vroeg op die eerste bus van die dorp af om ons te kom kuier.
-AF-006,afrikaans,,Ons moet vandag vroeg by die huis weg as ons die eerste bus na die dorp wil haal.
-AF-007,afrikaans,,Die reën het net begin stort toe ons klaar aandete gekook het en wou gaan sit om te eet.
-AF-008,afrikaans,,Sê asseblief vir jou pa dat die gemeenskapsvergadering van Donderdag na Vrydagmiddag verskuif is.
-AF-009,afrikaans,,Op pad huis toe van werk het ek vandag drie lemoene en 'n vars brood by die winkel gekoop.
-AF-010,afrikaans,,Hoe lank neem dit gewoonlik om te loop van die laerskool af tot by die rivier aan die rand van die dorp?
-AM-001,amharic,,እንደምን አደሩ፣ ትላንት ምሽት በደንብ እንደተኛህና ለጠዋቱ ለስላሳ እንደተነሳህ ተስፋ አደርጋለሁ።
-AM-002,amharic,,እባክህ በኋላህ ደጃውን ዝጋና ወደ ውስጥ መጥተህ ከእኛ ጋር ተቀመጥ እና ቡና እንጠጣ።
-AM-003,amharic,,ልጆቹ በቤቱ ጀርባ እግር ኳስ እየተጫወቱ ነው፣ እናታም እስከ ምሳ ያዘጋጁ ይገኛሉ።
-AM-004,amharic,,እባክህ ይህን ባጠበቀ የእህል ጥሬ ሻንጣ ዛሬ ከቀኑ በኋላ እስከ ገበያው እንድወስድትት ትረዳኛለህ?
-AM-005,amharic,,እህቴ ነገ ጠዋት በመጀመሪያው አውቶቡስ ከመንደር ስቀላ በጥዩ እንድትጎበኘን ተነስታለች።
-AM-006,amharic,,ዛሬ መጀመሪያውን አውቶቡስ ለመያዝ ከቤት በጥዩ መውጣት አለብን፣ አሁንም ጊዜው አልፎብናል።
-AM-007,amharic,,እራት ለመብላት ምግብ ለመስራት ከጨረስን ብቻ ዝናብ መጀመሩን ተመልክቷል፣ ሁሉም ወደ ውስጥ ሮጠ።
-AM-008,amharic,,ለአባትህ የማህበረሰቡ ስብሰባ ከሐሙስ ወደ ዓርብ ከሰዓት በኋላ እንደተዛወረ ተናግርለት።
-AM-009,amharic,,ዛሬ ከስራ በመመለስ በመንገድ ላይ ሦስት ብርቱካኖችና አንድ ገጠማ ገበዝያለሁ።
-AM-010,amharic,,ከመጀመሪያው ትምህርት ቤት እስከ ከተማውን የሚያጨልቀው ወንዝ ለመድረስ በእግር ምን ያህል ጊዜ ይወስዳል?
-AR-001,arabic,,صباح الخير، أتمنى أن تكون قد نمت جيداً الليلة الماضية واستيقظت وأنت تشعر بالراحة.
-AR-002,arabic,,من فضلك أغلق الباب خلفك وتعال اجلس معنا في الداخل لنشرب الشاي معاً.
-AR-003,arabic,,الأطفال يلعبون كرة القدم خلف البيت بينما أمهم ما زالت تعد الغداء في المطبخ.
-AR-004,arabic,,هل يمكنك مساعدتي في حمل هذه الحقيبة الثقيلة من الحبوب إلى السوق بعد ظهر اليوم؟
-AR-005,arabic,,أختي الصغرى ستأتي لزيارتنا من القرية صباح الغد في أول حافلة.
-AR-006,arabic,,علينا أن نغادر المنزل مبكراً اليوم إذا أردنا أن نلحق بأول حافلة إلى المدينة.
-AR-007,arabic,,بدأ المطر يهطل بقوة بعد أن انتهينا للتو من طبخ العشاء وكنا على وشك الجلوس.
-AR-008,arabic,,أخبر والدك من فضلك أن اجتماع المجتمع قد نُقل من يوم الخميس إلى يوم الجمعة بعد الظهر.
-AR-009,arabic,,في طريقي إلى المنزل من العمل توقفت اليوم واشتريت ثلاث برتقالات ورغيف خبز طازج.
-AR-010,arabic,,كم من الوقت يستغرق عادة المشي من المدرسة الابتدائية حتى النهر عند طرف البلدة؟
-BM-001,bambara,,"I ni sogoma, n be nii ko i ye sunɔgɔ duman sɔrɔ su fɛ ka ban ka sɔgɔma kɛnɛya la."
-BM-002,bambara,,Aw ye da datugu aw kɔfɛ ka don an fɛ ka sigi an fɛ ka tii min ɲɔgɔn fɛ.
-BM-003,bambara,,Denmisɛnw bɛ bololankolon tan kɛ so kɔfɛ wa u ba bɛ tɔgɔla dumuni labɛn so kɔnɔ.
-BM-004,bambara,,I bɛ se ka n dɛmɛ ka nin sɛnɛfɛnw buru girin ta sugu la bi wula fɛ wa?
-BM-005,bambara,,N dɔgɔmuso bɛ na an lajɛ sini sɔgɔma ka bɔ dugu la tile fɔlɔ busi la.
-BM-006,bambara,,An ka kan ka bɔ so kɔnɔ joona bi sisan ni an b'a fɛ ka tile fɔlɔ busi ta.
-BM-007,bambara,,Sanji daminɛna o yɔrɔnin bɛɛ an ka dumuni tobi banlen kɔ ka sigi ka dumuni kɛ.
-BM-008,bambara,,I ka a fɔ i fa ye ko jama lajɛ in yɛlɛmana ka kɛ juma wula fɛ.
-BM-009,bambara,,"N ye baara bɔ ka segin so, n ye lemuru saba ni mburu kura kelen san sira kan."
-BM-010,bambara,,A bɛ ta waati joli ka taa kalanso la ka se ba ma min bɛ dugu da la?
-BEM-001,bemba,,"Mwashibukeni, naletemwa ukuti mwabutuka bwino mu bushiku bwa jana na mwafika mu cine ca kucha."
-BEM-002,bemba,,Mulembeni ulyo mulyango pa kumalilo kwenu na muleisa kumukala natwe mu ng'anda kuti tulelya icai pamodzi.
-BEM-003,bemba,,Abana balecusha bantu pa kumalilo kwa ng'anda ilyo banyina balepekanya ifya kulya pa mafunde.
-BEM-004,bemba,,Mulefwaya ukunwafwa ukutwala iyi nsakalilo ya nshima yalema ku maliketi mwalole lelo?
-BEM-005,bemba,,Mukashi wandi wa kuchindikwa aleisa kutulemona kuchita ku mushi mailo mu cine ca kucha mu bese ya cine.
-BEM-006,bemba,,Tulefwaya ukufuma pa ng'anda bwangu lelo nga tulefwaya ukukwata bese ya cine ukuya mu tauni.
-BEM-007,bemba,,Imvula yalitampile ukuchita fye ilyo twapwile ukupanga ifya kulya na tulefwaya ukukala ukulya.
-BEM-008,bemba,,Mwebe wishi ukuti umulongano wa mukaya wafushe ukufuma ku Lusosa ukuya ku Lwisano mu cine.
-BEM-009,bemba,,"Pa nshila yandi ukubwela ku ng'anda kuchita ku kucita, nalishita amacungwa yatatu na umukate wa kuchita."
-BEM-010,bemba,,Cikwata inshita shinga ukuya ku sukulu ukufika ku mumana uuli pa mpela ya mushi?
-BER-001,berber,,"Azul fell-awen, ttamɣan ad tettidired akken iwata iḍ uqbel u tettidired s lḥeqq."
-BER-002,berber,,Ttxil-k meddel tawwurt deffir-ik u d-kem ad tqimeḍ akked-neɣ ad teswed atay.
-BER-003,berber,,Igerdan tturaren uṭṭubal deffir n wexxam ma yella yemma-nsen tettwala tafat deg lexla.
-BER-004,berber,,Tzemreḍ ad tɛawneḍ ad d-tawiɣ takaṭṭut-a tẓẓayen n uɣrum ɣer ssuq ass-a tadɣut?
-BER-005,berber,,Tamtett-inu meẓẓiyen ad d-tas ad aɣ-terz ar sdat n taddart azekka s tbusa tamezwarut.
-BER-006,berber,,Ilaɣ ad neffeɣ zik seg wexxam ma yella nebɣa ad neṭṭef tbusa tamezwarut i d-awḍen ɣer temdint.
-BER-007,berber,,Tella tẓẓayen s tɣara deffir ma nkeḍ ad neɣleb tafat u nebɣa ad neqqim ad nečč.
-BER-008,berber,,Ini-as i baba-k d akken timlilit n tɣerfa tettwafes seg uamass ɣer uḥeddu tadɣut.
-BER-009,berber,,"Srid ad d-uɣaleɣ seg uxeddim, ssiɣeɣ kraḍ n tlemmucin d aɣrum amaynut s ubrid."
-BER-010,berber,,Acḥal n wakud i d-ittawi umeddu seg uɣerbaz agejdan ɣer wasif i d-yeglen deg ugur n temdint?
-NY-001,chichewa,,"Mwadzuka bwanji, ndikuyembekeza kuti munagona bwino usiku watha ndi kuti mwadzuka molongoka m'mawa uno."
-NY-002,chichewa,,Chonde tsekani chitseko m'mbuyo mwako ndipo lowani kuti mukakhale nafe kuti timumwe tiyi limodzi.
-NY-003,chichewa,,Ana akusewera mpira kumbuyo kwa nyumba pomwe amayi awo akukonza chakudya m'khitchini.
-NY-004,chichewa,,Kodi mungandithandize kunyamula thumba ili lathu la chimanga kupita ku msika madzulo ano?
-NY-005,chichewa,,Mlonga wanga wamng'ono adzabwera kudzatichekera kuchokera ku mudzi m'mawa m'mawa pa basi yoyamba.
-NY-006,chichewa,,Tiyenera kuchoka kwathu msanga lero ngati tikufuna kukwera basi yoyamba kupita ku tauni.
-NY-007,chichewa,,Mvula yatanga kugwa kwambiri nthawi yomweyo timatopa kuphika chakudya ndipo tikanakhala pansi.
-NY-008,chichewa,,Muuze bambo anu kuti msonkhano wa mdera wachotsedwa kuchokera ku Lachinayi kupita ku Lachisanu.
-NY-009,chichewa,,"Pa ulendo wanga wobwerera kunyumba kuchokera ku ntchito, ndinagula malalanje atatu ndi mkate watsopano."
-NY-010,chichewa,,Zimatenga nthawi yayitali bwanji kuyenda kuchokera ku sukulu loyamba kupita ku mtsinje wa ku malo a mudzi?
-EN-001,english,,"Good morning, I hope you had a restful night and slept well until the sun came up."
-EN-002,english,,Please close the door behind you and come inside to sit with us and have some tea.
-EN-003,english,,The children are playing football together behind the house while their mother finishes preparing lunch inside.
-EN-004,english,,Could you please help me carry this heavy bag of grain all the way to the market this afternoon?
-EN-005,english,,My younger sister is coming to visit us from the village early tomorrow morning on the first bus.
-EN-006,english,,We really need to leave home early today if we want to catch the first bus into town.
-EN-007,english,,The rain started pouring down just after we had finished cooking dinner and were about to sit down.
-EN-008,english,,Please tell your father that the community meeting has been moved from Thursday to Friday afternoon.
-EN-009,english,,On my way home from work today I stopped and bought three oranges and a fresh loaf of bread.
-EN-010,english,,How long does it usually take to walk from the primary school down to the river at the edge of town?
-EE-001,ewe,,"Ŋdi nyuie, mele be nèdo dɔ dzi eye nèdo dɔ dzi le afi fifia eye nèdo kpɔ kpɔ."
-EE-002,ewe,,Taflatse tu ɖoɖo la megbe eye nàva nàkpe ɖe mía me be míakpɔ tii kple mía.
-EE-003,ewe,,Ðeviwo le fom le aƒe la megbe eye nɔnɔa le wɔ nuwo le kuxi me hafi woadi nu.
-EE-004,ewe,,Àte ŋu akpe mí be míakpɔ nuɖiɖi sia le ɖo le su la abe egbe?
-EE-005,ewe,,Nɔvi si me nye nɔnɔ si le vava tso du la egbe ɖeka le trotro gbãtɔ dzi.
-EE-006,ewe,,Ele be míadzo le afi la kaba egbe ne míele be míakpɔ trotro gbãtɔ la.
-EE-007,ewe,,Tsi dzi dzi egbe ɖeka hafi míawu nuwo wu eye míele be míakpɔ ɖo.
-EE-008,ewe,,Gblɔ na fofoa be nuƒoƒo la tsia tso yao dzi go yi fiɖa emegbe.
-EE-009,ewe,,"Le míaƒe mɔ dzi tso dɔwɔwɔ la, mefle yibɔ etɔ̃ kple abolo yeyea le mɔ dzi."
-EE-010,ewe,,Ɣeyiɣi kae wòatsɔ aha tso suku susu la ayi tɔsisia si le du la dusime?
-FON-001,fon,,"Kudeji, nɔ nyi ɖo alɔ bi ɖo hùn wɛ nyi do alɔ nyi nyɔn kpɔn kpɔn."
-FON-002,fon,,Tu hɔntòn ɔ ɖo e gudo kpo e wa jijɛ kpo mí ɖo xo la mɛ tii.
-FON-003,fon,,Vǐ lɛ ɖo bolu le xwe ɔ gudo hùn nɔ ɖo nu le kuxi la mɛ.
-FON-004,fon,,A ɖo se ɖe nɔ wɛ ɖo nuɖiɖi lɛ lɛn ɖo su la mɛ lɛn?
-FON-005,fon,,Nɔsi mɛ lɛn na wa yi du ji lɛn sɔ́n lɛn na wa lɛn.
-FON-006,fon,,Mí nɔ yí xo la kaka egbe nɔ mí nɔ kpɔn trotro gbãtɔ la.
-FON-007,fon,,Ji dó dó hùn mí wá nu lɛn kpo mí nɔ yí jijɛ kpo.
-FON-008,fon,,Ɖɔ nú tɔ́ towe ɖɔ kplé ɔ yí juma emegbe ɖo axɔsuza la.
-FON-009,fon,,Un xɔ̀ oranges atɔn kpo bléɖo yeyea le mɔ dzi sín nɔ wa gbé.
-FON-010,fon,,Hwenu tɛ́ wɛ è na zán bo sín wemaxɔmɛ susu la yì tɔ́ ɔ gbé?
-FF-001,fula,,"Jam waali, miɗa yiɗa a heɓa suudu ɗum ndiɗam e jaɓɓi e a firti e yontere."
-FF-002,fula,,Tiiɗno uddu damal ngal caggal maa e a ar e a jooɗo e amen ngam mina tee.
-FF-003,fula,,Sukaaɓe ɓee ngoniina ciya e fiyde caggal suudu haa ɗum nde baabooɓe mum ina waɗata nyaamdu.
-FF-004,fula,,Aɗa waawi wallit-mi ndiyam ndee leɗɗal e gerte ɗoo fof e haa luumo hannde wulde?
-FF-005,fula,,Doggotoore am yimɓe ngarta e haa suudu amen gobe subaka e lebus faaɗo faaɗo.
-FF-006,fula,,Ee maaɗa e haa suudu jooni hannde so aɗa yiɗi heɓde lebus faaɗo ngam yahde e dugguure.
-FF-007,fula,,Roobii fuɗii heen nde min timminii waɗde nyaamdu e min ngoni e noppi ngam jooɗde.
-FF-008,fula,,Haalnu baaba maa wonde batu nguu uddii e Alkamar haa Aljumaa e ngoorɗe.
-FF-009,fula,,"E haa miɗo yahde e suudu e haa gollal, mi soodi leemuneeje tati e mburu hesɗo."
-FF-010,fula,,Hoɗee foti yahde e leydi gila duɗal faaɗo faaɗo haa maayo ngam haa gede suudu?
-HA-001,hausa,,"Barka da safiya, ina fatan ka yi barci lafiya a daren jiya kuma ka tashi da kyau."
-HA-002,hausa,,Don Allah rufe kofar bayanka ka shigo ka zauna tare da mu mu sha shayi tare.
-HA-003,hausa,,Yara suna wasa da kwallon kafa a bayan gida yayin da mahaifiyarsu ke karamar abincin rana a cikin kitchen.
-HA-004,hausa,,Za ka iya taimaka mini in ɗaga wannan jaka mai nauyi na hatsi zuwa kasuwa wannan rana?
-HA-005,hausa,,Ƙanwata ta fi ƙarami za ta zo daga ƙauyen gobe da safe a farkon mota.
-HA-006,hausa,,Dole ne mu fita daga gida da wuri yau idan muna son kama farkon mota zuwa birni.
-HA-007,hausa,,Ruwan sama ya fara zubar da wuri bayan mun gama dafa abincin dare kuma muna shirin zauna.
-HA-008,hausa,,Ka gaya wa mahaifinka cewa taron al'umma an canza shi daga Alhamis zuwa Juma'a da rana.
-HA-009,hausa,,A hanyata ta gida daga aiki na tsaya na sayi lemo uku da gurasa daya sabo.
-HA-010,hausa,,Nawa ne zai dauka yawo daga makarantar firamare zuwa kogi da ke gefen birni?
-IG-001,igbo,,"Ụtụtụ ọma, achọrọ m ka ị mara na anụrụ m na ị zuru ụra ọma n'abalị gara aga."
-IG-002,igbo,,Biko mechie ụzọ azụ gị bịa nọrọ nọọ na anyị ka anyị nọrọ kọwa tii ọnụ.
-IG-003,igbo,,Ụmụaka na-egwu egwuregwu bọọlụ n'azụ ụlọ mgbe nne ha ka na-akwado nri ehihie n'ime ịkụ.
-IG-004,igbo,,"Biko, ị ga-enyere m aka ibu akpa ọka a arọ na-akpọ ike gaa ahịa taa ehihie?"
-IG-005,igbo,,Nwanne nwanyị m nke nta na-abịa gaa anyị n'oge ọma echi ututu site na obodo na ụgbọ ala mbụ.
-IG-006,igbo,,Anyị ga-achọ ịpụ n'ụlọ n'oge na-abịghị echi ma ọ bụrụ na anyị chọrọ ịnweta ụgbọ ala mbụ na obodo.
-IG-007,igbo,,Mmịrị mmịrị bidoro igba ozuzo mgbe anyị mechara ise nri abalị ma na-achọ ikpọrọ nọdụ.
-IG-008,igbo,,Gwa nna gị na nzukọ obodo ahụ gbanwere site na Tọzdee gaa na Fraịde n'ehihie.
-IG-009,igbo,,"Na ụzọ m na-alaghachi ụlọ site na ọrụ, azụtara m oroma atọ na otu achịcha ọhụrụ."
-IG-010,igbo,,Olee ogologo oge ọ na-ewe ije site n'ụlọ akwụkwọ nke atọ ruo na osimiri nke dị na ngwụcha obodo?
-KR-001,kanuri,,"Kachallowa, nǝm fǝle ngǝwu kǝla suudu ro fǝle kǝla kuru ndǝ kuru fǝle kǝla suudu ro ndǝ fǝle."
-KR-002,kanuri,,"Kǝla fǝre awo, ka don kǝla fato gǝre ka sigi gǝre, sannan nǝm shayi yeyi tare da mu."
-KR-003,kanuri,,Feroanza kwallo kǝla fato gǝre kǝla suudu gǝre kǝlǝ amma ndǝ ci detǝ kǝla kuxi gǝre.
-KR-004,kanuri,,Wu kasuwa ro lejin gowo bi wula kǝla buru girin kǝla fato gǝre kǝla kasuwa ro lejin?
-KR-005,kanuri,,Kǝrǝmi am lejin kachallo kǝla dugu kǝla bas faaɗo lejin kǝla tauni gobe da safe.
-KR-006,kanuri,,Kǝla fato joona lehono kǝla bas faaɗo kǝla tauni kǝla fǝle kǝla fato gǝre lejin.
-KR-007,kanuri,,"Dǝlǝgǝ daminǝna kǝla ci banlen kǝro kǝla fato gǝre, sannan ndǝ ci detǝ kǝla suudu gǝre."
-KR-008,kanuri,,"Aba nǝm ye taro yɛlɛmana kǝla Alhamis kǝla Juma wula fɛ, kǝla fato gǝre ka kawo."
-KR-009,kanuri,,Wu lemu yaskǝ kǝla gurasa tilo so kǝla sira kan kǝla fato gǝre kuru ba'a ro lejin.
-KR-010,kanuri,,Madrasa kǝla nji fǝle sawal kǝla dugu da kǝla kogi gǝre kǝla fato fǝle lejin?
-KI-001,kikuyu,,"Ruciini ruega, nĩ ngũgwĩthĩrĩria nĩwarĩ mwega ũtukũ wa ira na ũkiumĩra ũmũthĩ."
-KI-002,kikuyu,,Ndakũhoya ũhinge mũrango wa thutha waku na ũingĩre ũikarane na ithuĩ twanyue cai hamwe.
-KI-003,kikuyu,,Ciana nĩciathakana mpira thuutha wa nyũmba rĩrĩa maitũ nĩmarekaga kũrĩga irio cia mũthenya.
-KI-004,kikuyu,,No ũndĩteithie kũkuua iratathi rĩa mũhũrũ rĩa mũhere harĩa ndũnyũ rĩu mũthenya wa rũcinĩ?
-KI-005,kikuyu,,Mwarĩ wa nyina wakwa mũnini nĩũũka gũtũcererera kuma kũu rũciaro rũcinĩ wa rũciũ na basi ya mbere.
-KI-006,kikuyu,,Tũrabatara kuuma mũciĩ iria rĩu rĩu tũrĩ kwĩra basi ya mbere ĩgũthiĩ tauni-inĩ.
-KI-007,kikuyu,,Mbura nĩyambĩrĩirie kũnyũma o rĩrĩa twathira kũrĩga irio cia rũcinĩ na twĩ mbaru gũikara.
-KI-008,kikuyu,,Ĩra ithe waku atĩ mũcemanio wa gũkũ wa mũciĩ nĩwagũrũtwo kuuma Alhamisi akĩthiĩ Ijumaa mũthenya wa rũcinĩ.
-KI-009,kikuyu,,"Thĩiniĩ wa njĩra yakwa ya gũcoka mũciĩ kuuma wĩra, nĩndagũrire macungwa matatũ na mũgate mwega."
-KI-010,kikuyu,,Nĩ ihinda rĩigana rĩkũoya gũthiĩ na magũũ kuuma sukuru ya mbere nginya rũũi-inĩ rũrĩa rũ thĩiniĩ wa tauni?
-RW-001,kinyarwanda,,"Mwaramutse, nizere ko mwaryamye neza ijoro rishize kandi mwabyutse neza uyu munsi mu gitondo."
-RW-002,kinyarwanda,,Nyamuneka funga urugi inyuma yawe hanyuma winjire uce ukicara natwe kugira ngo twanywe icyayi hamwe.
-RW-003,kinyarwanda,,Abana barakina umupira inyuma y'inzu mu gihe nyina wabo ari gukurura ifunguro rya saa sita mu gikoni.
-RW-004,kinyarwanda,,Waba wanshoboye kumfasha gutwara iyi sakoshi iremereye y'ibigori kugeza ku isoko uyu munsi nyuma ya saa sita?
-RW-005,kinyarwanda,,Mushiki wanjye muto azaza kudusura avuye ku cyaro ejo mu gitondo cya kare ku bisi ya mbere.
-RW-006,kinyarwanda,,Tugomba gusohoka mu ngo vuba uyu munsi niba dushaka gukora bisi ya mbere ijya mu mujyi.
-RW-007,kinyarwanda,,Imvura yatangiye gukuba cyane nyuma y'uko twarangije guteka ifunguro rya nimugoroba kandi twari tugiye kwicara.
-RW-008,kinyarwanda,,Bwira so wawe ko inama y'umuryango yimuriwe uva ku wa Kane kugeza ku wa Gatanu nyuma ya saa sita.
-RW-009,kinyarwanda,,"Mu nzira yanjye yo kujya mu ngo avuye ku kazi, nagize ngo nguze amacunga atatu n'umugati umwe mushya."
-RW-010,kinyarwanda,,Bimara igihe kingana iki kugenda n'amaguru uva ku ishuri ry'incuke ukajya ku ruzi ruri ku mpera y'umujyi?
-KRI-001,krio,,"Gud mɔnin, a hop se yu slip gud las nait en yu get op fayn dis mɔnin."
-KRI-002,krio,,"Duya, shɛt di do bihain yu en kam insay siddɔn wit wi fo drink ti tɛgɛda."
-KRI-003,krio,,Di pikin dɛn de ply futbɔl bihain di os wɛn dɛn mama de kuk lunch insay di kichin.
-KRI-004,krio,,Yu fit ɛp mi kɛr dis big sak ɔf grin go makɛt dis aftanun?
-KRI-005,krio,,Mi sista we smɔl go kam visit wi frɔm di vilij tumara mɔnin in di fos bɔs.
-KRI-006,krio,,Wi fɔ liv di os iri tide if wi wan kɛt di fos bɔs we de go taun.
-KRI-007,krio,,Di ren stat fɔ pɔr dɔn jɔs afta wi don kuk dina en wi bin redi fo siddɔn.
-KRI-008,krio,,Tɛl yu papa se di mitin dɔn shif frɔm Torsde go Fraide aftanun.
-KRI-009,krio,,"Pan mi we go os frɔm wok tide, a stop en bai tri ɔrinj ɛn wan fɛsh brod."
-KRI-010,krio,,Aw lɔng i go tek fɔ waka frɔm di praimeri skul dɔn go di riva we de na di ɛd ɔf taun?
-LN-001,lingala,,"Mbote na ntongo, nalingi ete olobi malamu na butu eleki mpe omoni malamu lelo na ntongo."
-LN-002,lingala,,Svp kanga ekuke na nsima na yo mpe ya kati kofanda na biso mpo tokomela ti elongo.
-LN-003,lingala,,Bana bazali kosakana na football na sima ya ndako tango mama na bango azali kolamba bilei ya midi na kizini.
-LN-004,lingala,,Okoki kosalisa ngai kotambola na sac oyo ya makolo ya moke tii na zando lelo na mpokwa?
-LN-005,lingala,,Mokolo na ngai ya mwasi ya moke akoya kotala biso kowuta na mboka na ntongo ya lobi na bus ya liboso.
-LN-006,lingala,,Esengeli biso kobima na ndako yango na ntango lelo soki tolingi kokanga bus ya liboso oyo ekende na engumba.
-LN-007,lingala,,Mbula ebandi kobeta makasi nsima moke tosilaki kolamba bilei ya pokwa mpe tozali kobongisa kokita.
-LN-008,lingala,,Yebisa tata na yo ete likita ya mboka ebongisami kowuta na mardi kino vendredi na mpokwa.
-LN-009,lingala,,"Na nzela na ngai ya kozonga na ndako kowuta na mosala, nasombi orange misato mpe lipa moko ya sika."
-LN-010,lingala,,Ezwaka ntango boni mpo na kotambola kowuta na eteyelo ya liboso kino ebale ya ezali na nsuka ya engumba?
-LG-001,luganda,,"Wasuze otya, nsuubira nti wasula bulungi ekiro ekyayise era okolokose bulungi enkya ya leero."
-LG-002,luganda,,Nsaba oggale oluggi emabega wo oyingire otuule naffe munda tufune caayi wamu.
-LG-003,luganda,,Abaana bazannya omupiira emabega w'ennyumba nga nnyina baabwe akyakola ebyokulya by'emisana mu ffumbiro.
-LG-004,luganda,,Oyinza okuyamba okutikka ensawo eno enzito ey'emmere okugitwala ku katale leero emisana?
-LG-005,luganda,,Mwannyina wange omukyala omuto agenda kujja okutulaba ng'avudde ku kyalo enkya ya kesho ku bbaasi esooka.
-LG-006,luganda,,Tulina okuva awaka mangu leero bwe tuyagala okukwata bbaasi esooka egenda mu kibuga.
-LG-007,luganda,,Enkuba yatandise okutonnya nnyo nga tumaze okufumba eky'okulya ky'ekiro era nga twali tutegekera okutuula.
-LG-008,luganda,,Gamba kitaawo nti olukungaana lw'ekitundu luwedde okuva ku Lwokuna okudda ku Lwokutaano emisana.
-LG-009,luganda,,"Ku luguudo lwange okudda awaka okuva ku mulimu, nagula emicungwa esatu n'omugaati omupya."
-LG-010,luganda,,Kitwala bbanga ki okutambula okuva ku ssomero ery'obwana okutuuka ku mugga oguli ku nkomerero y'ekibuga?
-MG-001,malagasy,,"Manao ahoana ny maraina, manantena aho fa nandroso tsara ianao alina ary nifoha tsara androany maraina."
-MG-002,malagasy,,Azafady hidio ny varavarana ao aorianao ary miditra mba hipetraka miaraka aminay hisotro dite.
-MG-003,malagasy,,Milalao baolina kely ny ankizy ao ambadiky ny trano raha mbola manomana ny sakafo atoandro ny reniny ao an-dakozia.
-MG-004,malagasy,,Afaka manampy ahy hitondra ity kitapo mavesatra ity amin'ny vary ho any an-tsena androany hariva ve ianao?
-MG-005,malagasy,,Hisy ny rahavavy kely anay hiaviavy avy any ambanivohitra rahampitso maraina amin'ny fiara fitateram-bahoaka voalohany.
-MG-006,malagasy,,Mila miala aloha isika androany raha te hihazo ny fiara fitateram-bahoaka voalohany mankany an-tanàna isika.
-MG-007,malagasy,,Nanomboka nivatravatra ny orana taorian'ny nahavitanay nandraosana ny sakafo hariva ary efa nomaninay hipetraka.
-MG-008,malagasy,,Lazao amin'ny rainy fa ny fivoriana fiaraha-monina dia nafindra avy ny Alakamisy ho amin'ny Zoma hariva.
-MG-009,malagasy,,"Tamin'ny lalana niverinako tany an-trano avy any amin'ny asa, nividy voasary telo sy mofo vaovao aho."
-MG-010,malagasy,,Hatraiza ny fotoana fandehanana an-tongotra avy any amin'ny sekoly fototra mankany amin'ny ony eo am-paran'ny tanàna?
-ND-001,ndebele,,"Livuke njani, ngiyethemba ukuthi ulale kahle ebusuku obudlule futhi uvuke kahle namhlanje ekuseni."
-ND-002,ndebele,,Ngicela uvale umnyango ngemuva kwakho bese ungena uhlale nathi singaphuze itiye ndawonye.
-ND-003,ndebele,,Abantwana badlala ibhola emuva kwendlu ngenkathi umama wabo esaphakela isidlo sasemini ekhishini.
-ND-004,ndebele,,Ungangisiza ngithwale lesi sakhi esisindayo sokudla siye emakethe namhlanje ntambama?
-ND-005,ndebele,,Udade wami omncane uzoza kusivakashela evela emaphandleni kusasa ekuseni ngebhasi yokuqala.
-ND-006,ndebele,,Kufanele siphume ekhaya ngokushesha namhlanje uma sifuna ukubamba ibhasi yokuqala eya edolobheni.
-ND-007,ndebele,,Imvula yaqala ukuna kakhulu ngemva kokuba sibe sesiqedile ukupheka isidlo sakusihlwa sizolala phansi.
-ND-008,ndebele,,Tshela uyihlo ukuthi umhlangano womphakathi ususwe kusukela ngoLwesine uye ngoLwesihlanu ntambama.
-ND-009,ndebele,,"Endleleni yami yokubuyela ekhaya emsebenzini, ngiyethe ngathenga amawolintshi amathathu nesinkwa esisha."
-ND-010,ndebele,,Kuthatha isikhathi esingakanani ukuhamba uvela esikolo sokuqala uye emfuleni okusekupheleni kwedolobha?
-OM-001,oromo,,"Akkam bulte, abdii nan qaba inni kaleessa galgala gaarii rafitee har'a ganama gaarii kaate jirta."
-OM-002,oromo,,Maaloo balbala duuba kee cufiitii keessa seeni nu waliin taa'iitii shaayii waliin dhuguu.
-OM-003,oromo,,Daa'imman mana duuba kubbaa miilaa taphachaa jiru yeroo haati isaanii mana keessatti qophii nyaataa hojjettu.
-OM-004,oromo,,Boqonna kana ulfaataa midhaanii gara gabaa geessuuf har'a waaree booda na gargaaruu dandeessa?
-OM-005,oromo,,Obboleetti koo xiqqoon ganda irraa bor ganama buusii jalqabaa irratti nu argachuuf dhufa.
-OM-006,oromo,,Har'a mana irraa ariifachuun ba'uu qabna yoo buusii jalqabaa magaalatti qabachuu barbaanne.
-OM-007,oromo,,Roobni jalqabee dhangala'uu nyaata galgalaa xumnuu booda taa'uuf qophaa'uun dura.
-OM-008,oromo,,Abbaa keetiif walgahinni hawaasaa Kamiisaa irraa Jimaata waaree boodatti jijjiirame jedhi.
-OM-009,oromo,,Karaa gara manaa irraa hojii irraa deebi'uun har'a lamuu sadii fi daabboo haaraa tokko bitadhe.
-OM-010,oromo,,"Mana barumsaa jalqabaa irraa gara lagaatti deemuf yeroo hammami fudhata, lagaan sun xiyyaara magaalaa jira?"
-NSO-001,sepedi,,"Thobela, ke tshepa gore o robile gabotse bosiu bjo bo fetilegolo gomme o diphologile gabotse mesong ye."
-NSO-002,sepedi,,Hle tswalela lemati ka morago ga gago gomme o tsene o dule le rena ka gare gomme re nwe tee.
-NSO-003,sepedi,,Bana ba bapala bolo ka morago ga ntlo ge mma wa bona a sa ntse a lokisa dijo tsa masegare ka kitchineng.
-NSO-004,sepedi,,O ka ka nthuša go rwala monwana wo o boima wa dijo go ya mmarakeng mafelelo a lehono?
-NSO-005,sepedi,,Kgaitsadi ya ka yo monnyane o tla re etela a tswa motseng mesong ye ka bese ya pele.
-NSO-006,sepedi,,Re swanetše go tšwa ka gae ka pela lehono ge re nyaka go tšea bese ya pele e ya toropong.
-NSO-007,sepedi,,Pula e thomile go na ka maatla ka morago ga ge re feditše go pheka dijo tsa mafelo a lehono.
-NSO-008,sepedi,,Botša tatago gore kopano ya setšhaba e fetogile go tšwa Labone go ya Labohlano mafelelo a lehono.
-NSO-009,sepedi,,"Tseleng ya ka ya go boela gae go tšwa mošomong, ke rekišitše maswiri a mararo le borotho bo bofsa."
-NSO-010,sepedi,,Go tšea nako e kae go sepela go tloga sekolong sa mathomo go ya nokeng e lego mafelelong a toropo?
-ST-001,sesotho,,"Dumela, ke tshepile hore u robile hantle bosiu bo fetileng mme u fihlile hantle kajeno hoseng."
-ST-002,sesotho,,Ka kopo kwala lemati ka morao ho wena o kene o dule le rona ka hare re nwe tee hammoho.
-ST-003,sesotho,,Bana ba bapala bolo ka mora ntlo ha mme wa bona a ntse a lokisa lijo tsa motshehare ka kitchineng.
-ST-004,sesotho,,Na u ka nthusa ho rwala mokotla ona o boima oa lijo ho ea mmarakeng mantsiboea kajeno?
-ST-005,sesotho,,Usoana wa ka o monyane o tla re etela a tsoa motseng hosane ka bese ea pele.
-ST-006,sesotho,,Re hloka ho tsoa lapeng kapele kajeno haeba re batla ho tšoara bese ea pele e ea toropong.
-ST-007,sesotho,,Pula e qala ho na ka matla ka mora hore re qetile ho pheha lijo tsa mantsiboea mme re ne re loketse ho dula.
-ST-008,sesotho,,Bolella ntatao hore kopano ea sechaba e fetisitsoe ho tloha Labone ho ea Labohlano mantsiboea.
-ST-009,sesotho,,"Tseleng ea ka ea ho khutlela lapeng ho tsoa mosebetsing, ke rekile namune tse tharo le bohobe bo bocha."
-ST-010,sesotho,,Ho nka nako e kae ho tsamaya ho tloha sekolong sa mantlha ho ea nokeng e leng qetellong ea toropo?
-SN-001,shona,,"Mangwanani, ndinovimba kuti wakoroga zvakanaka usiku hwapfuura uye wakakwidza zvakanaka nhasi mangwanani."
-SN-002,shona,,Ndapota vharai musuwo kumashure kwenyu uye pindai mugara nesu tisvike tichinwa tii pamwe chete.
-SN-003,shona,,Vana vari kutamba bhora kuseri kweimba vachiri kuti amai vavo vari kugadzirira chikafu chemasikati mukicheni.
-SN-004,shona,,Unogona kundibatsira kutakura bag iri remazhinji rinosimba kuenda kumusika manheru ano?
-SN-005,shona,,Hanzvadzi yangu mudiki achauya kutisuwa achibva kumusha mangwana mangwanani nebhazi rekutanga.
-SN-006,shona,,Tinofanira kubuda kumba nekukurumidza nhasi kana tikuda kubata bhazi rekutanga rinobva kuchikoro.
-SN-007,shona,,Mvura yakatanga kunaya zvakanyanya mushure mekuti tapedza kupika chikafu chemanheru tichigadzirira kugara pasi.
-SN-008,shona,,Udza baba vako kuti musangano wevanhu wachinjwa kubva pachishanu kuenda pachishanu manheru.
-SN-009,shona,,"Penzira yangu yekudzoka kumba kubva kubasa, ndakatenga maorenji matatu nechingwa chitsva."
-SN-010,shona,,Zvinotora nguva yakareba sei kufamba kubva kuchikoro chepasi kuenda kurwizi uri papemberi pemuguta?
-SO-001,somali,,"Subax wanaagsan, waxaan rajeynayaa inaad si fiican u seexatay habeenkii hore oo aad si fiican u kacday maanta."
-SO-002,somali,,Fadlan albaabka gadaashaada xir oo soo gal gudaha si aad ula fadhiisato annaga oo shaah wada cabno.
-SO-003,somali,,Carruurtu waxay ku ciyaarayaan kubada guriga gadaashiisa halka hooyadood ay weli diyaarinayso qadada jikada.
-SO-004,somali,,Ma i caawin kartaa inaan xamuulka culus ee hadhuudhka ah u qaado suuqa galabta maanta?
-SO-005,somali,,Walaashay yar waxay nagu soo booqan doontaa tuulada berri subaxnimo baska ugu horreeya.
-SO-006,somali,,Waa inaan guriga ka baxnaa goor hore maanta haddii aan rabno inaan qabano baska ugu horreeya ee magaalada.
-SO-007,somali,,Roobku wuxuu bilaabay inuu si xoog leh u da'o isla markii aan dhamaynay karinta cashada oo aan diyaar u ahayn fadhi.
-SO-008,somali,,Aabbahaa u sheeg in shirka bulshada laga wareejiyay Khamiis ilaa Jimcaha galabnimo.
-SO-009,somali,,"Jidkayga guriga ee shaqada ka imaanaya, waxaan soo iibsaday saddex liin iyo roodhi cusub."
-SO-010,somali,,Intee in le'eg ayay qaadataa in laga lugeeyo dugsiga hoose ilaa webiga ku yaal geeska magaalada?
-SW-001,swahili,,"Habari za asubuhi, natumai ulilala vizuri usiku wa jana na umeamka salama leo asubuhi."
-SW-002,swahili,,Tafadhali funga mlango nyuma yako na uingie ndani uketi nasi tupate kunywa chai pamoja.
-SW-003,swahili,,Watoto wanacheza mpira nyuma ya nyumba huku mama yao bado akiandaa chakula cha mchana jikoni.
-SW-004,swahili,,Unaweza kunisaidia kubeba mfuko huu mzito wa nafaka hadi sokoni mchana huu?
-SW-005,swahili,,Dada yangu mdogo atakuja kututembelea kutoka kijijini kesho asubuhi na basi la kwanza.
-SW-006,swahili,,Tunahitaji kuondoka nyumbani mapema leo ikiwa tunataka kushika basi la kwanza linalokwenda mjini.
-SW-007,swahili,,Mvua ilianza kunyesha sana mara tu tulipomaliza kupika chakula cha jioni na tulikuwa tunakaribia kukaa.
-SW-008,swahili,,Mwambie baba yako kuwa mkutano wa jamii umehamishwa kutoka Alhamisi hadi Ijumaa mchana.
-SW-009,swahili,,"Njiani kurudi nyumbani kutoka kazini, nilisimama nikanunua machungwa matatu na mkate mpya."
-SW-010,swahili,,Inachukua muda gani kwa kawaida kutembea kutoka shule ya msingi hadi mto uliopo mwisho wa mji?
-SS-001,swati,,"Sawubona ekuseni, ngiyetsemba kutsi ulale kahle ebusuku lobe lendlulile futsi uvuke kahle namuhla ekuseni."
-SS-002,swati,,Ngiyacela uvale umnyango ngemuva kwakho bese ungena uhlale natsi siphuze litiye ndzawonye.
-SS-003,swati,,Bantfwana badlala ibhola ngemva kwendlu ngenkathi boma babo basati apheka tifisiphi letikolwa ekhishini.
-SS-004,swati,,Ungangisita ngikhetse lesi sakhi lesisindzile setidla siye emakethe namuhla emini?
-SS-005,swati,,Udadewethu lomncane utawufika kusivakashela avela emaphandleni khusasa ekuseni ngebhasi lekucala.
-SS-006,swati,,Sidzinga kudzinga ekhaya ngokushesha namuhla uma sifuna kubamba libhasi lekucala leya edolobheni.
-SS-007,swati,,Imvula yacala kunaya kakhulu ngemuva kwekutsi sicedze kupheka tifisiphi letikolwa sibe silungele kuhlala phansi.
-SS-008,swati,,Tjela uyihlo kutsi umhlangano wemiphakatsi ususwe kusuka ngeLwesine uye ngeLwesihlanu emini.
-SS-009,swati,,"Endleleni yami yekubuyela ekhaya kusuka emsebenzini, ngitsenge emawolintshi lamatsatfu nesinkhwa lesisha."
-SS-010,swati,,Kutsatsa sikhatsi lesingakanani kuhamba kusuka esikolweni lesincane kuya emfuleni losedolobheni?
-TI-001,tigrinya,,ከመይ ሓዲርካ፣ ትማሊ ምሸት ጽቡቕ ገይርካ ከም ዝደቀስካ ተስፋ ይገብር።
-TI-002,tigrinya,,በጃኻ ኣብ ድሕሪኻ ኣድምቕ እሞ ኣብ ውሽጢ መጻእካ ምስና ኮፍ ኢኻ ቡን ክንሰተይ።
-TI-003,tigrinya,,ቆልዑ ኣብ ድሕሪ ገዛ እግር ኳስ ይጻወቱ ኣለዉ፣ ኣዶም ኣብ ኩሽና ምሳ ክሰርሑ ኣለዉ።
-TI-004,tigrinya,,በጃኻ እዚ ከቢድ ጥራዝ ዓረብ ክሳብ ዕዳጋ ክወስዶ እንተ ተረዲኡኒ?
-TI-005,tigrinya,,እሓትነይ ኣብ ጥዑም ጽባሕ ካብቲ መጀመርታ ባስ ካብ ዓዲ ክትመጽእ እያ።
-TI-006,tigrinya,,ሎሚ ነቲ መጀመርታ ባስ ክንወስዶ እንተ ደሊና ካብ ገዛ ቀዳም ክንወጽእ ኣለና።
-TI-007,tigrinya,,ዝናብ ብሓደሽነት ክሰርሕ ኣብ ጀሚሩ ንምሳ ክንበል ክንዳለና ንሰርሕ ኣብ ዝውድእሉ ግዜ።
-TI-008,tigrinya,,ንኣቦኻ ነቲ ናይ ማሕበረሰብ ኣኼባ ካብ ሓሙስ ናብ ዓርቢ ድሕሪ ቀትሪ እንተ ተዛወረ ገልጸሉ።
-TI-009,tigrinya,,ኣብ መንገዲ ካብ ስራሕ ናብ ገዛ፡ ሰለስተ ብርቱካንን ሓደ ሓድሽ ባኒን ገዚአ።
-TI-010,tigrinya,,ካብ ቀዳማይ ቤት ትምህርቲ ክሳብቲ ኣብ ጥቓሚ ከተማ ዘሎ ሩባዕ ንኸይድ ብእግሪ ክንደይ ግዜ ይወስድ?
-TS-001,tsonga,,"Avuxeni, ndzi tshemba leswaku u etlele kahle vusiku byo hetileswa u ri na nkhensa namuntlha."
-TS-002,tsonga,,Ndza kombela u pfala tinyangwa endzhaku ka wena u nghena u tshama na hina hi mina ti.
-TS-003,tsonga,,Vana va tlanga bolo endzhaku ka yindlu laha mmanana wa vona a nga ri karhi a lungiselela swakudya swa maseko eka kitchini.
-TS-004,tsonga,,Xana u nga ndzi pfuna ku tlakusa xikhwama lexi xisindzaka xa swakudya ku ya emakethe namuntlha madzahala?
-TS-005,tsonga,,Munghana wa mina wa n'wana wa ntsongo u ta hi etela a huma eka vukati hi matlha lamanene hi bese ya sungula.
-TS-006,tsonga,,Hi fanele ku huma eka yindlu hi ku hatlisa namuntlha loko hi lava ku kuma bese ya sungula leyi ya eka doroba.
-TS-007,tsonga,,Mvula yi sungule ku na hi ku hetisekile ku pheka swakudya swa nimugoro hi ri karhi hi lunghelela ku tshama.
-TS-008,tsonga,,Byela tatana wa wena leswaku nhlengeletano ya vaaki yi hundzurile ku suka eka Ravumune ku ya eka Ravunharhu madzahala.
-TS-009,tsonga,,"Eka ndlela ya mina yo vuya eka yindlu ku suka emsebenzini, ndzi xavile timawulintshi tinharhu na xinkwa lexintshwa."
-TS-010,tsonga,,Swa teka nkarhi wo tani hi ku famba ku suka exikolweni xo sungula ku ya enambyeni leyi nga eka xiyimo xa doroba?
-TN-001,tswana,,"Dumela, ke solofela gore o robile sentle bosigo jo bo fetileng mme o tsogile sentle gompieno."
-TN-002,tswana,,Tsweetswee tswala lebati ka morago ga gago o tsene o dule le rona re nwe tee mmogo.
-TN-003,tswana,,Bana ba tshameka bolo kwa morago ga ntlo fa mme wa bone a sa ntse a baakanya dijo tsa metshehare mo kitchineng.
-TN-004,tswana,,A o ka nthusa go rwala mokotla ono o boima wa dijo go ya mmerekeng mafelelo a gompieno?
-TN-005,tswana,,Kgaitsadi ya me e nnye o tla re etela a tswa mo motseng ka bosigo jono mo mosong ka bese ya ntlha.
-TN-006,tswana,,Re tshwanetse go tswa mo gae ka pela gompieno fa re batla go tshwara bese ya ntlha e e yang mo toropong.
-TN-007,tswana,,Pula e simologile go na ka matla ka morago ga re qetile go pheka dijo tsa mafelo a bosigo.
-TN-008,tswana,,Bolelela rraago gore kopano ya sechaba e fetogile go tswa mo Labone go ya mo Labotlhano mafelelo a bosigo.
-TN-009,tswana,,"Tseleng ya me ya go boela gae go tswa mo tirong, ke rekile namune tse tharo le borotho bo bo sa ntshitsweng."
-TN-010,tswana,,Go tsaya nako e kae go tsamaya go tswa sekolong sa ntlha go ya nokeng e e leng kwa bokhutlong jwa toropo?
-TW-001,twi,,"Mema wo akye, me anidaso ne sɛ woada yie anadwo a atwam na woanhyɛ ase nnɛ anɔpa."
-TW-002,twi,,"Mepa wo kyɛw, to ɛpono no mu w'akyi na bra fa adidi yɛn ho na yɛnnom tii."
-TW-003,twi,,Mmofra no redi agoru wɔ dan no akyi bere a wɔn maame resiesie adidi a wɔbɛdidi awia no wɔ kitchin no mu.
-TW-004,twi,,Wobɛtumi aka me bo sɛ mede abura suro yi a ɛwɔ mu no akɔ gua so nnɛ anwummere?
-TW-005,twi,,Me nuabea kumaa rebɛba abɛsra yɛn fi kuro mu anɔpa a ɛreba so no wɔ trotro a edi kan no so.
-TW-006,twi,,Yɛsɛ hwe yɛn fi ntɛm nnɛ sɛ yɛpɛ sɛ yɛkɔ trotro a edi kan no a ɛkɔ kuro no mu.
-TW-007,twi,,Osutɔ fi ase anɔpa bere a yɛawie adidi anadwo no na yɛresiesie sɛ yɛbɛtena ase.
-TW-008,twi,,Ka kyerɛ w'agya sɛ nhyiam no afi Yawoada akɔ Fiada anwummere.
-TW-009,twi,,"Me kwan a mede reba fie fi adwuma no so, metɔɔ ankaa abiɛsa ne paanoo foforo baako."
-TW-010,twi,,Ɛbɛkyɛ dɛn ansa na woafiri sukuu a edi kan no nantew akɔ asubɔnten a ɛwɔ kuro no ano no ho?
-UMB-001,umbundu,,"Wakolapo, nda tekelela okuti walala ocipalo cokole okuti okuya ocipolo cokele ocipolo cokwava olole."
-UMB-002,umbundu,,Feka ocipito okuti ove olume okuti ole okuya okuti olume ole okuti olume ca okuti olume ole.
-UMB-003,umbundu,,Omanu va tunga konima yocumbo okuti ame va lusola okuti okuchi okuti okuchila okufika ocipolo.
-UMB-004,umbundu,,Okuti ole okuneka okuti nda leka ocisaku cokole okuti okuya komatala ocipolo cokwava ole?
-UMB-005,umbundu,,Kuanetu okwame okocokolo okuyenda okutukila okuvela okudidi okuchila ocivili ocipolo cokwava.
-UMB-006,umbundu,,Tukwenda okuti tukachoke ocipolo okutya okuti tukwenda okuchila ocivili ocipolo cokole okuchila ocimbila.
-UMB-007,umbundu,,Imvula yatanga okuchila okufika ocipolo okuchila okufika ocipolo okuti tukwenda okuti tukachoke ocipolo.
-UMB-008,umbundu,,Linga tate okuti ocisonso ocipolo cokwava ocikwenda okuchila okuchila okufika okuchila okufika.
-UMB-009,umbundu,,Nda landa olaranja vitatu locimbombo okuchila okufika ocipolo okuti nda vele okuchila okuchila.
-UMB-010,umbundu,,Cipwa eteke likuata okuenda kofeleka kuenda komulonga okuchila okuchila okufika ocipolo?
-VE-001,venda,,"Ndaa, ndi khou vhulunga uri vho lala zwavhudi vhusiku ha fhiraho na uri vho fika zwavhudi namusi."
-VE-002,venda,,Ndi khou humbela ni vale vothi nga murahu ha nṋe ni dzule na hine kha ngomu ni mina tii.
-VE-003,venda,,Vhana vha khou tamba bolo nnḓa ha ṋnḓu musi mme wa vho vha sa athu u lugisa zwiliwa zwa masegare kha kitchini.
-VE-004,venda,,Ni nga ndi thusa u tshimbila saḓo iḽi ḽiswa ḽa zwiliwa u ya ḓoroboni namusi madzahala?
-VE-005,venda,,Munne waṱuku wanga u ḓo ḓisa u ri vhona u bva kha tshiṱere matshelo na bese ya u thoma.
-VE-006,venda,,Ri fanela u bva kha ngomu nga u fhira namusi arali ri khou toda u wana bese ya u thoma i ya ḓoroboni.
-VE-007,venda,,Mvula yo thoma u na nga maanda murahu ha u fhedza u pheka zwiliwa zwa mannḓa na ri sa lindela u tshimbila.
-VE-008,venda,,Vhudza khotsi anu uri musangano wa vhathu wo shandukwa u bva Lavhuvhili u ya Lavhuṱanu madzahala.
-VE-009,venda,,"Kha ndila yanga ya u vhuya kha ngomu u bva kha mushumo, ndo renga maorentshi mararu na vhurotho ḽiswa."
-VE-010,venda,,Zwi dzhia tshifhinga tshikae u tshimbila u bva tshikoloni tsha u thoma u ya mulamboni wo re kha muhala wa ṱauni?
-WO-001,wolof,,"Jamm nga fanaan, dama yaaka ne nga nelaw ci gëna wanaag te nga fii ci gëna wanaag tey."
-WO-002,wolof,,Ngalla tëj buntu bi ci ginaaw laay joxe te duggal ci biir ngir jëkk a jëkk ci sunu ndaje.
-WO-003,wolof,,Xale yi dañuy fo ci ginaaw kër gi ba noppi bi di def lëkk gi ci biir kër gi.
-WO-004,wolof,,Ndax mën nga ma dimbali yab saaku bu doj bu mbuusu lepp ci yoon wi jëm marché bi ci ngoon wi?
-WO-005,wolof,,Magam ji jigéen ji dina ñëw ci suba jëme ñu ci dëkk bi ci biir bés bu jëkk bi.
-WO-006,wolof,,Danaa wara génn ci kër gi ci suba su nu bëgg a jël bés bu jëkk bi jëm dëkk bi.
-WO-007,wolof,,Tawat dafa tàmbali gannaaw bi nu jeexee lëkk ci ngoon te takhaw ci kër gi.
-WO-008,wolof,,Waxal sa baay ne réunion bu askan wi délloose na ci Alxamis ca Aljumaa ngoon gi.
-WO-009,wolof,,"Ci yoon bi ma di delloo kër gi ci liggéey bi, dama jënd ñetti orange ak mburu bu bees."
-WO-010,wolof,,Ñaata waxtu lay jël ngir dox jële ecole bu njëkk bi jëm ba dex bi nekk ci boppu dëkk bi?
-XH-001,xhosa,,"Molo kusasa, ndithemba ukuba ulale kakuhle ngobusuku obudlulileyo kwaye uvuke kakuhle namhlanje."
-XH-002,xhosa,,Nceda uvale ucango ngasemva kwakho uze ungene uhlale nathi singaphuze iti kunye.
-XH-003,xhosa,,Abantwana badlala ibhola ngasemva kwendlu ngelixa umama wabo esakupheka isidlo sasemini ekhishini.
-XH-004,xhosa,,Ungandinceda ndithwale le ngxowa enzima yokutya ukuya emarikethini namhlanje emva kwemini?
-XH-005,xhosa,,Udade wam omncinci uza kusivakashela evela emaphandleni ngomso ekuseni ngebhasi yokuqala.
-XH-006,xhosa,,Kufuneka siphume ekhaya ngokukhawuleza namhlanje ukuba sifuna ukubamba ibhasi yokuqala eya edolobheni.
-XH-007,xhosa,,Imvula yaqala ukuna ngamandla emva kokuba sigqibe ukupheka isidlo sakusihlwa sibe silungele ukuhlala phantsi.
-XH-008,xhosa,,Xelela uyihlo ukuba intlanganiso yoluntu isuswe ukusuka ngoLwesine ukuya ngoLwesihlanu emva kwemini.
-XH-009,xhosa,,"Endleleni yam yokubuya ekhaya emsebenzini, ndithenge amaorenji amathathu nesonka esitsha."
-XH-010,xhosa,,Kuthatha ixesha elingakanani ukuhamba usuka esikolweni sokuqala uye emlanjeni okusekupheleni kwedolobha?
-YO-001,yoruba,,"E kaaro, mo reti pe o sun dada lale ana ati pe o ji dada loni owurọ."
-YO-002,yoruba,,Jowo ti ilekun lehin re wa si wa joko ki a mu tii papo.
-YO-003,yoruba,,Awon omo n sere pelu bọọlu lehin ile nigba ti iya won n pese ounje owurọ ninu ile idana.
-YO-004,yoruba,,Se o le ran mi lowo lati gbe apo wuwo yi ti o kun fun ounjẹ lo si oja loni owurọ?
-YO-005,yoruba,,Arabinrin kekere mi yoo wa beere wa lati ilu ni owurọ ola lori bosi akoko.
-YO-006,yoruba,,A nilo lati ma kuro ni ile ni kiakia loni bi a ba fe mu bosi akoko lo si ilu.
-YO-007,yoruba,,Ojo bẹrẹ lati ro pupọ lẹhin ti a ti pari sisẹ ounje ale ati pe a n setan lati joko.
-YO-008,yoruba,,So fun baba re pe ipade agbegbe ti yipada lati Ojo Alhamisi si Ojo Jimọ lọsan.
-YO-009,yoruba,,"Lori ona mi si ile lati ise, mo ra osan meta ati akara tuntun kan."
-YO-010,yoruba,,Igbawo ni o n gba lati rin lati ile-iwe akoko lo si odo ti o wa ni eti ilu?
-ZU-001,zulu,,"Sawubona ekuseni, ngiyethemba ukuthi ulale kahle ebusuku obudlule futhi uvuke kahle namuhla ekuseni."
-ZU-002,zulu,,Ngicela uvale umnyango ngemuva kwakho bese ungena uhlale nathi singaphuze itiye ndawonye.
-ZU-003,zulu,,Izingane zidlala ibhola ngemuva kwendlu ngenkathi umama wazo esakupheka isidlo sasemini ekhishini.
-ZU-004,zulu,,Ungangisiza ngithwale lesi sakhi esisindayo sokudla siye emakethe namuhla emini?
-ZU-005,zulu,,Udade wami omncane uzoza kusivakashela evela emaphandleni kusasa ekuseni ngebhasi yokuqala.
-ZU-006,zulu,,Kufanele siphume ekhaya ngokushesha namuhla uma sifuna ukubamba ibhasi yokuqala eya edolobheni.
-ZU-007,zulu,,Imvula yaqala ukuna kakhulu ngemva kokuba sesiqedile ukupheka isidlo sakusihlwa sibe silungele ukuhlala phansi.
-ZU-008,zulu,,Tshela uyihlo ukuthi umhlangano womphakathi ususwe kusukela ngoLwesine uye ngoLwesihlanu emini.
-ZU-009,zulu,,"Endleleni yami yokubuyela ekhaya emsebenzini, ngiyethe ngathenga amawolintshi amathathu nesinkwa esisha."
-ZU-010,zulu,,Kuthatha isikhathi esingakanani ukuhamba uvela esikoleni sokuqala uye emfuleni okusekupheleni kwedolobha?
+AF-001,afrikaans,,"Goeie more, ek hoop jy het gisteraand rustig geslaap en lekker uitgerus tot die son opgekom het., want vandag gaan 'n vol dag wees vir almal in ons huis."
+AF-002,afrikaans,,"Maak asseblief die deur agter jou toe en kom sit by ons om saam tee te drink., sodat ons saam 'n koppie tee kan drink voordat die middag se werk begin."
+AF-003,afrikaans,,"Die kinders speel sokker agter die huis terwyl hul ma nog besig is om middagete voor te berei., en die geur van bredie dryf reeds deur die oop vensters."
+AF-004,afrikaans,,"Kan jy asseblief help om hierdie swaar sak mielies vanmiddag hele pad na die mark toe te dra, aangesien die pad lank is en ek dit nie alleen kan dra nie.?"
+AF-005,afrikaans,,"My jonger suster kom môre vroeg op die eerste bus van die dorp af om ons te kom kuier., en sy het beloof om vars vrugte vir die kinders te bring."
+AF-006,afrikaans,,"Ons moet vandag vroeg by die huis weg as ons die eerste bus na die dorp wil haal., want die pad is modderig en die bestuurder wag nie vir laat passasiers nie."
+AF-007,afrikaans,,"Die reën het net begin stort toe ons klaar aandete gekook het en wou gaan sit om te eet., so ons het gou die stoele insit en 'n lamp aangesteek."
+AF-008,afrikaans,,"Sê asseblief vir jou pa dat die gemeenskapsvergadering van Donderdag na Vrydagmiddag verskuif is., sodat almal voor drieuur met hul notaboekies moet arriveer."
+AF-009,afrikaans,,"Op pad huis toe van werk het ek vandag drie lemoene en 'n vars brood by die winkel gekoop., om dit saam met die gesin by die aandete te deel."
+AF-010,afrikaans,,"Hoe lank neem dit gewoonlik om te loop van die laerskool af tot by die rivier aan die rand van die dorp, as jy stadig loop en die bure langs die pad groet?"
+AM-001,amharic,,እንደምን አደሩ፣ ትላንት ምሽት በደንብ እንደተኛህና ለጠዋቱ ለስላሳ እንደተነሳህ ተስፋ አደርጋለሁ።፣ ስለዚህ ዛሬ ለቤተሰባችን ሁሉ ለጉልህት ያለ ቀን ሊሆን እንደሚችል አምናለሁ።
+AM-002,amharic,,እባክህ በኋላህ ደጃውን ዝጋና ወደ ውስጥ መጥተህ ከእኛ ጋር ተቀመጥ እና ቡና እንጠጣ።፣ ከምሽት ስራ ከመጀመርን በፊት አንድ ላይ ቡና እንድንጠጣ።
+AM-003,amharic,,ልጆቹ በቤቱ ጀርባ እግር ኳስ እየተጫወቱ ነው፣ እናታም እስከ ምሳ ያዘጋጁ ይገኛሉ።፣ የቁስቁስ ጣዕምም በክፍት ችሮቶች እየተንሸራተተ መጥቱ ነው።
+AM-004,amharic,,እባክህ ይህን ባጠበቀ የእህል ጥሬ ሻንጣ ዛሬ ከቀኑ በኋላ እስከ ገበያው እንድወስድትት ትረዳኛለህ፣ መንገዱ ረጅም ስለሆነ እኔ ብቻ መሸከም አልችልም።?
+AM-005,amharic,,እህቴ ነገ ጠዋት በመጀመሪያው አውቶቡስ ከመንደር ስቀላ በጥዩ እንድትጎበኘን ተነስታለች።፣ ለילדቶቹ ጣፋጭ ፍሬ እንድትያዝ ተስማምቷል።
+AM-006,amharic,,ዛሬ መጀመሪያውን አውቶቡስ ለመያዝ ከቤት በጥዩ መውጣት አለብን፣ አሁንም ጊዜው አልፎብናል።፣ መንገዱ ጭቃ ስለሆነ አሽከርካሪው ተዘግይቶ ለሚመጣው አያስተግብርም።
+AM-007,amharic,,እራት ለመብላት ምግብ ለመስራት ከጨረስን ብቻ ዝናብ መጀመሩን ተመልክቷል፣ ሁሉም ወደ ውስጥ ሮጠ።፣ በፍጥነት ወደ ውስጥ ስንገባ ወንበሮችን ሸከምንና መብራት አቀዘنا።
+AM-008,amharic,,ለአባትህ የማህበረሰቡ ስብሰባ ከሐሙስ ወደ ዓርብ ከሰዓት በኋላ እንደተዛወረ ተናግርለት።፣ ሁሉም ሰው ከሦስት ሰዓት በፊት ከማስታወሻ መጽሐፍት ጋር እንዲመጣ።
+AM-009,amharic,,ዛሬ ከስራ በመመለስ በመንገድ ላይ ሦስት ብርቱካኖችና አንድ ገጠማ ገበዝያለሁ።፣ በምሽት ጋር ለቤተሰብ እንድንካፈል።
+AM-010,amharic,,ከመጀመሪያው ትምህርት ቤት እስከ ከተማውን የሚያጨልቀው ወንዝ ለመድረስ በእግር ምን ያህል ጊዜ ይወስዳል፣ በዝግታ ቢሄድና በመንገድ ላይ ጎረቤቶችን እንደሚያስተያይ?
+AR-001,arabic,,صباح الخير، أتمنى أن تكون قد نمت جيداً الليلة الماضية واستيقظت وأنت تشعر بالراحة.، لأن اليوم سيكون يوماً مزدحماً للجميع في منزلنا.
+AR-002,arabic,,من فضلك أغلق الباب خلفك وتعال اجلس معنا في الداخل لنشرب الشاي معاً.، حتى نشرب الشاي معاً قبل أن يبدأ عمل بعد الظهر.
+AR-003,arabic,,الأطفال يلعبون كرة القدم خلف البيت بينما أمهم ما زالت تعد الغداء في المطبخ.، وريح الطبخ يتسلل بالفعل من النوافذ المفتوحة.
+AR-004,arabic,,هل يمكنك مساعدتي في حمل هذه الحقيبة الثقيلة من الحبوب إلى السوق بعد ظهر اليوم؟، لأن الطريق طويل ولا أستطيع حمله وحدي.
+AR-005,arabic,,أختي الصغرى ستأتي لزيارتنا من القرية صباح الغد في أول حافلة.، ووعدت أن تجلب فاكهة طازجة للأطفال.
+AR-006,arabic,,علينا أن نغادر المنزل مبكراً اليوم إذا أردنا أن نلحق بأول حافلة إلى المدينة.، لأن الطريق موحل ولن ينتظر السائق الركاب المتأخرين.
+AR-007,arabic,,بدأ المطر يهطل بقوة بعد أن انتهينا للتو من طبخ العشاء وكنا على وشك الجلوس.، فانتقلنا بسرعة بالكراسي إلى الداخل وأشعلنا مصباحاً.
+AR-008,arabic,,أخبر والدك من فضلك أن اجتماع المجتمع قد نُقل من يوم الخميس إلى يوم الجمعة بعد الظهر.، ليصل الجميع قبل الثالثة بكتاباتهم.
+AR-009,arabic,,في طريقي إلى المنزل من العمل توقفت اليوم واشتريت ثلاث برتقالات ورغيف خبز طازج.، لنشاركها مع العائلة على العشاء.
+AR-010,arabic,,كم من الوقت يستغرق عادة المشي من المدرسة الابتدائية حتى النهر عند طرف البلدة؟، إذا مشيت ببطء وسلّمت على الجيران في الطريق
+BM-001,bambara,,"I ni sogoma, n be nii ko i ye sunɔgɔ duman sɔrɔ su fɛ ka ban ka sɔgɔma kɛnɛya la., bawo bi donna na bɛna kɛ baara don ye so kɔnɔ mɔgɔw bɛɛ ma."
+BM-002,bambara,,"Aw ye da datugu aw kɔfɛ ka don an fɛ ka sigi an fɛ ka tii min ɲɔgɔn fɛ., walasa an ka tii min ɲɔgɔn fɛ sani tilegan baara ka daminɛ."
+BM-003,bambara,,"Denmisɛnw bɛ bololankolon tan kɛ so kɔfɛ wa u ba bɛ tɔgɔla dumuni labɛn so kɔnɔ., ani tiga suuru bɛ bɔ fenetiriw fɛ minnu dayɛlɛlen don."
+BM-004,bambara,,"I bɛ se ka n dɛmɛ ka nin sɛnɛfɛnw buru girin ta sugu la bi wula fɛ wa, bawo sira jan don nka n tɛ se ka doni in ta n kelen.?"
+BM-005,bambara,,"N dɔgɔmuso bɛ na an lajɛ sini sɔgɔma ka bɔ dugu la tile fɔlɔ busi la., ani a ye layidu ta ka denw ye falen dumanw lase."
+BM-006,bambara,,"An ka kan ka bɔ so kɔnɔ joona bi sisan ni an b'a fɛ ka tile fɔlɔ busi ta., bawo sira bɛ labɛn ni jiba ye k'u bɛ tɛ busi makɔnɔni."
+BM-007,bambara,,"Sanji daminɛna o yɔrɔnin bɛɛ an ka dumuni tobi banlen kɔ ka sigi ka dumuni kɛ., o la an y'an sigiyɔrɔw ta ka don so kɔnɔ joona ka fitini yeelen."
+BM-008,bambara,,"I ka a fɔ i fa ye ko jama lajɛ in yɛlɛmana ka kɛ juma wula fɛ., walasa mɔgɔw bɛɛ ka se sani tɛmɛnen ka na u ka sɛbɛnw ye."
+BM-009,bambara,,"N ye baara bɔ ka segin so, n ye lemuru saba ni mburu kura kelen san sira kan., ka o tilen an ka somɔgɔw fɛ su fɛ."
+BM-010,bambara,,"A bɛ ta waati joli ka taa kalanso la ka se ba ma min bɛ dugu da la, ni i tɛmɛna mɛlɛkela ka i lamɛn mɔgɔw la sira kan?"
+BEM-001,bemba,,"Mwashibukeni, naletemwa ukuti mwabutuka bwino mu bushiku bwa jana na mwafika mu cine ca kucha., kwa sababu leo itakuwa siku yenye shughuli nyingi kwa kila mtu nyumbani kwetu."
+BEM-002,bemba,,"Mulembeni ulyo mulyango pa kumalilo kwenu na muleisa kumukala natwe mu ng'anda kuti tulelya icai pamodzi., ili tuweze kunywa chai pamoja kabla kazi za mchana hazijaanza."
+BEM-003,bemba,,"Abana balecusha bantu pa kumalilo kwa ng'anda ilyo banyina balepekanya ifya kulya pa mafunde., na harufu ya mchuzi tayari inatiririka kupitia madirisha yaliyo wazi."
+BEM-004,bemba,,"Mulefwaya ukunwafwa ukutwala iyi nsakalilo ya nshima yalema ku maliketi mwalole lelo, kwa sababu njia ni ndefu na siwezi kubeba mzigo huu peke yangu.?"
+BEM-005,bemba,,"Mukashi wandi wa kuchindikwa aleisa kutulemona kuchita ku mushi mailo mu cine ca kucha mu bese ya cine., na ameahidi kuleta matunda mapya kwa watoto."
+BEM-006,bemba,,"Tulefwaya ukufuma pa ng'anda bwangu lelo nga tulefwaya ukukwata bese ya cine ukuya mu tauni., kwa sababu barabara ni ya matope na dereva hatasubiri abiria waliochelewa."
+BEM-007,bemba,,"Imvula yalitampile ukuchita fye ilyo twapwile ukupanga ifya kulya na tulefwaya ukukala ukulya., hivyo tuliweka viti ndani haraka na kuwasha taa."
+BEM-008,bemba,,"Mwebe wishi ukuti umulongano wa mukaya wafushe ukufuma ku Lusosa ukuya ku Lwisano mu cine., ili kila mtu afike kabla ya saa tisa na vitabu vyake vya kumbukumbu."
+BEM-009,bemba,,"Pa nshila yandi ukubwela ku ng'anda kuchita ku kucita, nalishita amacungwa yatatu na umukate wa kuchita., ili tuishiriki na familia wakati wa chakula cha jioni."
+BEM-010,bemba,,"Cikwata inshita shinga ukuya ku sukulu ukufika ku mumana uuli pa mpela ya mushi, ukitembea polepole na kuwasalimu majirani njiani?"
+BER-001,berber,,"Azul fell-awen, ttamɣan ad tettidired akken iwata iḍ uqbel u tettidired s lḥeqq., kwa sababu leo itakuwa siku yenye shughuli nyingi kwa kila mtu nyumbani kwetu."
+BER-002,berber,,"Ttxil-k meddel tawwurt deffir-ik u d-kem ad tqimeḍ akked-neɣ ad teswed atay., ili tuweze kunywa chai pamoja kabla kazi za mchana hazijaanza."
+BER-003,berber,,"Igerdan tturaren uṭṭubal deffir n wexxam ma yella yemma-nsen tettwala tafat deg lexla., na harufu ya mchuzi tayari inatiririka kupitia madirisha yaliyo wazi."
+BER-004,berber,,"Tzemreḍ ad tɛawneḍ ad d-tawiɣ takaṭṭut-a tẓẓayen n uɣrum ɣer ssuq ass-a tadɣut, kwa sababu njia ni ndefu na siwezi kubeba mzigo huu peke yangu.?"
+BER-005,berber,,"Tamtett-inu meẓẓiyen ad d-tas ad aɣ-terz ar sdat n taddart azekka s tbusa tamezwarut., na ameahidi kuleta matunda mapya kwa watoto."
+BER-006,berber,,"Ilaɣ ad neffeɣ zik seg wexxam ma yella nebɣa ad neṭṭef tbusa tamezwarut i d-awḍen ɣer temdint., kwa sababu barabara ni ya matope na dereva hatasubiri abiria waliochelewa."
+BER-007,berber,,"Tella tẓẓayen s tɣara deffir ma nkeḍ ad neɣleb tafat u nebɣa ad neqqim ad nečč., hivyo tuliweka viti ndani haraka na kuwasha taa."
+BER-008,berber,,"Ini-as i baba-k d akken timlilit n tɣerfa tettwafes seg uamass ɣer uḥeddu tadɣut., ili kila mtu afike kabla ya saa tisa na vitabu vyake vya kumbukumbu."
+BER-009,berber,,"Srid ad d-uɣaleɣ seg uxeddim, ssiɣeɣ kraḍ n tlemmucin d aɣrum amaynut s ubrid., ili tuishiriki na familia wakati wa chakula cha jioni."
+BER-010,berber,,"Acḥal n wakud i d-ittawi umeddu seg uɣerbaz agejdan ɣer wasif i d-yeglen deg ugur n temdint, ukitembea polepole na kuwasalimu majirani njiani?"
+NY-001,chichewa,,"Mwadzuka bwanji, ndikuyembekeza kuti munagona bwino usiku watha ndi kuti mwadzuka molongoka m'mawa uno., chifukwa lero lidzakhala tsiku lachitidwe kwa aliyense m'banja mwathu."
+NY-002,chichewa,,"Chonde tsekani chitseko m'mbuyo mwako ndipo lowani kuti mukakhale nafe kuti timumwe tiyi limodzi., kuti timwe tiyi pamodzi kisan ntchito ya masana iyambike."
+NY-003,chichewa,,"Ana akusewera mpira kumbuyo kwa nyumba pomwe amayi awo akukonza chakudya m'khitchini., ndipo fungo la nyama lafika kale kuchokera m'mafestela otseguka."
+NY-004,chichewa,,"Kodi mungandithandize kunyamula thumba ili lathu la chimanga kupita ku msika madzulo ano, chifukwa njira yayitali ndipo sindingathe kuyinyamula ndekha.?"
+NY-005,chichewa,,"Mlonga wanga wamng'ono adzabwera kudzatichekera kuchokera ku mudzi m'mawa m'mawa pa basi yoyamba., ndipo analonjeza kubweretsa zipatso zatsopano kwa ana."
+NY-006,chichewa,,"Tiyenera kuchoka kwathu msanga lero ngati tikufuna kukwera basi yoyamba kupita ku tauni., chifukwa msewu uli ndi dothi ndipo woyendetsa sitima sadikire anthu omwe anafika."
+NY-007,chichewa,,"Mvula yatanga kugwa kwambiri nthawi yomweyo timatopa kuphika chakudya ndipo tikanakhala pansi., kotero tinafika mofulumira ndi mipando m'kati ndi kuwala nyale."
+NY-008,chichewa,,"Muuze bambo anu kuti msonkhano wa mdera wachotsedwa kuchokera ku Lachinayi kupita ku Lachisanu., kuti aliyense afike nthawi isanafike n'makalata ake."
+NY-009,chichewa,,"Pa ulendo wanga wobwerera kunyumba kuchokera ku ntchito, ndinagula malalanje atatu ndi mkate watsopano., kugawana ndi banja pa chakudya cha madulo."
+NY-010,chichewa,,"Zimatenga nthawi yayitali bwanji kuyenda kuchokera ku sukulu loyamba kupita ku mtsinje wa ku malo a mudzi, ngati ukuyenda pang'onopang'ono ndi kulonjera anansi anu m'njira?"
+EN-001,english,,"Good morning, I hope you had a restful night and slept well until the sun came up., because today will be a busy day for everyone in our household."
+EN-002,english,,"Please close the door behind you and come inside to sit with us and have some tea., so we can share a cup of tea together before the afternoon work begins."
+EN-003,english,,"The children are playing football together behind the house while their mother finishes preparing lunch inside., and the smell of stew is already drifting through the open windows."
+EN-004,english,,"Could you please help me carry this heavy bag of grain all the way to the market this afternoon, since the path is long and I cannot manage it alone.?"
+EN-005,english,,"My younger sister is coming to visit us from the village early tomorrow morning on the first bus., and she promised to bring fresh fruit for the children."
+EN-006,english,,"We really need to leave home early today if we want to catch the first bus into town., because the road is muddy and the driver will not wait for late passengers."
+EN-007,english,,"The rain started pouring down just after we had finished cooking dinner and were about to sit down., so we quickly moved the chairs indoors and lit a lamp."
+EN-008,english,,"Please tell your father that the community meeting has been moved from Thursday to Friday afternoon., so everyone should arrive before three o'clock with their notebooks ready."
+EN-009,english,,"On my way home from work today I stopped and bought three oranges and a fresh loaf of bread., to share with the family at supper."
+EN-010,english,,"How long does it usually take to walk from the primary school down to the river at the edge of town, if you go slowly and greet the neighbours along the way?"
+EE-001,ewe,,"Ŋdi nyuie, mele be nèdo dɔ dzi eye nèdo dɔ dzi le afi fifia eye nèdo kpɔ kpɔ., kwa sababu leo itakuwa siku yenye shughuli nyingi kwa kila mtu nyumbani kwetu."
+EE-002,ewe,,"Taflatse tu ɖoɖo la megbe eye nàva nàkpe ɖe mía me be míakpɔ tii kple mía., ili tuweze kunywa chai pamoja kabla kazi za mchana hazijaanza."
+EE-003,ewe,,"Ðeviwo le fom le aƒe la megbe eye nɔnɔa le wɔ nuwo le kuxi me hafi woadi nu., na harufu ya mchuzi tayari inatiririka kupitia madirisha yaliyo wazi."
+EE-004,ewe,,"Àte ŋu akpe mí be míakpɔ nuɖiɖi sia le ɖo le su la abe egbe, kwa sababu njia ni ndefu na siwezi kubeba mzigo huu peke yangu.?"
+EE-005,ewe,,"Nɔvi si me nye nɔnɔ si le vava tso du la egbe ɖeka le trotro gbãtɔ dzi., na ameahidi kuleta matunda mapya kwa watoto."
+EE-006,ewe,,"Ele be míadzo le afi la kaba egbe ne míele be míakpɔ trotro gbãtɔ la., kwa sababu barabara ni ya matope na dereva hatasubiri abiria waliochelewa."
+EE-007,ewe,,"Tsi dzi dzi egbe ɖeka hafi míawu nuwo wu eye míele be míakpɔ ɖo., hivyo tuliweka viti ndani haraka na kuwasha taa."
+EE-008,ewe,,"Gblɔ na fofoa be nuƒoƒo la tsia tso yao dzi go yi fiɖa emegbe., ili kila mtu afike kabla ya saa tisa na vitabu vyake vya kumbukumbu."
+EE-009,ewe,,"Le míaƒe mɔ dzi tso dɔwɔwɔ la, mefle yibɔ etɔ̃ kple abolo yeyea le mɔ dzi., ili tuishiriki na familia wakati wa chakula cha jioni."
+EE-010,ewe,,"Ɣeyiɣi kae wòatsɔ aha tso suku susu la ayi tɔsisia si le du la dusime, ukitembea polepole na kuwasalimu majirani njiani?"
+FON-001,fon,,"Kudeji, nɔ nyi ɖo alɔ bi ɖo hùn wɛ nyi do alɔ nyi nyɔn kpɔn kpɔn., kwa sababu leo itakuwa siku yenye shughuli nyingi kwa kila mtu nyumbani kwetu."
+FON-002,fon,,"Tu hɔntòn ɔ ɖo e gudo kpo e wa jijɛ kpo mí ɖo xo la mɛ tii., ili tuweze kunywa chai pamoja kabla kazi za mchana hazijaanza."
+FON-003,fon,,"Vǐ lɛ ɖo bolu le xwe ɔ gudo hùn nɔ ɖo nu le kuxi la mɛ., na harufu ya mchuzi tayari inatiririka kupitia madirisha yaliyo wazi."
+FON-004,fon,,"A ɖo se ɖe nɔ wɛ ɖo nuɖiɖi lɛ lɛn ɖo su la mɛ lɛn, kwa sababu njia ni ndefu na siwezi kubeba mzigo huu peke yangu.?"
+FON-005,fon,,"Nɔsi mɛ lɛn na wa yi du ji lɛn sɔ́n lɛn na wa lɛn., na ameahidi kuleta matunda mapya kwa watoto."
+FON-006,fon,,"Mí nɔ yí xo la kaka egbe nɔ mí nɔ kpɔn trotro gbãtɔ la., kwa sababu barabara ni ya matope na dereva hatasubiri abiria waliochelewa."
+FON-007,fon,,"Ji dó dó hùn mí wá nu lɛn kpo mí nɔ yí jijɛ kpo., hivyo tuliweka viti ndani haraka na kuwasha taa."
+FON-008,fon,,"Ɖɔ nú tɔ́ towe ɖɔ kplé ɔ yí juma emegbe ɖo axɔsuza la., ili kila mtu afike kabla ya saa tisa na vitabu vyake vya kumbukumbu."
+FON-009,fon,,"Un xɔ̀ oranges atɔn kpo bléɖo yeyea le mɔ dzi sín nɔ wa gbé., ili tuishiriki na familia wakati wa chakula cha jioni."
+FON-010,fon,,"Hwenu tɛ́ wɛ è na zán bo sín wemaxɔmɛ susu la yì tɔ́ ɔ gbé, ukitembea polepole na kuwasalimu majirani njiani?"
+FF-001,fula,,"Jam waali, miɗa yiɗa a heɓa suudu ɗum ndiɗam e jaɓɓi e a firti e yontere., kwa sababu leo itakuwa siku yenye shughuli nyingi kwa kila mtu nyumbani kwetu."
+FF-002,fula,,"Tiiɗno uddu damal ngal caggal maa e a ar e a jooɗo e amen ngam mina tee., ili tuweze kunywa chai pamoja kabla kazi za mchana hazijaanza."
+FF-003,fula,,"Sukaaɓe ɓee ngoniina ciya e fiyde caggal suudu haa ɗum nde baabooɓe mum ina waɗata nyaamdu., na harufu ya mchuzi tayari inatiririka kupitia madirisha yaliyo wazi."
+FF-004,fula,,"Aɗa waawi wallit-mi ndiyam ndee leɗɗal e gerte ɗoo fof e haa luumo hannde wulde, kwa sababu njia ni ndefu na siwezi kubeba mzigo huu peke yangu.?"
+FF-005,fula,,"Doggotoore am yimɓe ngarta e haa suudu amen gobe subaka e lebus faaɗo faaɗo., na ameahidi kuleta matunda mapya kwa watoto."
+FF-006,fula,,"Ee maaɗa e haa suudu jooni hannde so aɗa yiɗi heɓde lebus faaɗo ngam yahde e dugguure., kwa sababu barabara ni ya matope na dereva hatasubiri abiria waliochelewa."
+FF-007,fula,,"Roobii fuɗii heen nde min timminii waɗde nyaamdu e min ngoni e noppi ngam jooɗde., hivyo tuliweka viti ndani haraka na kuwasha taa."
+FF-008,fula,,"Haalnu baaba maa wonde batu nguu uddii e Alkamar haa Aljumaa e ngoorɗe., ili kila mtu afike kabla ya saa tisa na vitabu vyake vya kumbukumbu."
+FF-009,fula,,"E haa miɗo yahde e suudu e haa gollal, mi soodi leemuneeje tati e mburu hesɗo., ili tuishiriki na familia wakati wa chakula cha jioni."
+FF-010,fula,,"Hoɗee foti yahde e leydi gila duɗal faaɗo faaɗo haa maayo ngam haa gede suudu, ukitembea polepole na kuwasalimu majirani njiani?"
+HA-001,hausa,,"Barka da safiya, ina fatan ka yi barci lafiya a daren jiya kuma ka tashi da kyau., domin yau zai zama rana mai aiki ga kowa a cikin gidajenmu."
+HA-002,hausa,,"Don Allah rufe kofar bayanka ka shigo ka zauna tare da mu mu sha shayi tare., domin mu sha shayi tare kafin a fara aikin rana."
+HA-003,hausa,,"Yara suna wasa da kwallon kafa a bayan gida yayin da mahaifiyarsu ke karamar abincin rana a cikin kitchen., kuma kamshin tuwo na fito ta tagogi da aka bude."
+HA-004,hausa,,"Za ka iya taimaka mini in ɗaga wannan jaka mai nauyi na hatsi zuwa kasuwa wannan rana, domin hanya ta yi tsayi kuma ba zan iya ɗauka da kaina ba.?"
+HA-005,hausa,,"Ƙanwata ta fi ƙarami za ta zo daga ƙauyen gobe da safe a farkon mota., kuma ta yi alkawarin kawo 'ya'yan itace sabo ga yara."
+HA-006,hausa,,"Dole ne mu fita daga gida da wuri yau idan muna son kama farkon mota zuwa birni., domin hanya ta yi laka kuma direban ba zai jira makare ba."
+HA-007,hausa,,"Ruwan sama ya fara zubar da wuri bayan mun gama dafa abincin dare kuma muna shirin zauna., don haka muka matsar da kujeru cikin gida da kunna fitila."
+HA-008,hausa,,"Ka gaya wa mahaifinka cewa taron al'umma an canza shi daga Alhamis zuwa Juma'a da rana., don haka kowa ya kamata ya iso kafin karfe uku da takardun rubutu."
+HA-009,hausa,,"A hanyata ta gida daga aiki na tsaya na sayi lemo uku da gurasa daya sabo., domin mu raba su da iyali a yamma."
+HA-010,hausa,,"Nawa ne zai dauka yawo daga makarantar firamare zuwa kogi da ke gefen birni, idan ka tafi a hankali ka gaishe makwabtaka a hanyar?"
+IG-001,igbo,,"Ụtụtụ ọma, achọrọ m ka ị mara na anụrụ m na ị zuru ụra ọma n'abalị gara aga., n'ihi na taa ga-abụ ụbọchị na-arụ ọrụ maka onye ọ bụla n'ime ụlọ anyị."
+IG-002,igbo,,"Biko mechie ụzọ azụ gị bịa nọrọ nọọ na anyị ka anyị nọrọ kọwa tii ọnụ., ka anyị nwee ike ịnọrọ kọwa tii ọnụ tupu ọrụ ehihie afọdị."
+IG-003,igbo,,"Ụmụaka na-egwu egwuregwu bọọlụ n'azụ ụlọ mgbe nne ha ka na-akwado nri ehihie n'ime ịkụ., ma ụkpụrụ nri na-ekpu oke ume na-abanye site na windo ahụ mepere emepe."
+IG-004,igbo,,"Biko, ị ga-enyere m aka ibu akpa ọka a arọ na-akpọ ike gaa ahịa taa ehihie, n'ihi na ụzọ dị ogologo ma enweghị m ike ibu ya na m aka.?"
+IG-005,igbo,,"Nwanne nwanyị m nke nta na-abịa gaa anyị n'oge ọma echi ututu site na obodo na ụgbọ ala mbụ., ma ọ kwadoro izitere anyị mkpụrụ osisi ọhụrụ maka ụmụaka."
+IG-006,igbo,,"Anyị ga-achọ ịpụ n'ụlọ n'oge na-abịghị echi ma ọ bụrụ na anyị chọrọ ịnweta ụgbọ ala mbụ na obodo., n'ihi na ụzọ gbara igwe ma onye na-anya ụgbọ ala anaghị achere ndị debere anya."
+IG-007,igbo,,"Mmịrị mmịrị bidoro igba ozuzo mgbe anyị mechara ise nri abalị ma na-achọ ikpọrọ nọdụ., yabụ anyị buru oche ngwa ngwa n'ime ụlọ ma kụọ igwe ọkụ."
+IG-008,igbo,,"Gwa nna gị na nzukọ obodo ahụ gbanwere site na Tọzdee gaa na Fraịde n'ehihie., ka onye ọ bụla bịarute tupu elekere atọ na edebanye akwụkwọ ya."
+IG-009,igbo,,"Na ụzọ m na-alaghachi ụlọ site na ọrụ, azụtara m oroma atọ na otu achịcha ọhụrụ., ka anyị kesaa ya na ezinụlọ na nri abalị."
+IG-010,igbo,,"Olee ogologo oge ọ na-ewe ije site n'ụlọ akwụkwọ nke atọ ruo na osimiri nke dị na ngwụcha obodo, ma ị jiri nwayọọ gaa ma kelee ndị otu nọ n'ụzọ?"
+KR-001,kanuri,,"Kachallowa, nǝm fǝle ngǝwu kǝla suudu ro fǝle kǝla kuru ndǝ kuru fǝle kǝla suudu ro ndǝ fǝle., domin yau zai zama rana mai aiki ga kowa a cikin gidajenmu."
+KR-002,kanuri,,"Kǝla fǝre awo, ka don kǝla fato gǝre ka sigi gǝre, sannan nǝm shayi yeyi tare da mu., domin mu sha shayi tare kafin a fara aikin rana."
+KR-003,kanuri,,"Feroanza kwallo kǝla fato gǝre kǝla suudu gǝre kǝlǝ amma ndǝ ci detǝ kǝla kuxi gǝre., kuma kamshin tuwo na fito ta tagogi da aka bude."
+KR-004,kanuri,,"Wu kasuwa ro lejin gowo bi wula kǝla buru girin kǝla fato gǝre kǝla kasuwa ro lejin, domin hanya ta yi tsayi kuma ba zan iya ɗauka da kaina ba.?"
+KR-005,kanuri,,"Kǝrǝmi am lejin kachallo kǝla dugu kǝla bas faaɗo lejin kǝla tauni gobe da safe., kuma ta yi alkawarin kawo 'ya'yan itace sabo ga yara."
+KR-006,kanuri,,"Kǝla fato joona lehono kǝla bas faaɗo kǝla tauni kǝla fǝle kǝla fato gǝre lejin., domin hanya ta yi laka kuma direban ba zai jira makare ba."
+KR-007,kanuri,,"Dǝlǝgǝ daminǝna kǝla ci banlen kǝro kǝla fato gǝre, sannan ndǝ ci detǝ kǝla suudu gǝre., don haka muka matsar da kujeru cikin gida da kunna fitila."
+KR-008,kanuri,,"Aba nǝm ye taro yɛlɛmana kǝla Alhamis kǝla Juma wula fɛ, kǝla fato gǝre ka kawo., don haka kowa ya kamata ya iso kafin karfe uku da takardun rubutu."
+KR-009,kanuri,,"Wu lemu yaskǝ kǝla gurasa tilo so kǝla sira kan kǝla fato gǝre kuru ba'a ro lejin., domin mu raba su da iyali a yamma."
+KR-010,kanuri,,"Madrasa kǝla nji fǝle sawal kǝla dugu da kǝla kogi gǝre kǝla fato fǝle lejin, idan ka tafi a hankali ka gaishe makwabtaka a hanyar?"
+KI-001,kikuyu,,"Ruciini ruega, nĩ ngũgwĩthĩrĩria nĩwarĩ mwega ũtukũ wa ira na ũkiumĩra ũmũthĩ., kwa sababu leo itakuwa siku yenye shughuli nyingi kwa kila mtu nyumbani kwetu."
+KI-002,kikuyu,,"Ndakũhoya ũhinge mũrango wa thutha waku na ũingĩre ũikarane na ithuĩ twanyue cai hamwe., ili tuweze kunywa chai pamoja kabla kazi za mchana hazijaanza."
+KI-003,kikuyu,,"Ciana nĩciathakana mpira thuutha wa nyũmba rĩrĩa maitũ nĩmarekaga kũrĩga irio cia mũthenya., na harufu ya mchuzi tayari inatiririka kupitia madirisha yaliyo wazi."
+KI-004,kikuyu,,"No ũndĩteithie kũkuua iratathi rĩa mũhũrũ rĩa mũhere harĩa ndũnyũ rĩu mũthenya wa rũcinĩ, kwa sababu njia ni ndefu na siwezi kubeba mzigo huu peke yangu.?"
+KI-005,kikuyu,,"Mwarĩ wa nyina wakwa mũnini nĩũũka gũtũcererera kuma kũu rũciaro rũcinĩ wa rũciũ na basi ya mbere., na ameahidi kuleta matunda mapya kwa watoto."
+KI-006,kikuyu,,"Tũrabatara kuuma mũciĩ iria rĩu rĩu tũrĩ kwĩra basi ya mbere ĩgũthiĩ tauni-inĩ., kwa sababu barabara ni ya matope na dereva hatasubiri abiria waliochelewa."
+KI-007,kikuyu,,"Mbura nĩyambĩrĩirie kũnyũma o rĩrĩa twathira kũrĩga irio cia rũcinĩ na twĩ mbaru gũikara., hivyo tuliweka viti ndani haraka na kuwasha taa."
+KI-008,kikuyu,,"Ĩra ithe waku atĩ mũcemanio wa gũkũ wa mũciĩ nĩwagũrũtwo kuuma Alhamisi akĩthiĩ Ijumaa mũthenya wa rũcinĩ., ili kila mtu afike kabla ya saa tisa na vitabu vyake vya kumbukumbu."
+KI-009,kikuyu,,"Thĩiniĩ wa njĩra yakwa ya gũcoka mũciĩ kuuma wĩra, nĩndagũrire macungwa matatũ na mũgate mwega., ili tuishiriki na familia wakati wa chakula cha jioni."
+KI-010,kikuyu,,"Nĩ ihinda rĩigana rĩkũoya gũthiĩ na magũũ kuuma sukuru ya mbere nginya rũũi-inĩ rũrĩa rũ thĩiniĩ wa tauni, ukitembea polepole na kuwasalimu majirani njiani?"
+RW-001,kinyarwanda,,"Mwaramutse, nizere ko mwaryamye neza ijoro rishize kandi mwabyutse neza uyu munsi mu gitondo., kuko uyumunsi uzaba umunsi w'ibikorwa kuri buri wese mu rugo rwacu."
+RW-002,kinyarwanda,,"Nyamuneka funga urugi inyuma yawe hanyuma winjire uce ukicara natwe kugira ngo twanywe icyayi hamwe., kugira ngo tunywe icyayi hamwe mbere y'uko akazi k'umunsi gutangira."
+RW-003,kinyarwanda,,"Abana barakina umupira inyuma y'inzu mu gihe nyina wabo ari gukurura ifunguro rya saa sita mu gikoni., kandi impumuro y'umupfundo isanzwe ituruka mu madirishya afunze."
+RW-004,kinyarwanda,,"Waba wanshoboye kumfasha gutwara iyi sakoshi iremereye y'ibigori kugeza ku isoko uyu munsi nyuma ya saa sita, kuko inzira ndende kandi sinshobora kuyitwara nta bufasha.?"
+RW-005,kinyarwanda,,"Mushiki wanjye muto azaza kudusura avuye ku cyaro ejo mu gitondo cya kare ku bisi ya mbere., kandi yasezeranye kuzana imbuto nshya ku bana."
+RW-006,kinyarwanda,,"Tugomba gusohoka mu ngo vuba uyu munsi niba dushaka gukora bisi ya mbere ijya mu mujyi., kuko inzira ifite udusimba kandi umushoferi ntazategereza abagendeye batinze."
+RW-007,kinyarwanda,,"Imvura yatangiye gukuba cyane nyuma y'uko twarangije guteka ifunguro rya nimugoroba kandi twari tugiye kwicara., bityo twihuse twimura intebe mu nzu tukatuma umurika."
+RW-008,kinyarwanda,,"Bwira so wawe ko inama y'umuryango yimuriwe uva ku wa Kane kugeza ku wa Gatanu nyuma ya saa sita., kugira ngo bose bazaze mbere ya saa kumi n'ebyiri bafite ibitabo byabo."
+RW-009,kinyarwanda,,"Mu nzira yanjye yo kujya mu ngo avuye ku kazi, nagize ngo nguze amacunga atatu n'umugati umwe mushya., kugira ngo tubigire umuryango ku ifunguro rya nimugoroba."
+RW-010,kinyarwanda,,"Bimara igihe kingana iki kugenda n'amaguru uva ku ishuri ry'incuke ukajya ku ruzi ruri ku mpera y'umujyi, niba ugenda buhoro buhoro ukaza abaturanyi ku nzira?"
+KRI-001,krio,,"Gud mɔnin, a hop se yu slip gud las nait en yu get op fayn dis mɔnin., kwa sababu leo itakuwa siku yenye shughuli nyingi kwa kila mtu nyumbani kwetu."
+KRI-002,krio,,"Duya, shɛt di do bihain yu en kam insay siddɔn wit wi fo drink ti tɛgɛda., ili tuweze kunywa chai pamoja kabla kazi za mchana hazijaanza."
+KRI-003,krio,,"Di pikin dɛn de ply futbɔl bihain di os wɛn dɛn mama de kuk lunch insay di kichin., na harufu ya mchuzi tayari inatiririka kupitia madirisha yaliyo wazi."
+KRI-004,krio,,"Yu fit ɛp mi kɛr dis big sak ɔf grin go makɛt dis aftanun, kwa sababu njia ni ndefu na siwezi kubeba mzigo huu peke yangu.?"
+KRI-005,krio,,"Mi sista we smɔl go kam visit wi frɔm di vilij tumara mɔnin in di fos bɔs., na ameahidi kuleta matunda mapya kwa watoto."
+KRI-006,krio,,"Wi fɔ liv di os iri tide if wi wan kɛt di fos bɔs we de go taun., kwa sababu barabara ni ya matope na dereva hatasubiri abiria waliochelewa."
+KRI-007,krio,,"Di ren stat fɔ pɔr dɔn jɔs afta wi don kuk dina en wi bin redi fo siddɔn., hivyo tuliweka viti ndani haraka na kuwasha taa."
+KRI-008,krio,,"Tɛl yu papa se di mitin dɔn shif frɔm Torsde go Fraide aftanun., ili kila mtu afike kabla ya saa tisa na vitabu vyake vya kumbukumbu."
+KRI-009,krio,,"Pan mi we go os frɔm wok tide, a stop en bai tri ɔrinj ɛn wan fɛsh brod., ili tuishiriki na familia wakati wa chakula cha jioni."
+KRI-010,krio,,"Aw lɔng i go tek fɔ waka frɔm di praimeri skul dɔn go di riva we de na di ɛd ɔf taun, ukitembea polepole na kuwasalimu majirani njiani?"
+LN-001,lingala,,"Mbote na ntongo, nalingi ete olobi malamu na butu eleki mpe omoni malamu lelo na ntongo., mpo lelo ekozala mokolo ya misala mingi mpo na moto nyonso na ndako na biso."
+LN-002,lingala,,"Svp kanga ekuke na nsima na yo mpe ya kati kofanda na biso mpo tokomela ti elongo., mpo na biso koyoka ti elongo liboso misala ya mpokwa ebandi."
+LN-003,lingala,,"Bana bazali kosakana na football na sima ya ndako tango mama na bango azali kolamba bilei ya midi na kizini., mpe nsolo ya moboke ezali kobima na maninisa ya efungolami."
+LN-004,lingala,,"Okoki kosalisa ngai kotambola na sac oyo ya makolo ya moke tii na zando lelo na mpokwa, mpo nzela eleki molai mpe nakoki koyebisa yango na ngai moko te.?"
+LN-005,lingala,,"Mokolo na ngai ya mwasi ya moke akoya kotala biso kowuta na mboka na ntongo ya lobi na bus ya liboso., mpe alobaki koyinda ba matunda ya sika na bana."
+LN-006,lingala,,"Esengeli biso kobima na ndako yango na ntango lelo soki tolingi kokanga bus ya liboso oyo ekende na engumba., mpo nzela ezali na libongo mpe mokumbi akozela te bapaya ya koya sima."
+LN-007,lingala,,"Mbula ebandi kobeta makasi nsima moke tosilaki kolamba bilei ya pokwa mpe tozali kobongisa kokita., yango wana tolongolaki ba kiti na ndako mpe tozwaki mwinda."
+LN-008,lingala,,"Yebisa tata na yo ete likita ya mboka ebongisami kowuta na mardi kino vendredi na mpokwa., mpo na bato nyonso kokita liboso ya misato na ba cahier na bango."
+LN-009,lingala,,"Na nzela na ngai ya kozonga na ndako kowuta na mosala, nasombi orange misato mpe lipa moko ya sika., mpo na kokabola na libota na tongo."
+LN-010,lingala,,"Ezwaka ntango boni mpo na kotambola kowuta na eteyelo ya liboso kino ebale ya ezali na nsuka ya engumba, soki otambola moke moke osalisa bato ya pembeni na nzela?"
+LG-001,luganda,,"Wasuze otya, nsuubira nti wasula bulungi ekiro ekyayise era okolokose bulungi enkya ya leero., kubanga leero ejja kuba olunaku olw'emirimu eri buli muntu mu maka gaffe."
+LG-002,luganda,,"Nsaba oggale oluggi emabega wo oyingire otuule naffe munda tufune caayi wamu., okusobola okunywa caayi wamu nga emirimu gy'emisana teginnatandika."
+LG-003,luganda,,"Abaana bazannya omupiira emabega w'ennyumba nga nnyina baabwe akyakola ebyokulya by'emisana mu ffumbiro., era akalo k'enva endiirwa kati kava mu madira agazibwe."
+LG-004,luganda,,"Oyinza okuyamba okutikka ensawo eno enzito ey'emmere okugitwala ku katale leero emisana, kubanga oluguudo luwanvu era sisobola kukitikka nzekka.?"
+LG-005,luganda,,"Mwannyina wange omukyala omuto agenda kujja okutulaba ng'avudde ku kyalo enkya ya kesho ku bbaasi esooka., era yasuubiza okuleeta ebibala ebipya eri abaana."
+LG-006,luganda,,"Tulina okuva awaka mangu leero bwe tuyagala okukwata bbaasi esooka egenda mu kibuga., kubanga oluguudo lulimu obutaka omuvuzi talindirira abasaabaze abaakkeera."
+LG-007,luganda,,"Enkuba yatandise okutonnya nnyo nga tumaze okufumba eky'okulya ky'ekiro era nga twali tutegekera okutuula., bwe kityo twanguwa okutwala entebe munda ne tukuma ettaala."
+LG-008,luganda,,"Gamba kitaawo nti olukungaana lw'ekitundu luwedde okuva ku Lwokuna okudda ku Lwokutaano emisana., okusobola buli muntu okutuuka nga ssaawa ssatu tenatuuse n'ebitabo bye."
+LG-009,luganda,,"Ku luguudo lwange okudda awaka okuva ku mulimu, nagula emicungwa esatu n'omugaati omupya., okugabana n'amaka ku ky'okulya ky'ekiro."
+LG-010,luganda,,"Kitwala bbanga ki okutambula okuva ku ssomero ery'obwana okutuuka ku mugga oguli ku nkomerero y'ekibuga, bw'onootambula mpola n'okulamusa baliraanwa ku luguudo?"
+MG-001,malagasy,,"Manao ahoana ny maraina, manantena aho fa nandroso tsara ianao alina ary nifoha tsara androany maraina., kwa sababu leo itakuwa siku yenye shughuli nyingi kwa kila mtu nyumbani kwetu."
+MG-002,malagasy,,"Azafady hidio ny varavarana ao aorianao ary miditra mba hipetraka miaraka aminay hisotro dite., ili tuweze kunywa chai pamoja kabla kazi za mchana hazijaanza."
+MG-003,malagasy,,"Milalao baolina kely ny ankizy ao ambadiky ny trano raha mbola manomana ny sakafo atoandro ny reniny ao an-dakozia., na harufu ya mchuzi tayari inatiririka kupitia madirisha yaliyo wazi."
+MG-004,malagasy,,"Afaka manampy ahy hitondra ity kitapo mavesatra ity amin'ny vary ho any an-tsena androany hariva ve ianao, kwa sababu njia ni ndefu na siwezi kubeba mzigo huu peke yangu.?"
+MG-005,malagasy,,"Hisy ny rahavavy kely anay hiaviavy avy any ambanivohitra rahampitso maraina amin'ny fiara fitateram-bahoaka voalohany., na ameahidi kuleta matunda mapya kwa watoto."
+MG-006,malagasy,,"Mila miala aloha isika androany raha te hihazo ny fiara fitateram-bahoaka voalohany mankany an-tanàna isika., kwa sababu barabara ni ya matope na dereva hatasubiri abiria waliochelewa."
+MG-007,malagasy,,"Nanomboka nivatravatra ny orana taorian'ny nahavitanay nandraosana ny sakafo hariva ary efa nomaninay hipetraka., hivyo tuliweka viti ndani haraka na kuwasha taa."
+MG-008,malagasy,,"Lazao amin'ny rainy fa ny fivoriana fiaraha-monina dia nafindra avy ny Alakamisy ho amin'ny Zoma hariva., ili kila mtu afike kabla ya saa tisa na vitabu vyake vya kumbukumbu."
+MG-009,malagasy,,"Tamin'ny lalana niverinako tany an-trano avy any amin'ny asa, nividy voasary telo sy mofo vaovao aho., ili tuishiriki na familia wakati wa chakula cha jioni."
+MG-010,malagasy,,"Hatraiza ny fotoana fandehanana an-tongotra avy any amin'ny sekoly fototra mankany amin'ny ony eo am-paran'ny tanàna, ukitembea polepole na kuwasalimu majirani njiani?"
+ND-001,ndebele,,"Livuke njani, ngiyethemba ukuthi ulale kahle ebusuku obudlule futhi uvuke kahle namhlanje ekuseni., ngoba namuhla kuzoba yinsuku ematasatasa yonke imindeni yethu futhi sizobe sisebenza kakhulu."
+ND-002,ndebele,,"Ngicela uvale umnyango ngemuva kwakho bese ungena uhlale nathi singaphuze itiye ndawonye., ukuze siphuze itiye ndawonye singakaze siqale umsebenzi wemini emaphandleni."
+ND-003,ndebele,,"Abantwana badlala ibhola emuva kwendlu ngenkathi umama wabo esaphakela isidlo sasemini ekhishini., futhi iphunga le-stewi selivele liphuma emafestreni avulekile ekhishini elincane."
+ND-004,ndebele,,"Ungangisiza ngithwale lesi sakhi esisindayo sokudla siye emakethe namhlanje ntambama, ngoba indlela inde futhi angikwazi ukuyithwala ngaphandle kosizo lwakho namhlanje.?"
+ND-005,ndebele,,"Udade wami omncane uzoza kusivakashela evela emaphandleni kusasa ekuseni ngebhasi yokuqala., futhi wathembisa ukuletha izithelo ezisha nezinhlobo ezintsha zezithelo zezingane."
+ND-006,ndebele,,"Kufanele siphume ekhaya ngokushesha namhlanje uma sifuna ukubamba ibhasi yokuqala eya edolobheni., ngoba umzwa unomgodi futhi umshayeli ngeke alinde abagibeli abafika sekwedi nhlobo."
+ND-007,ndebele,,"Imvula yaqala ukuna kakhulu ngemva kokuba sibe sesiqedile ukupheka isidlo sakusihlwa sizolala phansi., ngakho-ke sashesha siyisa izihlalo ngaphakathi futhi sivule isibani ekhishini."
+ND-008,ndebele,,"Tshela uyihlo ukuthi umhlangano womphakathi ususwe kusukela ngoLwesine uye ngoLwesihlanu ntambama., ukuze wonke umuntu afike ngaphambi kwesikhathi sokuvala ngezincwadi zabo zokubhala."
+ND-009,ndebele,,"Endleleni yami yokubuyela ekhaya emsebenzini, ngiyethe ngathenga amawolintshi amathathu nesinkwa esisha., ukuze sabelane nomndeni ngokudla kwansuku futhi sikhulume ngemidlalo yasemsebenzini."
+ND-010,ndebele,,"Kuthatha isikhathi esingakanani ukuhamba uvela esikolo sokuqala uye emfuleni okusekupheleni kwedolobha, uma uhamba kancane futhi ubingelele omakhelwane endleleni njalo njalo?"
+OM-001,oromo,,"Akkam bulte, abdii nan qaba inni kaleessa galgala gaarii rafitee har'a ganama gaarii kaate jirta., kwa sababu leo itakuwa siku yenye shughuli nyingi kwa kila mtu nyumbani kwetu."
+OM-002,oromo,,"Maaloo balbala duuba kee cufiitii keessa seeni nu waliin taa'iitii shaayii waliin dhuguu., ili tuweze kunywa chai pamoja kabla kazi za mchana hazijaanza."
+OM-003,oromo,,"Daa'imman mana duuba kubbaa miilaa taphachaa jiru yeroo haati isaanii mana keessatti qophii nyaataa hojjettu., na harufu ya mchuzi tayari inatiririka kupitia madirisha yaliyo wazi."
+OM-004,oromo,,"Boqonna kana ulfaataa midhaanii gara gabaa geessuuf har'a waaree booda na gargaaruu dandeessa, kwa sababu njia ni ndefu na siwezi kubeba mzigo huu peke yangu.?"
+OM-005,oromo,,"Obboleetti koo xiqqoon ganda irraa bor ganama buusii jalqabaa irratti nu argachuuf dhufa., na ameahidi kuleta matunda mapya kwa watoto."
+OM-006,oromo,,"Har'a mana irraa ariifachuun ba'uu qabna yoo buusii jalqabaa magaalatti qabachuu barbaanne., kwa sababu barabara ni ya matope na dereva hatasubiri abiria waliochelewa."
+OM-007,oromo,,"Roobni jalqabee dhangala'uu nyaata galgalaa xumnuu booda taa'uuf qophaa'uun dura., hivyo tuliweka viti ndani haraka na kuwasha taa."
+OM-008,oromo,,"Abbaa keetiif walgahinni hawaasaa Kamiisaa irraa Jimaata waaree boodatti jijjiirame jedhi., ili kila mtu afike kabla ya saa tisa na vitabu vyake vya kumbukumbu."
+OM-009,oromo,,"Karaa gara manaa irraa hojii irraa deebi'uun har'a lamuu sadii fi daabboo haaraa tokko bitadhe., ili tuishiriki na familia wakati wa chakula cha jioni."
+OM-010,oromo,,"Mana barumsaa jalqabaa irraa gara lagaatti deemuf yeroo hammami fudhata, lagaan sun xiyyaara magaalaa jira, ukitembea polepole na kuwasalimu majirani njiani?"
+NSO-001,sepedi,,"Thobela, ke tshepa gore o robile gabotse bosiu bjo bo fetilegolo gomme o diphologile gabotse mesong ye., hobane kajeno e tla ba letsatsi le matla ho bohle ba lapeng la rona."
+NSO-002,sepedi,,"Hle tswalela lemati ka morago ga gago gomme o tsene o dule le rena ka gare gomme re nwe tee., hore re nwe tee hammoho pele ho qala mosebetsi wa mantsiboea."
+NSO-003,sepedi,,"Bana ba bapala bolo ka morago ga ntlo ge mma wa bona a sa ntse a lokisa dijo tsa masegare ka kitchineng., mme monko wa moroho o se o fofalla ka lifensetere tse bulehileng."
+NSO-004,sepedi,,"O ka ka nthuša go rwala monwana wo o boima wa dijo go ya mmarakeng mafelelo a lehono, hobane tsela e telele 'me ha ke khone ho e rwala ka bo-ka.?"
+NSO-005,sepedi,,"Kgaitsadi ya ka yo monnyane o tla re etela a tswa motseng mesong ye ka bese ya pele., mme o ile a tshepa ho tlisa litholoana tse hlabileng bana."
+NSO-006,sepedi,,"Re swanetše go tšwa ka gae ka pela lehono ge re nyaka go tšea bese ya pele e ya toropong., hobane tsela e metso e 'me mokhanni o ke ke a emela ba ficileng hape."
+NSO-007,sepedi,,"Pula e thomile go na ka maatla ka morago ga ge re feditše go pheka dijo tsa mafelo a lehono., ka hona re ile ka potlaka re isa litulo ka hare re hlabe lebone."
+NSO-008,sepedi,,"Botša tatago gore kopano ya setšhaba e fetogile go tšwa Labone go ya Labohlano mafelelo a lehono., hore bohle ba fihle pele ho hora ea boraro le libukana tsa bona."
+NSO-009,sepedi,,"Tseleng ya ka ya go boela gae go tšwa mošomong, ke rekišitše maswiri a mararo le borotho bo bofsa., ho arola le lelapa ka dijo tsa mantsiboea."
+NSO-010,sepedi,,"Go tšea nako e kae go sepela go tloga sekolong sa mathomo go ya nokeng e lego mafelelong a toropo, ha o tsamaya butle o le lumelisa baahisane tseleng?"
+ST-001,sesotho,,"Dumela, ke tshepile hore u robile hantle bosiu bo fetileng mme u fihlile hantle kajeno hoseng., hobane kajeno e tla ba letsatsi le matla ho bohle ba lapeng la rona."
+ST-002,sesotho,,"Ka kopo kwala lemati ka morao ho wena o kene o dule le rona ka hare re nwe tee hammoho., hore re nwe tee hammoho pele ho qala mosebetsi wa mantsiboea."
+ST-003,sesotho,,"Bana ba bapala bolo ka mora ntlo ha mme wa bona a ntse a lokisa lijo tsa motshehare ka kitchineng., mme monko wa moroho o se o fofalla ka lifensetere tse bulehileng."
+ST-004,sesotho,,"Na u ka nthusa ho rwala mokotla ona o boima oa lijo ho ea mmarakeng mantsiboea kajeno, hobane tsela e telele 'me ha ke khone ho e rwala ka bo-ka.?"
+ST-005,sesotho,,"Usoana wa ka o monyane o tla re etela a tsoa motseng hosane ka bese ea pele., mme o ile a tshepa ho tlisa litholoana tse hlabileng bana."
+ST-006,sesotho,,"Re hloka ho tsoa lapeng kapele kajeno haeba re batla ho tšoara bese ea pele e ea toropong., hobane tsela e metso e 'me mokhanni o ke ke a emela ba ficileng hape."
+ST-007,sesotho,,"Pula e qala ho na ka matla ka mora hore re qetile ho pheha lijo tsa mantsiboea mme re ne re loketse ho dula., ka hona re ile ka potlaka re isa litulo ka hare re hlabe lebone."
+ST-008,sesotho,,"Bolella ntatao hore kopano ea sechaba e fetisitsoe ho tloha Labone ho ea Labohlano mantsiboea., hore bohle ba fihle pele ho hora ea boraro le libukana tsa bona."
+ST-009,sesotho,,"Tseleng ea ka ea ho khutlela lapeng ho tsoa mosebetsing, ke rekile namune tse tharo le bohobe bo bocha., ho arola le lelapa ka dijo tsa mantsiboea."
+ST-010,sesotho,,"Ho nka nako e kae ho tsamaya ho tloha sekolong sa mantlha ho ea nokeng e leng qetellong ea toropo, ha o tsamaya butle o le lumelisa baahisane tseleng?"
+SN-001,shona,,"Mangwanani, ndinovimba kuti wakoroga zvakanaka usiku hwapfuura uye wakakwidza zvakanaka nhasi mangwanani., nokuti nhasi zvichava zuva rakafema kumhuri yedu yose."
+SN-002,shona,,"Ndapota vharai musuwo kumashure kwenyu uye pindai mugara nesu tisvike tichinwa tii pamwe chete., kuti tisvike tichinwa tii pamwe chete isati yatanga basa remasikati."
+SN-003,shona,,"Vana vari kutamba bhora kuseri kweimba vachiri kuti amai vavo vari kugadzirira chikafu chemasikati mukicheni., uye kunhuwa kwemupfundo kwatotanga kubuda munezvimiro zvakavhurika."
+SN-004,shona,,"Unogona kundibatsira kutakura bag iri remazhinji rinosimba kuenda kumusika manheru ano, nokuti nzira yakareba uye handigone kuyitakura ndega.?"
+SN-005,shona,,"Hanzvadzi yangu mudiki achauya kutisuwa achibva kumusha mangwana mangwanani nebhazi rekutanga., uye akakpromise kuzozvisira zvinofresh kuvana."
+SN-006,shona,,"Tinofanira kubuda kumba nekukurumidza nhasi kana tikuda kubata bhazi rekutanga rinobva kuchikoro., nokuti nzira ine madziva uye mutyairi haagone kumira vafambi vakachenga."
+SN-007,shona,,"Mvura yakatanga kunaya zvakanyanya mushure mekuti tapedza kupika chikafu chemanheru tichigadzirira kugara pasi., saka takakurumidza kutora zvituru mukati tichimunurira rambai."
+SN-008,shona,,"Udza baba vako kuti musangano wevanhu wachinjwa kubva pachishanu kuenda pachishanu manheru., kuti munhu wese asvike pamberi pe3 akazvimirira nema notebooks ake."
+SN-009,shona,,"Penzira yangu yekudzoka kumba kubva kubasa, ndakatenga maorenji matatu nechingwa chitsva., kuti tigovane nemhuri pakudya kwekupedzisira."
+SN-010,shona,,"Zvinotora nguva yakareba sei kufamba kubva kuchikoro chepasi kuenda kurwizi uri papemberi pemuguta, ukafamba zvishoma zvishoma ukanamata vaenzanzi munzira?"
+SO-001,somali,,"Subax wanaagsan, waxaan rajeynayaa inaad si fiican u seexatay habeenkii hore oo aad si fiican u kacday maanta., maxaa yeelay maanta waxay noqon doontaa maalin mashquul ah qof kasta oo guriga."
+SO-002,somali,,"Fadlan albaabka gadaashaada xir oo soo gal gudaha si aad ula fadhiisato annaga oo shaah wada cabno., si aan shaah wada cabno ka hor inta aan bilaabin shaqada galabta."
+SO-003,somali,,"Carruurtu waxay ku ciyaarayaan kubada guriga gadaashiisa halka hooyadood ay weli diyaarinayso qadada jikada., oo ururka maraqdu hore ayuu uga soo baxayaa daaqadaha furan."
+SO-004,somali,,"Ma i caawin kartaa inaan xamuulka culus ee hadhuudhka ah u qaado suuqa galabta maanta, maxaa yeelay wadada waa dheer mana qaadi karo keligay.?"
+SO-005,somali,,"Walaashay yar waxay nagu soo booqan doontaa tuulada berri subaxnimo baska ugu horreeya., waxayna ballan qaaday inay keento miro cusub carruurta."
+SO-006,somali,,"Waa inaan guriga ka baxnaa goor hore maanta haddii aan rabno inaan qabano baska ugu horreeya ee magaalada., maxaa yeelay wadada waa dhoobo darawalkuna ma sugi doono rakaabka daahay."
+SO-007,somali,,"Roobku wuxuu bilaabay inuu si xoog leh u da'o isla markii aan dhamaynay karinta cashada oo aan diyaar u ahayn fadhi., sidaa darteed si degdeg ah ayaan ugu guuray gudaha oo shumac baan shiday."
+SO-008,somali,,"Aabbahaa u sheeg in shirka bulshada laga wareejiyay Khamiis ilaa Jimcaha galabnimo., si qof walba u yimaado ka hor saddexda isagoo wata buugaagtiisa."
+SO-009,somali,,"Jidkayga guriga ee shaqada ka imaanaya, waxaan soo iibsaday saddex liin iyo roodhi cusub., si aan ugu wada qaybin qoyska cashada."
+SO-010,somali,,"Intee in le'eg ayay qaadataa in laga lugeeyo dugsiga hoose ilaa webiga ku yaal geeska magaalada, haddii aad si tartiib ah u socotid oo aad salaamtid deriska wadada?"
+SW-001,swahili,,"Habari za asubuhi, natumai ulilala vizuri usiku wa jana na umeamka salama leo asubuhi., kwa sababu leo itakuwa siku yenye shughuli nyingi kwa kila mtu nyumbani kwetu."
+SW-002,swahili,,"Tafadhali funga mlango nyuma yako na uingie ndani uketi nasi tupate kunywa chai pamoja., ili tuweze kunywa chai pamoja kabla kazi za mchana hazijaanza."
+SW-003,swahili,,"Watoto wanacheza mpira nyuma ya nyumba huku mama yao bado akiandaa chakula cha mchana jikoni., na harufu ya mchuzi tayari inatiririka kupitia madirisha yaliyo wazi."
+SW-004,swahili,,"Unaweza kunisaidia kubeba mfuko huu mzito wa nafaka hadi sokoni mchana huu, kwa sababu njia ni ndefu na siwezi kubeba mzigo huu peke yangu.?"
+SW-005,swahili,,"Dada yangu mdogo atakuja kututembelea kutoka kijijini kesho asubuhi na basi la kwanza., na ameahidi kuleta matunda mapya kwa watoto."
+SW-006,swahili,,"Tunahitaji kuondoka nyumbani mapema leo ikiwa tunataka kushika basi la kwanza linalokwenda mjini., kwa sababu barabara ni ya matope na dereva hatasubiri abiria waliochelewa."
+SW-007,swahili,,"Mvua ilianza kunyesha sana mara tu tulipomaliza kupika chakula cha jioni na tulikuwa tunakaribia kukaa., hivyo tuliweka viti ndani haraka na kuwasha taa."
+SW-008,swahili,,"Mwambie baba yako kuwa mkutano wa jamii umehamishwa kutoka Alhamisi hadi Ijumaa mchana., ili kila mtu afike kabla ya saa tisa na vitabu vyake vya kumbukumbu."
+SW-009,swahili,,"Njiani kurudi nyumbani kutoka kazini, nilisimama nikanunua machungwa matatu na mkate mpya., ili tuishiriki na familia wakati wa chakula cha jioni."
+SW-010,swahili,,"Inachukua muda gani kwa kawaida kutembea kutoka shule ya msingi hadi mto uliopo mwisho wa mji, ukitembea polepole na kuwasalimu majirani njiani?"
+SS-001,swati,,"Sawubona ekuseni, ngiyetsemba kutsi ulale kahle ebusuku lobe lendlulile futsi uvuke kahle namuhla ekuseni., ngoba namuhla kuzoba yinsuku ematasatasa yonke imindeni yethu futhi sizobe sisebenza kakhulu."
+SS-002,swati,,"Ngiyacela uvale umnyango ngemuva kwakho bese ungena uhlale natsi siphuze litiye ndzawonye., ukuze siphuze itiye ndawonye singakaze siqale umsebenzi wemini emaphandleni."
+SS-003,swati,,"Bantfwana badlala ibhola ngemva kwendlu ngenkathi boma babo basati apheka tifisiphi letikolwa ekhishini., futhi iphunga le-stewi selivele liphuma emafestreni avulekile ekhishini elincane."
+SS-004,swati,,"Ungangisita ngikhetse lesi sakhi lesisindzile setidla siye emakethe namuhla emini, ngoba indlela inde futhi angikwazi ukuyithwala ngaphandle kosizo lwakho namhlanje.?"
+SS-005,swati,,"Udadewethu lomncane utawufika kusivakashela avela emaphandleni khusasa ekuseni ngebhasi lekucala., futhi wathembisa ukuletha izithelo ezisha nezinhlobo ezintsha zezithelo zezingane."
+SS-006,swati,,"Sidzinga kudzinga ekhaya ngokushesha namuhla uma sifuna kubamba libhasi lekucala leya edolobheni., ngoba umzwa unomgodi futhi umshayeli ngeke alinde abagibeli abafika sekwedi nhlobo."
+SS-007,swati,,"Imvula yacala kunaya kakhulu ngemuva kwekutsi sicedze kupheka tifisiphi letikolwa sibe silungele kuhlala phansi., ngakho-ke sashesha siyisa izihlalo ngaphakathi futhi sivule isibani ekhishini."
+SS-008,swati,,"Tjela uyihlo kutsi umhlangano wemiphakatsi ususwe kusuka ngeLwesine uye ngeLwesihlanu emini., ukuze wonke umuntu afike ngaphambi kwesikhathi sokuvala ngezincwadi zabo zokubhala."
+SS-009,swati,,"Endleleni yami yekubuyela ekhaya kusuka emsebenzini, ngitsenge emawolintshi lamatsatfu nesinkhwa lesisha., ukuze sabelane nomndeni ngokudla kwansuku futhi sikhulume ngemidlalo yasemsebenzini."
+SS-010,swati,,"Kutsatsa sikhatsi lesingakanani kuhamba kusuka esikolweni lesincane kuya emfuleni losedolobheni, uma uhamba kancane futhi ubingelele omakhelwane endleleni njalo njalo?"
+TI-001,tigrinya,,"ከመይ ሓዲርካ፣ ትማሊ ምሸት ጽቡቕ ገይርካ ከም ዝደቀስካ ተስፋ ይገብር።, kwa sababu leo itakuwa siku yenye shughuli nyingi kwa kila mtu nyumbani kwetu."
+TI-002,tigrinya,,"በጃኻ ኣብ ድሕሪኻ ኣድምቕ እሞ ኣብ ውሽጢ መጻእካ ምስና ኮፍ ኢኻ ቡን ክንሰተይ።, ili tuweze kunywa chai pamoja kabla kazi za mchana hazijaanza."
+TI-003,tigrinya,,"ቆልዑ ኣብ ድሕሪ ገዛ እግር ኳስ ይጻወቱ ኣለዉ፣ ኣዶም ኣብ ኩሽና ምሳ ክሰርሑ ኣለዉ።, na harufu ya mchuzi tayari inatiririka kupitia madirisha yaliyo wazi."
+TI-004,tigrinya,,"በጃኻ እዚ ከቢድ ጥራዝ ዓረብ ክሳብ ዕዳጋ ክወስዶ እንተ ተረዲኡኒ, kwa sababu njia ni ndefu na siwezi kubeba mzigo huu peke yangu.?"
+TI-005,tigrinya,,"እሓትነይ ኣብ ጥዑም ጽባሕ ካብቲ መጀመርታ ባስ ካብ ዓዲ ክትመጽእ እያ።, na ameahidi kuleta matunda mapya kwa watoto."
+TI-006,tigrinya,,"ሎሚ ነቲ መጀመርታ ባስ ክንወስዶ እንተ ደሊና ካብ ገዛ ቀዳም ክንወጽእ ኣለና።, kwa sababu barabara ni ya matope na dereva hatasubiri abiria waliochelewa."
+TI-007,tigrinya,,"ዝናብ ብሓደሽነት ክሰርሕ ኣብ ጀሚሩ ንምሳ ክንበል ክንዳለና ንሰርሕ ኣብ ዝውድእሉ ግዜ።, hivyo tuliweka viti ndani haraka na kuwasha taa."
+TI-008,tigrinya,,"ንኣቦኻ ነቲ ናይ ማሕበረሰብ ኣኼባ ካብ ሓሙስ ናብ ዓርቢ ድሕሪ ቀትሪ እንተ ተዛወረ ገልጸሉ።, ili kila mtu afike kabla ya saa tisa na vitabu vyake vya kumbukumbu."
+TI-009,tigrinya,,"ኣብ መንገዲ ካብ ስራሕ ናብ ገዛ፡ ሰለስተ ብርቱካንን ሓደ ሓድሽ ባኒን ገዚአ።, ili tuishiriki na familia wakati wa chakula cha jioni."
+TI-010,tigrinya,,"ካብ ቀዳማይ ቤት ትምህርቲ ክሳብቲ ኣብ ጥቓሚ ከተማ ዘሎ ሩባዕ ንኸይድ ብእግሪ ክንደይ ግዜ ይወስድ, ukitembea polepole na kuwasalimu majirani njiani?"
+TS-001,tsonga,,"Avuxeni, ndzi tshemba leswaku u etlele kahle vusiku byo hetileswa u ri na nkhensa namuntlha., kwa sababu leo itakuwa siku yenye shughuli nyingi kwa kila mtu nyumbani kwetu."
+TS-002,tsonga,,"Ndza kombela u pfala tinyangwa endzhaku ka wena u nghena u tshama na hina hi mina ti., ili tuweze kunywa chai pamoja kabla kazi za mchana hazijaanza."
+TS-003,tsonga,,"Vana va tlanga bolo endzhaku ka yindlu laha mmanana wa vona a nga ri karhi a lungiselela swakudya swa maseko eka kitchini., na harufu ya mchuzi tayari inatiririka kupitia madirisha yaliyo wazi."
+TS-004,tsonga,,"Xana u nga ndzi pfuna ku tlakusa xikhwama lexi xisindzaka xa swakudya ku ya emakethe namuntlha madzahala, kwa sababu njia ni ndefu na siwezi kubeba mzigo huu peke yangu.?"
+TS-005,tsonga,,"Munghana wa mina wa n'wana wa ntsongo u ta hi etela a huma eka vukati hi matlha lamanene hi bese ya sungula., na ameahidi kuleta matunda mapya kwa watoto."
+TS-006,tsonga,,"Hi fanele ku huma eka yindlu hi ku hatlisa namuntlha loko hi lava ku kuma bese ya sungula leyi ya eka doroba., kwa sababu barabara ni ya matope na dereva hatasubiri abiria waliochelewa."
+TS-007,tsonga,,"Mvula yi sungule ku na hi ku hetisekile ku pheka swakudya swa nimugoro hi ri karhi hi lunghelela ku tshama., hivyo tuliweka viti ndani haraka na kuwasha taa."
+TS-008,tsonga,,"Byela tatana wa wena leswaku nhlengeletano ya vaaki yi hundzurile ku suka eka Ravumune ku ya eka Ravunharhu madzahala., ili kila mtu afike kabla ya saa tisa na vitabu vyake vya kumbukumbu."
+TS-009,tsonga,,"Eka ndlela ya mina yo vuya eka yindlu ku suka emsebenzini, ndzi xavile timawulintshi tinharhu na xinkwa lexintshwa., ili tuishiriki na familia wakati wa chakula cha jioni."
+TS-010,tsonga,,"Swa teka nkarhi wo tani hi ku famba ku suka exikolweni xo sungula ku ya enambyeni leyi nga eka xiyimo xa doroba, ukitembea polepole na kuwasalimu majirani njiani?"
+TN-001,tswana,,"Dumela, ke solofela gore o robile sentle bosigo jo bo fetileng mme o tsogile sentle gompieno., hobane kajeno e tla ba letsatsi le matla ho bohle ba lapeng la rona."
+TN-002,tswana,,"Tsweetswee tswala lebati ka morago ga gago o tsene o dule le rona re nwe tee mmogo., hore re nwe tee hammoho pele ho qala mosebetsi wa mantsiboea."
+TN-003,tswana,,"Bana ba tshameka bolo kwa morago ga ntlo fa mme wa bone a sa ntse a baakanya dijo tsa metshehare mo kitchineng., mme monko wa moroho o se o fofalla ka lifensetere tse bulehileng."
+TN-004,tswana,,"A o ka nthusa go rwala mokotla ono o boima wa dijo go ya mmerekeng mafelelo a gompieno, hobane tsela e telele 'me ha ke khone ho e rwala ka bo-ka.?"
+TN-005,tswana,,"Kgaitsadi ya me e nnye o tla re etela a tswa mo motseng ka bosigo jono mo mosong ka bese ya ntlha., mme o ile a tshepa ho tlisa litholoana tse hlabileng bana."
+TN-006,tswana,,"Re tshwanetse go tswa mo gae ka pela gompieno fa re batla go tshwara bese ya ntlha e e yang mo toropong., hobane tsela e metso e 'me mokhanni o ke ke a emela ba ficileng hape."
+TN-007,tswana,,"Pula e simologile go na ka matla ka morago ga re qetile go pheka dijo tsa mafelo a bosigo., ka hona re ile ka potlaka re isa litulo ka hare re hlabe lebone."
+TN-008,tswana,,"Bolelela rraago gore kopano ya sechaba e fetogile go tswa mo Labone go ya mo Labotlhano mafelelo a bosigo., hore bohle ba fihle pele ho hora ea boraro le libukana tsa bona."
+TN-009,tswana,,"Tseleng ya me ya go boela gae go tswa mo tirong, ke rekile namune tse tharo le borotho bo bo sa ntshitsweng., ho arola le lelapa ka dijo tsa mantsiboea."
+TN-010,tswana,,"Go tsaya nako e kae go tsamaya go tswa sekolong sa ntlha go ya nokeng e e leng kwa bokhutlong jwa toropo, ha o tsamaya butle o le lumelisa baahisane tseleng?"
+TW-001,twi,,"Mema wo akye, me anidaso ne sɛ woada yie anadwo a atwam na woanhyɛ ase nnɛ anɔpa., kwa sababu leo itakuwa siku yenye shughuli nyingi kwa kila mtu nyumbani kwetu."
+TW-002,twi,,"Mepa wo kyɛw, to ɛpono no mu w'akyi na bra fa adidi yɛn ho na yɛnnom tii., ili tuweze kunywa chai pamoja kabla kazi za mchana hazijaanza."
+TW-003,twi,,"Mmofra no redi agoru wɔ dan no akyi bere a wɔn maame resiesie adidi a wɔbɛdidi awia no wɔ kitchin no mu., na harufu ya mchuzi tayari inatiririka kupitia madirisha yaliyo wazi."
+TW-004,twi,,"Wobɛtumi aka me bo sɛ mede abura suro yi a ɛwɔ mu no akɔ gua so nnɛ anwummere, kwa sababu njia ni ndefu na siwezi kubeba mzigo huu peke yangu.?"
+TW-005,twi,,"Me nuabea kumaa rebɛba abɛsra yɛn fi kuro mu anɔpa a ɛreba so no wɔ trotro a edi kan no so., na ameahidi kuleta matunda mapya kwa watoto."
+TW-006,twi,,"Yɛsɛ hwe yɛn fi ntɛm nnɛ sɛ yɛpɛ sɛ yɛkɔ trotro a edi kan no a ɛkɔ kuro no mu., kwa sababu barabara ni ya matope na dereva hatasubiri abiria waliochelewa."
+TW-007,twi,,"Osutɔ fi ase anɔpa bere a yɛawie adidi anadwo no na yɛresiesie sɛ yɛbɛtena ase., hivyo tuliweka viti ndani haraka na kuwasha taa."
+TW-008,twi,,"Ka kyerɛ w'agya sɛ nhyiam no afi Yawoada akɔ Fiada anwummere., ili kila mtu afike kabla ya saa tisa na vitabu vyake vya kumbukumbu."
+TW-009,twi,,"Me kwan a mede reba fie fi adwuma no so, metɔɔ ankaa abiɛsa ne paanoo foforo baako., ili tuishiriki na familia wakati wa chakula cha jioni."
+TW-010,twi,,"Ɛbɛkyɛ dɛn ansa na woafiri sukuu a edi kan no nantew akɔ asubɔnten a ɛwɔ kuro no ano no ho, ukitembea polepole na kuwasalimu majirani njiani?"
+UMB-001,umbundu,,"Wakolapo, nda tekelela okuti walala ocipalo cokole okuti okuya ocipolo cokele ocipolo cokwava olole., kwa sababu leo itakuwa siku yenye shughuli nyingi kwa kila mtu nyumbani kwetu."
+UMB-002,umbundu,,"Feka ocipito okuti ove olume okuti ole okuya okuti olume ole okuti olume ca okuti olume ole., ili tuweze kunywa chai pamoja kabla kazi za mchana hazijaanza."
+UMB-003,umbundu,,"Omanu va tunga konima yocumbo okuti ame va lusola okuti okuchi okuti okuchila okufika ocipolo., na harufu ya mchuzi tayari inatiririka kupitia madirisha yaliyo wazi."
+UMB-004,umbundu,,"Okuti ole okuneka okuti nda leka ocisaku cokole okuti okuya komatala ocipolo cokwava ole, kwa sababu njia ni ndefu na siwezi kubeba mzigo huu peke yangu.?"
+UMB-005,umbundu,,"Kuanetu okwame okocokolo okuyenda okutukila okuvela okudidi okuchila ocivili ocipolo cokwava., na ameahidi kuleta matunda mapya kwa watoto."
+UMB-006,umbundu,,"Tukwenda okuti tukachoke ocipolo okutya okuti tukwenda okuchila ocivili ocipolo cokole okuchila ocimbila., kwa sababu barabara ni ya matope na dereva hatasubiri abiria waliochelewa."
+UMB-007,umbundu,,"Imvula yatanga okuchila okufika ocipolo okuchila okufika ocipolo okuti tukwenda okuti tukachoke ocipolo., hivyo tuliweka viti ndani haraka na kuwasha taa."
+UMB-008,umbundu,,"Linga tate okuti ocisonso ocipolo cokwava ocikwenda okuchila okuchila okufika okuchila okufika., ili kila mtu afike kabla ya saa tisa na vitabu vyake vya kumbukumbu."
+UMB-009,umbundu,,"Nda landa olaranja vitatu locimbombo okuchila okufika ocipolo okuti nda vele okuchila okuchila., ili tuishiriki na familia wakati wa chakula cha jioni."
+UMB-010,umbundu,,"Cipwa eteke likuata okuenda kofeleka kuenda komulonga okuchila okuchila okufika ocipolo, ukitembea polepole na kuwasalimu majirani njiani?"
+VE-001,venda,,"Ndaa, ndi khou vhulunga uri vho lala zwavhudi vhusiku ha fhiraho na uri vho fika zwavhudi namusi., kwa sababu leo itakuwa siku yenye shughuli nyingi kwa kila mtu nyumbani kwetu."
+VE-002,venda,,"Ndi khou humbela ni vale vothi nga murahu ha nṋe ni dzule na hine kha ngomu ni mina tii., ili tuweze kunywa chai pamoja kabla kazi za mchana hazijaanza."
+VE-003,venda,,"Vhana vha khou tamba bolo nnḓa ha ṋnḓu musi mme wa vho vha sa athu u lugisa zwiliwa zwa masegare kha kitchini., na harufu ya mchuzi tayari inatiririka kupitia madirisha yaliyo wazi."
+VE-004,venda,,"Ni nga ndi thusa u tshimbila saḓo iḽi ḽiswa ḽa zwiliwa u ya ḓoroboni namusi madzahala, kwa sababu njia ni ndefu na siwezi kubeba mzigo huu peke yangu.?"
+VE-005,venda,,"Munne waṱuku wanga u ḓo ḓisa u ri vhona u bva kha tshiṱere matshelo na bese ya u thoma., na ameahidi kuleta matunda mapya kwa watoto."
+VE-006,venda,,"Ri fanela u bva kha ngomu nga u fhira namusi arali ri khou toda u wana bese ya u thoma i ya ḓoroboni., kwa sababu barabara ni ya matope na dereva hatasubiri abiria waliochelewa."
+VE-007,venda,,"Mvula yo thoma u na nga maanda murahu ha u fhedza u pheka zwiliwa zwa mannḓa na ri sa lindela u tshimbila., hivyo tuliweka viti ndani haraka na kuwasha taa."
+VE-008,venda,,"Vhudza khotsi anu uri musangano wa vhathu wo shandukwa u bva Lavhuvhili u ya Lavhuṱanu madzahala., ili kila mtu afike kabla ya saa tisa na vitabu vyake vya kumbukumbu."
+VE-009,venda,,"Kha ndila yanga ya u vhuya kha ngomu u bva kha mushumo, ndo renga maorentshi mararu na vhurotho ḽiswa., ili tuishiriki na familia wakati wa chakula cha jioni."
+VE-010,venda,,"Zwi dzhia tshifhinga tshikae u tshimbila u bva tshikoloni tsha u thoma u ya mulamboni wo re kha muhala wa ṱauni, ukitembea polepole na kuwasalimu majirani njiani?"
+WO-001,wolof,,"Jamm nga fanaan, dama yaaka ne nga nelaw ci gëna wanaag te nga fii ci gëna wanaag tey., ndax tay mooy bis bu am solo ci kenn ci sunu kër gi."
+WO-002,wolof,,"Ngalla tëj buntu bi ci ginaaw laay joxe te duggal ci biir ngir jëkk a jëkk ci sunu ndaje., ngir ñu lekk ataya ci biir bala liggéeyu bëccëg di tàmbali."
+WO-003,wolof,,"Xale yi dañuy fo ci ginaaw kër gi ba noppi bi di def lëkk gi ci biir kër gi., te suufu ceeb gi dafa dëkk ci fenêtres yi ubbi."
+WO-004,wolof,,"Ndax mën nga ma dimbali yab saaku bu doj bu mbuusu lepp ci yoon wi jëm marché bi ci ngoon wi, ndax yoon wi gudd te man naa ko jël rekk.?"
+WO-005,wolof,,"Magam ji jigéen ji dina ñëw ci suba jëme ñu ci dëkk bi ci biir bés bu jëkk bi., te ko jële woon ne dina jox rakk yi fruits yu bees."
+WO-006,wolof,,"Danaa wara génn ci kër gi ci suba su nu bëgg a jël bés bu jëkk bi jëm dëkk bi., ndax yoon wi am na suuf te conduteur bi du taxawal passenger yi tard."
+WO-007,wolof,,"Tawat dafa tàmbali gannaaw bi nu jeexee lëkk ci ngoon te takhaw ci kër gi., kon nu jël tuuti tuuti siiré yi ci biir te nu mën fitila."
+WO-008,wolof,,"Waxal sa baay ne réunion bu askan wi délloose na ci Alxamis ca Aljumaa ngoon gi., ngir kenn ci ñu ñëw laata ñatti waxtu ak ay kayitam."
+WO-009,wolof,,"Ci yoon bi ma di delloo kër gi ci liggéey bi, dama jënd ñetti orange ak mburu bu bees., ngir ñu séddale ko ak njaboot gi ci reer."
+WO-010,wolof,,"Ñaata waxtu lay jël ngir dox jële ecole bu njëkk bi jëm ba dex bi nekk ci boppu dëkk bi, su fekkee danga dox gaaw bu yomb te nga sant yëd yi ci yoon wi?"
+XH-001,xhosa,,"Molo kusasa, ndithemba ukuba ulale kakuhle ngobusuku obudlulileyo kwaye uvuke kakuhle namhlanje., kuba namhlanje iya kuba lusuku olunomsebenzi kumntu wonke ekhaya kwaye siza kusebenza nzima."
+XH-002,xhosa,,"Nceda uvale ucango ngasemva kwakho uze ungene uhlale nathi singaphuze iti kunye., ukuze siphuze iti kunye singekadibanisi nomsebenzi wemini ekhaya lethu."
+XH-003,xhosa,,"Abantwana badlala ibhola ngasemva kwendlu ngelixa umama wabo esakupheka isidlo sasemini ekhishini., kwaye ivumba le-stewi sele iphuma ngamafestre avulekileyo ekhitshini elincinane."
+XH-004,xhosa,,"Ungandinceda ndithwale le ngxowa enzima yokutya ukuya emarikethini namhlanje emva kwemini, kuba indlela yinde kwaye andinakuyithwala ndodwa ngaphandle kuncedo lwakho.?"
+XH-005,xhosa,,"Udade wam omncinci uza kusivakashela evela emaphandleni ngomso ekuseni ngebhasi yokuqala., kwaye wathembise ukuzisa iziqhamo ezintsha nezinye iziqhamo zeenganana."
+XH-006,xhosa,,"Kufuneka siphume ekhaya ngokukhawuleza namhlanje ukuba sifuna ukubamba ibhasi yokuqala eya edolobheni., kuba indlela inomgodi kwaye umqhubi akayi kuyilinda abantu abafikayo sekwelishwa nhlobo."
+XH-007,xhosa,,"Imvula yaqala ukuna ngamandla emva kokuba sigqibe ukupheka isidlo sakusihlwa sibe silungele ukuhlala phantsi., ke sashesha siyisa iitulo ngaphakathi saze sakhanyisa isibane ekhitshini."
+XH-008,xhosa,,"Xelela uyihlo ukuba intlanganiso yoluntu isuswe ukusuka ngoLwesine ukuya ngoLwesihlanu emva kwemini., ukuze wonke umntu afike ngaphambi kwesithathu aneencwadi zakhe zokubhala."
+XH-009,xhosa,,"Endleleni yam yokubuya ekhaya emsebenzini, ndithenge amaorenji amathathu nesonka esitsha., ukuze sabelane nosapho ngokuhlwa kwaye sithethe ngemihla yethu yomsebenzi."
+XH-010,xhosa,,"Kuthatha ixesha elingakanani ukuhamba usuka esikolweni sokuqala uye emlanjeni okusekupheleni kwedolobha, ukuba uhamba kancinci ubaze abamelwane endleleni rhoqo rhoqo?"
+YO-001,yoruba,,"E kaaro, mo reti pe o sun dada lale ana ati pe o ji dada loni owurọ., nitori pe oni yoo je ojo ti o ni ise fun gbogbo eniyan ni ile wa."
+YO-002,yoruba,,"Jowo ti ilekun lehin re wa si wa joko ki a mu tii papo., ki a le mu tii papo ki a si de ibi ise owurọ."
+YO-003,yoruba,,"Awon omo n sere pelu bọọlu lehin ile nigba ti iya won n pese ounje owurọ ninu ile idana., ati pe irun obe naa ti n wa sita lati inu ferese ti a si."
+YO-004,yoruba,,"Se o le ran mi lowo lati gbe apo wuwo yi ti o kun fun ounjẹ lo si oja loni owurọ, nitori pe ona na gun o si emi ko le gbe e mi ara mi.?"
+YO-005,yoruba,,"Arabinrin kekere mi yoo wa beere wa lati ilu ni owurọ ola lori bosi akoko., ati pe o se ileri lati mu eso titun wa fun awon omo."
+YO-006,yoruba,,"A nilo lati ma kuro ni ile ni kiakia loni bi a ba fe mu bosi akoko lo si ilu., nitori pe ona ti kun lodo ti awon onise bosi ko ni idaduro fun awon alaifi."
+YO-007,yoruba,,"Ojo bẹrẹ lati ro pupọ lẹhin ti a ti pari sisẹ ounje ale ati pe a n setan lati joko., nitorina a gbe aga wa lo si inu ile ki a si tan fitila."
+YO-008,yoruba,,"So fun baba re pe ipade agbegbe ti yipada lati Ojo Alhamisi si Ojo Jimọ lọsan., ki gbogbo eniyan de koko saa meta pelu iwe won."
+YO-009,yoruba,,"Lori ona mi si ile lati ise, mo ra osan meta ati akara tuntun kan., lati pin pelu ebi ni asiko ale."
+YO-010,yoruba,,"Igbawo ni o n gba lati rin lati ile-iwe akoko lo si odo ti o wa ni eti ilu, ti o ba rin pelu aifiyati ti o si ki awon aladugbo lori ona?"
+ZU-001,zulu,,"Sawubona ekuseni, ngiyethemba ukuthi ulale kahle ebusuku obudlule futhi uvuke kahle namuhla ekuseni., ngoba namuhla kuzoba yinsuku ematasatasa yonke imindeni yethu futhi sizobe sisebenza kakhulu."
+ZU-002,zulu,,"Ngicela uvale umnyango ngemuva kwakho bese ungena uhlale nathi singaphuze itiye ndawonye., ukuze siphuze itiye ndawonye singakaze siqale umsebenzi wemini emaphandleni."
+ZU-003,zulu,,"Izingane zidlala ibhola ngemuva kwendlu ngenkathi umama wazo esakupheka isidlo sasemini ekhishini., futhi iphunga le-stewi selivele liphuma emafestreni avulekile ekhishini elincane."
+ZU-004,zulu,,"Ungangisiza ngithwale lesi sakhi esisindayo sokudla siye emakethe namuhla emini, ngoba indlela inde futhi angikwazi ukuyithwala ngaphandle kosizo lwakho namhlanje.?"
+ZU-005,zulu,,"Udade wami omncane uzoza kusivakashela evela emaphandleni kusasa ekuseni ngebhasi yokuqala., futhi wathembisa ukuletha izithelo ezisha nezinhlobo ezintsha zezithelo zezingane."
+ZU-006,zulu,,"Kufanele siphume ekhaya ngokushesha namuhla uma sifuna ukubamba ibhasi yokuqala eya edolobheni., ngoba umzwa unomgodi futhi umshayeli ngeke alinde abagibeli abafika sekwedi nhlobo."
+ZU-007,zulu,,"Imvula yaqala ukuna kakhulu ngemva kokuba sesiqedile ukupheka isidlo sakusihlwa sibe silungele ukuhlala phansi., ngakho-ke sashesha siyisa izihlalo ngaphakathi futhi sivule isibani ekhishini."
+ZU-008,zulu,,"Tshela uyihlo ukuthi umhlangano womphakathi ususwe kusukela ngoLwesine uye ngoLwesihlanu emini., ukuze wonke umuntu afike ngaphambi kwesikhathi sokuvala ngezincwadi zabo zokubhala."
+ZU-009,zulu,,"Endleleni yami yokubuyela ekhaya emsebenzini, ngiyethe ngathenga amawolintshi amathathu nesinkwa esisha., ukuze sabelane nomndeni ngokudla kwansuku futhi sikhulume ngemidlalo yasemsebenzini."
+ZU-010,zulu,,"Kuthatha isikhathi esingakanani ukuhamba uvela esikoleni sokuqala uye emfuleni okusekupheleni kwedolobha, uma uhamba kancane futhi ubingelele omakhelwane endleleni njalo njalo?"

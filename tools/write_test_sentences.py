@@ -10,10 +10,16 @@ from __future__ import annotations
 
 import csv
 import io
+import re
 import sys
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from tools.sentence_addenda import ADDENDA
+
 OUT = PROJECT_ROOT / "config" / "test_sentences.csv"
 
 CODES = {
@@ -517,6 +523,28 @@ SENTENCES: dict[str, list[str]] = {
 }
 
 
+def _word_count(text: str) -> int:
+    return len(re.findall(r"[\w']+", text, re.UNICODE))
+
+
+def _lengthen(language: str, lines: list[str]) -> list[str]:
+    extras = ADDENDA.get(language)
+    if not extras:
+        raise KeyError(f"No addenda configured for {language!r}")
+    if len(extras) != 10:
+        raise ValueError(f"{language} addenda must have 10 entries, got {len(extras)}")
+    out: list[str] = []
+    for index, line in enumerate(lines):
+        extra = extras[index]
+        base = line.rstrip()
+        if base.endswith("?"):
+            text = f"{base[:-1].rstrip()}{extra}?"
+        else:
+            text = f"{base}{extra}"
+        out.append(text)
+    return out
+
+
 def _clean(lines: list[str]) -> list[str]:
     seen: set[str] = set()
     out: list[str] = []
@@ -536,10 +564,14 @@ def main() -> int:
     if set(SENTENCES) != set(CODES):
         problems.append(f"key mismatch {set(SENTENCES) ^ set(CODES)}")
     for language, lines in list(SENTENCES.items()):
-        SENTENCES[language] = _clean(lines)
+        expanded = _lengthen(language, lines)
+        SENTENCES[language] = _clean(expanded)
         cleaned = SENTENCES[language]
         if len(cleaned) != 10:
             problems.append(f"{language} has {len(cleaned)} clean lines")
+        short = [text for text in cleaned if _word_count(text) < 18]
+        if short:
+            print(f"warning: {language} has {len(short)} sentence(s) under 18 words")
     if problems:
         print("\n".join(problems))
         return 1
