@@ -61,7 +61,7 @@ PREFERENCE_LABELS = {
     "same": "About the same",
 }
 
-CRITERIA = (
+CRITERIA_BASE = (
     (
         "Naturalness",
         "naturalness",
@@ -72,12 +72,24 @@ CRITERIA = (
         "pronunciation",
         "Are the words pronounced correctly and easy to understand?",
     ),
-    (
-        "Speaker similarity / voice quality",
-        "similarity",
-        "How clean is the voice, and how well does it match the reference speaker?",
-    ),
 )
+
+CRITERIA_VOICE_PRESET = (
+    "Voice quality",
+    "similarity",
+    "How clean and pleasant is the voice?",
+)
+
+CRITERIA_VOICE_CLONE = (
+    "Match to your recording",
+    "similarity",
+    "How well does this sample match the voice you recorded, and how clean does it sound?",
+)
+
+
+def rating_criteria(is_clone: bool) -> tuple[tuple[str, str, str], ...]:
+    voice = CRITERIA_VOICE_CLONE if is_clone else CRITERIA_VOICE_PRESET
+    return CRITERIA_BASE + (voice,)
 
 SCALE_LEGEND = " · ".join(RATING_SCALE_HELP[value] for value in RATING_SCALE)
 
@@ -614,7 +626,7 @@ def render_rating_form(context: AppContext, trial, tester_id: str, mode: str) ->
             )
 
         scores: dict[str, int | None] = {}
-        for title, slug, help_text in CRITERIA:
+        for title, slug, help_text in rating_criteria(trial.condition.is_clone):
             with st.container(border=True):
                 st.markdown(
                     f'<div class="criterion-title">{escape(title)}</div>'
@@ -666,7 +678,12 @@ def render_rating_form(context: AppContext, trial, tester_id: str, mode: str) ->
         listened_to_both=bool(confirmed),
     )
 
-    problems = evaluation.validate_ratings(ratings)
+    problems = evaluation.validate_ratings(
+        ratings,
+        voice_criterion_label=(
+            CRITERIA_VOICE_CLONE[0] if trial.condition.is_clone else CRITERIA_VOICE_PRESET[0]
+        ),
+    )
     if context.settings.tester_id_mode == "required" and not tester_id:
         problems.insert(0, "Please enter your name.")
     if problems:

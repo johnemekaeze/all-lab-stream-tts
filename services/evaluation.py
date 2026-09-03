@@ -457,7 +457,12 @@ class Ratings:
     listened_to_both: bool = False
 
 
-def validate_ratings(ratings: Ratings, *, require_listen_confirmation: bool = True) -> list[str]:
+def validate_ratings(
+    ratings: Ratings,
+    *,
+    require_listen_confirmation: bool = True,
+    voice_criterion_label: str = "Voice quality",
+) -> list[str]:
     """Return a list of human-readable problems; empty means valid."""
     problems: list[str] = []
 
@@ -467,7 +472,7 @@ def validate_ratings(ratings: Ratings, *, require_listen_confirmation: bool = Tr
     required = (
         ("Naturalness", ratings.naturalness_a, ratings.naturalness_b),
         ("Pronunciation / intelligibility", ratings.pronunciation_a, ratings.pronunciation_b),
-        ("Speaker similarity / voice quality", ratings.speaker_similarity_a, ratings.speaker_similarity_b),
+        (voice_criterion_label, ratings.speaker_similarity_a, ratings.speaker_similarity_b),
     )
     for name, value_a, value_b in required:
         missing = [label for label, value in (("A", value_a), ("B", value_b)) if value not in RATING_SCALE]
