@@ -388,8 +388,8 @@ def _render_sentence_controls(context: AppContext, selection: VoiceSelection):
         f'<div class="eval-sentence">{escape(sentence.text)}</div>', unsafe_allow_html=True
     )
     st.caption(
-        f"Sentence {index + 1} of {len(ids)}. One listen is enough — rate this pair and stop, "
-        "or pick another sentence if you like."
+        f"Sentence {index + 1} of {len(ids)}. Rate this pair, then try another sentence "
+        "if you want to keep going."
     )
     prev_col, next_col = st.columns(2)
     with prev_col:
@@ -549,10 +549,13 @@ def render_condition_panel(trial) -> None:
     chips = [("Language", condition.language.label)]
     if condition.accent_label:
         chips.append(("Accent", condition.accent_label))
-    chips.append(("Reference speaker", condition.speaker.neutral_label))
-    chips.append(("Voice", condition.mode_label))
-    if condition.is_clone and condition.reference_audio is not None:
-        chips.append(("Recording", condition.reference_audio.name))
+    if condition.is_clone:
+        chips.append(("Voice", condition.mode_label))
+        if condition.reference_audio is not None:
+            chips.append(("Recording", condition.reference_audio.name))
+    else:
+        chips.append(("Preset voice", condition.speaker.neutral_label))
+        chips.append(("Voice mode", condition.mode_label))
 
     _section_title("What you are rating")
     with st.container(border=True):
@@ -694,7 +697,7 @@ def render_rating_form(context: AppContext, trial, tester_id: str, mode: str) ->
     _advance_selection(context, trial)
     clear_trial_state(trial_id)
     st.session_state["saved_message"] = (
-        "Saved. That one rating is enough — play another sentence only if you want to."
+        "Saved. Try another sentence if you like, or stop whenever you're done."
     )
     st.rerun()
 
@@ -766,7 +769,7 @@ def main() -> None:
         st.markdown(
             '<div class="idle-panel">'
             "<h2>Ready when you are</h2>"
-            "<p>Both samples are prepared before you rate them. One pair is enough.</p>"
+            "<p>Both samples are prepared before you rate them. Rate one pair or as many as you like.</p>"
             '<div class="listen-preview">'
             '<div class="sample-ghost"><span>A</span><div class="ghost-bar"></div></div>'
             '<div class="sample-ghost"><span>B</span><div class="ghost-bar"></div></div>'

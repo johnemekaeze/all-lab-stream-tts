@@ -51,9 +51,8 @@ RATING_SCALE_HELP = {
 }
 
 INSTRUCTIONS = (
-    "Listen to both samples before rating them. One pair is enough — you can stop after "
-    "this, or play another sentence if you like. Judge only speech quality, naturalness, "
-    "pronunciation, and voice."
+    "Listen to both samples before rating them. You can rate one pair or as many as you "
+    "like. Judge only speech quality, naturalness, pronunciation, and voice."
 )
 
 
