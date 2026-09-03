@@ -147,7 +147,11 @@ def _secret_to_env(value: Any) -> str:
         return "true" if value else "false"
     if isinstance(value, (int, float)):
         return str(value)
-    return str(value).strip()
+    text = str(value).strip()
+    # Tolerate secrets pasted with extra wrapping quotes, e.g. "\"false\"".
+    if len(text) >= 2 and text[0] == text[-1] and text[0] in "\"'":
+        text = text[1:-1].strip()
+    return text
 
 
 def _streamlit_secret(name: str) -> str:

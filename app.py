@@ -34,6 +34,7 @@ from services.evaluation import (
     SampleGenerationError,
     TestCondition,
 )
+from services import researcher_view
 from services.settings import Settings, load_settings
 from services.storage import ResultsStore, StorageError
 
@@ -628,6 +629,12 @@ def render_condition_panel(trial) -> None:
 
 def render_samples(trial) -> None:
     _section_title("Listen to both samples", step="2")
+    if any(sample.mocked for sample in trial.samples.values()):
+        st.caption(
+            "One sample may use placeholder audio (a synthetic tone) until the second TTS "
+            "system is deployed. The other sample should be real speech when the live "
+            "endpoint is configured."
+        )
     st.markdown('<div class="sample-grid">', unsafe_allow_html=True)
     columns = st.columns(2, gap="large")
     for column, label in zip(columns, SAMPLE_LABELS):
@@ -807,6 +814,7 @@ def main() -> None:
         return
 
     init_session(context)
+    researcher_view.render_login(context.settings)
 
     render_header()
     render_flow_steps(st.session_state.get("trial"))
@@ -857,6 +865,13 @@ def main() -> None:
                 "load the new test when you are ready."
             )
         render_rating_form(context, trial, tester_id, mode)
+
+    researcher_view.render_dashboard(
+        settings=context.settings,
+        catalog=context.catalog,
+        store=context.store,
+        cache=context.cache,
+    )
 
 
 if __name__ == "__main__":
