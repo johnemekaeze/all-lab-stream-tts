@@ -445,7 +445,11 @@ def _only_reference_fields(value: Any) -> bool:
 
 
 def _is_absent(value: Any) -> bool:
-    return value is None or (isinstance(value, (str, list, dict, tuple)) and len(value) == 0)
+    if value is None:
+        return True
+    if isinstance(value, str):
+        return not value.strip()
+    return isinstance(value, (list, dict, tuple)) and len(value) == 0
 
 
 def _looks_like_audio(content: bytes) -> bool:

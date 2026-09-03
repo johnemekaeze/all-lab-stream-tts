@@ -148,6 +148,13 @@ class TestCondition:
         )
 
 
+def _clean_reference_text(value: str | None) -> str | None:
+    if value is None:
+        return None
+    cleaned = value.strip()
+    return cleaned or None
+
+
 def build_condition(
     catalog: TestCatalog,
     *,
@@ -211,7 +218,7 @@ def build_condition(
         accent=accent,
         generation_mode=generation_mode,
         reference_audio=reference_audio if generation_mode == CLONE_MODE else None,
-        reference_text=(reference_text or None) if generation_mode == CLONE_MODE else None,
+        reference_text=_clean_reference_text(reference_text) if generation_mode == CLONE_MODE else None,
     )
 
 
@@ -236,7 +243,7 @@ def pick_random_condition(
             accent=accent,
             generation_mode=generation_mode,
             reference_audio=reference_audio if generation_mode == CLONE_MODE else None,
-            reference_text=(reference_text or None) if generation_mode == CLONE_MODE else None,
+            reference_text=_clean_reference_text(reference_text) if generation_mode == CLONE_MODE else None,
         )
         for language, accent, speaker, sentence in catalog.iter_conditions()
     ]
