@@ -1,0 +1,20 @@
+[theme]
+# Warm paper + ink. Deliberately not red: the submit button should not look
+# like a warning, and no colour may draw attention to one of the two samples.
+base = "light"
+primaryColor = "#1d4f7a"
+backgroundColor = "#f2eee6"
+secondaryBackgroundColor = "#fffdf8"
+textColor = "#1b1914"
+font = "sans serif"
+
+[client]
+toolbarMode = "minimal"
+showSidebarNavigation = false
+
+[server]
+# Testers only ever upload short reference clips.
+maxUploadSize = 5
+
+[browser]
+gatherUsageStats = false

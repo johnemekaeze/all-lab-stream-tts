@@ -1,0 +1,113 @@
+# ---------------------------------------------------------------------------
+# Hugging Face endpoint ADAPTER configuration.
+#
+# This is the ONLY place that knows the wire format of your TTS endpoints.
+# The Streamlit UI, caching and storage layers never touch it, so you can
+# change the payload/response contract here without touching any Python.
+#
+# The values below are a REASONABLE GUESS - confirm them against your real
+# CosyVoice inference handler and edit as needed.
+# ---------------------------------------------------------------------------
+
+request:
+  # HTTP method and content type used for the synthesis call.
+  method: POST
+  content_type: application/json
+
+  # -----------------------------------------------------------------------
+  # There are TWO payload templates, one per generation mode.
+  #
+  #   payload        DEFAULT. "Preset voice": the reference speaker prompts are
+  #                  already baked into the model, so only the speaker
+  #                  selection is sent - NO reference audio, NO reference text.
+  #   payload_clone  OPTIONAL "Clone a voice": the user supplies a reference
+  #                  clip. The reference transcript stays optional.
+  #
+  # Each value is a template. Available fields:
+  #   {text}                 sentence text to synthesise
+  #   {language}             language key, e.g. "yoruba"
+  #   {language_label}       display label, e.g. "Yoruba"
+  #   {language_code}        short code, e.g. "YO"
+  #   {accent}               English accent key or null
+  #   {accent_label}         English accent label or null
+  #   {gender}               "male" / "female" / "unspecified"
+  #   {speaker_id}           reference speaker preset ID
+  #   {sentence_id}          sentence ID ("custom-<hash>" for typed text)
+  #   {generation_mode}      "preset" or "clone"
+  #   {reference_audio}      clone mode only: URL/path, or the uploaded clip
+  #                          encoded per `reference_audio_upload` below
+  #   {reference_audio_list} clone mode only: list form of the above
+  #   {reference_audio_name} clone mode only: file name of the clip
+  #   {reference_text}       clone mode only: optional transcript
+  #
+  # A value of exactly "{field}" passes the RAW python value through (so nulls
+  # stay null and lists stay lists). Anything else is rendered as a string,
+  # e.g. "speaker: {speaker_id}".
+  #
+  # A key built ONLY from reference fields is dropped when those fields are
+  # empty. That is what guarantees preset generation sends no reference audio
+  # and no reference text, and that an omitted transcript is simply absent.
+  # -----------------------------------------------------------------------
+  # Matches the deployed CosyVoice3 handler (POST /, schema TTSRequest):
+  #   inputs               required, the text to synthesise
+  #   language             language name, e.g. "igbo" (see GET /languages)
+  #   voice                "male" / "female" preset; ignored when a clip is sent
+  #   prompt_audio_base64  clone only: the reference clip, WAV, base64
+  #   prompt_text          clone only: optional transcript of the clip
+  payload:
+    inputs: "{text}"
+    language: "{language}"
+    voice: "{gender}"
+
+  payload_clone:
+    inputs: "{text}"
+    language: "{language}"
+    prompt_audio_base64: "{reference_audio}"
+    prompt_text: "{reference_text}"
+
+  # How an UPLOADED reference clip is put on the wire:
+  #   base64    -> plain base64 string (default)
+  #   data_uri  -> "data:audio/wav;base64,..."
+  # A reference given as a URL/path is always passed through unchanged for the
+  # endpoint to fetch itself.
+  reference_audio_upload: base64
+
+  # Extra static fields merged into the payload (sampling settings, etc.).
+  extra_payload: {}
+
+  # Set to true if your endpoint expects the standard HF envelope
+  #   {"inputs": {...payload...}, "parameters": {...}}
+  wrap_in_inputs: false
+  parameters: {}
+
+  # Drop keys whose rendered value is None instead of sending nulls.
+  omit_none: false
+
+response:
+  # auto   -> decide from the Content-Type header (recommended)
+  # audio  -> body is raw audio bytes
+  # base64 -> body is a base64 string
+  # json   -> body is JSON; the audio is looked up using the keys below
+  mode: auto
+
+  # Keys searched (recursively, in order) when the response is JSON.
+  json_audio_keys:
+    - audio
+    - audio_base64
+    - audio_content
+    - generated_audio
+    - wav
+    - data
+
+  # Keys searched for the audio mime type / format when the response is JSON.
+  json_format_keys:
+    - mime_type
+    - content_type
+    - format
+    - sampling_format
+
+  # Mime type assumed when the endpoint does not tell us.
+  default_mime: audio/wav
+
+  # Reject payloads smaller than this (bytes) as malformed audio.
+  min_bytes: 512

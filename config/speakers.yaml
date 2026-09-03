@@ -1,0 +1,547 @@
+# ---------------------------------------------------------------------------
+# Reference speaker configuration - 84 speakers in total.
+#
+#   37 non-English languages x 2 speakers (male + female) = 74
+#   English: 5 African English accents x 2 speakers        = 10
+#                                                          ----
+#                                                            84
+#
+# These speakers are PRESETS that already exist inside the model, so the
+# default generation path sends nothing but the speaker selection: NO
+# reference audio and NO reference text.
+#
+# Replace the placeholders:
+#   speaker_id      -> your real reference-speaker identifier (REQUIRED)
+#   label           -> researcher-facing description (never shown to testers)
+#
+# OPTIONAL, and empty by default:
+#   reference_audio -> a list of local paths or http(s)/hf URLs, used ONLY as a
+#                      convenience default for the "Clone a voice" mode. Leave
+#                      it empty for normal preset text-to-speech. Values that
+#                      start with PLACEHOLDER are ignored at load time.
+#   reference_text  -> transcript of that clip. Optional even when cloning.
+#
+# Non-English languages use:
+#     <language>:
+#       male:   { speaker_id: ... }
+#       female: { speaker_id: ... }
+#
+# English uses one list of speakers per accent:
+#     english:
+#       nigerian:
+#         - speaker_id: EN-NG-01
+#         - speaker_id: EN-NG-02
+#
+# A gender entry may also hold a LIST if you later add more than one speaker
+# per gender - the loader accepts both a single mapping and a list.
+# ---------------------------------------------------------------------------
+
+afrikaans:
+  male:
+    speaker_id: AF-M-01
+    label: "Afrikaans male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: AF-F-01
+    label: "Afrikaans female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+amharic:
+  male:
+    speaker_id: AM-M-01
+    label: "Amharic male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: AM-F-01
+    label: "Amharic female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+arabic:
+  male:
+    speaker_id: AR-M-01
+    label: "Arabic male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: AR-F-01
+    label: "Arabic female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+bambara:
+  male:
+    speaker_id: BM-M-01
+    label: "Bambara male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: BM-F-01
+    label: "Bambara female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+bemba:
+  male:
+    speaker_id: BEM-M-01
+    label: "Bemba male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: BEM-F-01
+    label: "Bemba female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+berber:
+  male:
+    speaker_id: BER-M-01
+    label: "Berber male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: BER-F-01
+    label: "Berber female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+chichewa:
+  male:
+    speaker_id: NY-M-01
+    label: "Chichewa male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: NY-F-01
+    label: "Chichewa female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+english:
+  # Nigerian English
+  nigerian:
+    - speaker_id: EN-NG-01
+      gender: male        # PLACEHOLDER - set the real speaker gender
+      label: "Nigerian English reference speaker 1"
+      reference_audio: []       # optional, cloning only
+      reference_text: null      # optional, cloning only
+    - speaker_id: EN-NG-02
+      gender: female        # PLACEHOLDER - set the real speaker gender
+      label: "Nigerian English reference speaker 2"
+      reference_audio: []       # optional, cloning only
+      reference_text: null      # optional, cloning only
+
+  # Ghanaian English
+  ghanaian:
+    - speaker_id: EN-GH-01
+      gender: male        # PLACEHOLDER - set the real speaker gender
+      label: "Ghanaian English reference speaker 1"
+      reference_audio: []       # optional, cloning only
+      reference_text: null      # optional, cloning only
+    - speaker_id: EN-GH-02
+      gender: female        # PLACEHOLDER - set the real speaker gender
+      label: "Ghanaian English reference speaker 2"
+      reference_audio: []       # optional, cloning only
+      reference_text: null      # optional, cloning only
+
+  # East African English
+  east_african:
+    - speaker_id: EN-EA-01
+      gender: male        # PLACEHOLDER - set the real speaker gender
+      label: "East African English reference speaker 1"
+      reference_audio: []       # optional, cloning only
+      reference_text: null      # optional, cloning only
+    - speaker_id: EN-EA-02
+      gender: female        # PLACEHOLDER - set the real speaker gender
+      label: "East African English reference speaker 2"
+      reference_audio: []       # optional, cloning only
+      reference_text: null      # optional, cloning only
+
+  # North African English
+  north_african:
+    - speaker_id: EN-NA-01
+      gender: male        # PLACEHOLDER - set the real speaker gender
+      label: "North African English reference speaker 1"
+      reference_audio: []       # optional, cloning only
+      reference_text: null      # optional, cloning only
+    - speaker_id: EN-NA-02
+      gender: female        # PLACEHOLDER - set the real speaker gender
+      label: "North African English reference speaker 2"
+      reference_audio: []       # optional, cloning only
+      reference_text: null      # optional, cloning only
+
+  # South African English
+  south_african:
+    - speaker_id: EN-SA-01
+      gender: male        # PLACEHOLDER - set the real speaker gender
+      label: "South African English reference speaker 1"
+      reference_audio: []       # optional, cloning only
+      reference_text: null      # optional, cloning only
+    - speaker_id: EN-SA-02
+      gender: female        # PLACEHOLDER - set the real speaker gender
+      label: "South African English reference speaker 2"
+      reference_audio: []       # optional, cloning only
+      reference_text: null      # optional, cloning only
+
+ewe:
+  male:
+    speaker_id: EE-M-01
+    label: "Ewe male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: EE-F-01
+    label: "Ewe female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+fon:
+  male:
+    speaker_id: FON-M-01
+    label: "Fon male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: FON-F-01
+    label: "Fon female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+fula:
+  male:
+    speaker_id: FF-M-01
+    label: "Fula male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: FF-F-01
+    label: "Fula female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+hausa:
+  male:
+    speaker_id: HA-M-01
+    label: "Hausa male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: HA-F-01
+    label: "Hausa female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+igbo:
+  male:
+    speaker_id: IG-M-01
+    label: "Igbo male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: IG-F-01
+    label: "Igbo female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+kanuri:
+  male:
+    speaker_id: KR-M-01
+    label: "Kanuri male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: KR-F-01
+    label: "Kanuri female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+kikuyu:
+  male:
+    speaker_id: KI-M-01
+    label: "Kikuyu male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: KI-F-01
+    label: "Kikuyu female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+kinyarwanda:
+  male:
+    speaker_id: RW-M-01
+    label: "Kinyarwanda male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: RW-F-01
+    label: "Kinyarwanda female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+krio:
+  male:
+    speaker_id: KRI-M-01
+    label: "Krio male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: KRI-F-01
+    label: "Krio female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+lingala:
+  male:
+    speaker_id: LN-M-01
+    label: "Lingala male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: LN-F-01
+    label: "Lingala female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+luganda:
+  male:
+    speaker_id: LG-M-01
+    label: "Luganda male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: LG-F-01
+    label: "Luganda female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+malagasy:
+  male:
+    speaker_id: MG-M-01
+    label: "Malagasy male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: MG-F-01
+    label: "Malagasy female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+ndebele:
+  male:
+    speaker_id: ND-M-01
+    label: "Ndebele male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: ND-F-01
+    label: "Ndebele female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+oromo:
+  male:
+    speaker_id: OM-M-01
+    label: "Oromo male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: OM-F-01
+    label: "Oromo female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+sepedi:
+  male:
+    speaker_id: NSO-M-01
+    label: "Sepedi male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: NSO-F-01
+    label: "Sepedi female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+sesotho:
+  male:
+    speaker_id: ST-M-01
+    label: "Sesotho male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: ST-F-01
+    label: "Sesotho female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+shona:
+  male:
+    speaker_id: SN-M-01
+    label: "Shona male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: SN-F-01
+    label: "Shona female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+somali:
+  male:
+    speaker_id: SO-M-01
+    label: "Somali male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: SO-F-01
+    label: "Somali female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+swahili:
+  male:
+    speaker_id: SW-M-01
+    label: "Swahili male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: SW-F-01
+    label: "Swahili female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+swati:
+  male:
+    speaker_id: SS-M-01
+    label: "Swati male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: SS-F-01
+    label: "Swati female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+tigrinya:
+  male:
+    speaker_id: TI-M-01
+    label: "Tigrinya male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: TI-F-01
+    label: "Tigrinya female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+tsonga:
+  male:
+    speaker_id: TS-M-01
+    label: "Tsonga male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: TS-F-01
+    label: "Tsonga female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+tswana:
+  male:
+    speaker_id: TN-M-01
+    label: "Tswana male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: TN-F-01
+    label: "Tswana female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+twi:
+  male:
+    speaker_id: TW-M-01
+    label: "Twi male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: TW-F-01
+    label: "Twi female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+umbundu:
+  male:
+    speaker_id: UMB-M-01
+    label: "Umbundu male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: UMB-F-01
+    label: "Umbundu female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+venda:
+  male:
+    speaker_id: VE-M-01
+    label: "Venda male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: VE-F-01
+    label: "Venda female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+wolof:
+  male:
+    speaker_id: WO-M-01
+    label: "Wolof male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: WO-F-01
+    label: "Wolof female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+xhosa:
+  male:
+    speaker_id: XH-M-01
+    label: "Xhosa male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: XH-F-01
+    label: "Xhosa female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+yoruba:
+  male:
+    speaker_id: YO-M-01
+    label: "Yoruba male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: YO-F-01
+    label: "Yoruba female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+
+zulu:
+  male:
+    speaker_id: ZU-M-01
+    label: "Zulu male reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only
+  female:
+    speaker_id: ZU-F-01
+    label: "Zulu female reference speaker"
+    reference_audio: []            # optional, cloning only
+    reference_text: null           # optional, cloning only

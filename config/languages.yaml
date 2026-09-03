@@ -1,0 +1,219 @@
+# ---------------------------------------------------------------------------
+# Evaluation languages (38 total).
+#
+# key       : internal identifier, used in speakers.yaml and test_sentences.csv
+# label     : text shown in the UI
+# code      : short code used inside speaker IDs and audio cache paths
+# accents   : OPTIONAL. Only languages that declare accents get an accent
+#             selector in the UI. Currently only English does.
+# available : OPTIONAL, default true. Set to false for a language the deployed
+#             systems cannot speak yet. It keeps its speakers and sentences but
+#             is never offered to a tester, so no trial can be started that the
+#             model would reject. Flip it back to true (or delete the line) as
+#             soon as the systems cover it.
+#
+# Do not add or remove languages without updating speakers.yaml and
+# test_sentences.csv accordingly - the app validates that they agree.
+#
+# The 14 languages currently marked unavailable are the ones the deployed
+# CosyVoice3 endpoint does not accept; it serves 24 of the 38 below.
+# ---------------------------------------------------------------------------
+languages:
+  - key: afrikaans
+    label: Afrikaans
+    code: AF
+    available: false
+    unavailable_reason: not served by the deployed systems yet
+
+  - key: amharic
+    label: Amharic
+    code: AM
+
+  - key: arabic
+    label: Arabic
+    code: AR
+
+  - key: bambara
+    label: Bambara
+    code: BM
+    available: false
+    unavailable_reason: not served by the deployed systems yet
+
+  - key: bemba
+    label: Bemba
+    code: BEM
+    available: false
+    unavailable_reason: not served by the deployed systems yet
+
+  - key: berber
+    label: Berber
+    code: BER
+
+  - key: chichewa
+    label: Chichewa
+    code: NY
+
+  - key: english
+    label: English
+    code: EN
+    available: false
+    unavailable_reason: not served by the deployed systems yet
+    # English is the only language with accent groups. Each accent has its
+    # own pair of reference speakers (see speakers.yaml). The accent selector
+    # appears automatically once English becomes available again.
+    accents:
+      - key: nigerian
+        label: Nigerian English
+        code: NG
+      - key: ghanaian
+        label: Ghanaian English
+        code: GH
+      - key: east_african
+        label: East African English
+        code: EA
+      - key: north_african
+        label: North African English
+        code: NA
+      - key: south_african
+        label: South African English
+        code: SA
+
+  - key: ewe
+    label: Ewe
+    code: EE
+
+  - key: fon
+    label: Fon
+    code: FON
+    available: false
+    unavailable_reason: not served by the deployed systems yet
+
+  - key: fula
+    label: Fula
+    code: FF
+
+  - key: hausa
+    label: Hausa
+    code: HA
+
+  - key: igbo
+    label: Igbo
+    code: IG
+
+  - key: kanuri
+    label: Kanuri
+    code: KR
+    available: false
+    unavailable_reason: not served by the deployed systems yet
+
+  - key: kikuyu
+    label: Kikuyu
+    code: KI
+    available: false
+    unavailable_reason: not served by the deployed systems yet
+
+  - key: kinyarwanda
+    label: Kinyarwanda
+    code: RW
+    available: false
+    unavailable_reason: not served by the deployed systems yet
+
+  - key: krio
+    label: Krio
+    code: KRI
+    available: false
+    unavailable_reason: not served by the deployed systems yet
+
+  - key: lingala
+    label: Lingala
+    code: LN
+
+  - key: luganda
+    label: Luganda
+    code: LG
+
+  - key: malagasy
+    label: Malagasy
+    code: MG
+
+  - key: ndebele
+    label: Ndebele
+    code: ND
+    available: false
+    unavailable_reason: not served by the deployed systems yet
+
+  - key: oromo
+    label: Oromo
+    code: OM
+
+  - key: sepedi
+    label: Sepedi
+    code: NSO
+
+  - key: sesotho
+    label: Sesotho
+    code: ST
+
+  - key: shona
+    label: Shona
+    code: SN
+    available: false
+    unavailable_reason: not served by the deployed systems yet
+
+  - key: somali
+    label: Somali
+    code: SO
+
+  - key: swahili
+    label: Swahili
+    code: SW
+
+  - key: swati
+    label: Swati
+    code: SS
+    available: false
+    unavailable_reason: not served by the deployed systems yet
+
+  - key: tigrinya
+    label: Tigrinya
+    code: TI
+
+  - key: tsonga
+    label: Tsonga
+    code: TS
+
+  - key: tswana
+    label: Tswana
+    code: TN
+
+  - key: twi
+    label: Twi
+    code: TW
+
+  - key: umbundu
+    label: Umbundu
+    code: UMB
+
+  - key: venda
+    label: Venda
+    code: VE
+
+  - key: wolof
+    label: Wolof
+    code: WO
+    available: false
+    unavailable_reason: not served by the deployed systems yet
+
+  - key: xhosa
+    label: Xhosa
+    code: XH
+
+  - key: yoruba
+    label: Yoruba
+    code: YO
+    available: false
+    unavailable_reason: not served by the deployed systems yet
+
+  - key: zulu
+    label: Zulu
+    code: ZU
