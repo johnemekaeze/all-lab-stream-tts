@@ -131,7 +131,7 @@ def main() -> int:
 
     page = rendered_text(app)
     check("title is neutral", "multilingual speech evaluation" in page)
-    check("instructions are shown", "listen to both samples before rating them" in page)
+    check("instructions are shown", "listen to the sample before rating it" in page)
     check("no samples are loaded initially", app.session_state["trial"] is None)
 
     # --- The important controls live in the main area, not the sidebar -----
@@ -161,7 +161,7 @@ def main() -> int:
     # Select Igbo / female and play the samples.
     app.session_state["sel_language"] = "igbo"
     app.run()
-    button_by_label(app, "Play both samples").click()
+    button_by_label(app, "Play sample").click()
     app.run()
 
     check("no exception while generating samples", not app.exception, str(app.exception))
@@ -169,20 +169,22 @@ def main() -> int:
     check("a trial is stored in session state", trial is not None)
     if trial is None:
         return 1
-    check("both samples were prepared", trial.is_ready)
+    check("the visible sample was prepared", trial.is_ready and "A" in trial.samples)
+    check("Sample B was not generated", "B" not in trial.samples)
     check(
-        "A/B mapping is randomised over the two systems",
-        {trial.assignment.model_for_A, trial.assignment.model_for_B} == {"individual", "combined"},
+        "Sample A is pinned to the live/individual system while B is hidden",
+        trial.assignment.model_for_A == "individual" and trial.assignment.model_for_B == "combined",
     )
     check("the condition is Igbo", trial.condition.language.key == "igbo")
     check("preset mode sends no reference audio", trial.condition.reference_audio is None)
     check("preset mode sends no reference text", trial.condition.reference_text is None)
-    check("both sides are flagged as placeholder audio in mock mode", all(s.mocked for s in trial.samples.values()))
+    check("the visible sample is flagged as placeholder audio in mock mode", trial.sample("A").mocked)
 
     body = rendered_text(app)
     leaks = [word for word in FORBIDDEN if word in body]
     check("rendered page reveals no system identity", not leaks, str(leaks))
-    check("Sample A and Sample B are both presented", "sample a" in body and "sample b" in body)
+    check("Sample A is presented", "sample a" in body)
+    check("Sample B is hidden", "sample b" not in body)
 
     assignment_before = (trial.assignment.model_for_A, trial.assignment.model_for_B)
     for _ in range(3):  # simulate incidental reruns
@@ -202,11 +204,9 @@ def main() -> int:
     check("nothing was saved for an incomplete submission", store.count() == 0)
     check("the trial is still loaded after a failed submission", app.session_state["trial"] is not None)
 
-    # Fill everything in and submit.
-    widget_by_key_suffix(app.radio, "::preference").set_value("A")
+    # Fill Sample A ratings and submit (B is hidden).
     for slug in ("naturalness", "pronunciation", "similarity"):
-        for label, value in (("A", 4), ("B", 3)):
-            widget_by_key_suffix(app.radio, f"::{slug}_{label}").set_value(value)
+        widget_by_key_suffix(app.radio, f"::{slug}_A").set_value(4)
     widget_by_key_suffix(app.text_area, "::comments").set_value("Smoke test comment.")
     widget_by_key_suffix(app.checkbox, "::confirmed").set_value(True)
     button_by_label(app, "Submit Evaluation").click()
@@ -224,8 +224,9 @@ def main() -> int:
         (row["sample_A_model"], row["sample_B_model"]) == assignment_before,
         str((row["sample_A_model"], row["sample_B_model"])),
     )
-    check("ratings were recorded", row["naturalness_A"] == 4 and row["naturalness_B"] == 3)
-    check("preference was recorded", row["preferred_sample"] == "A")
+    check("ratings were recorded", row["naturalness_A"] == 4)
+    check("Sample B ratings were stored as empty", row["naturalness_B"] is None)
+    check("preference is omitted while Sample B is hidden", row["preferred_sample"] in ("", None))
     check("sentence advanced for the next test", app.session_state["sel_sentence"] != row["sentence_id"])
 
     # English is withheld until the endpoint supports it.
@@ -241,7 +242,7 @@ def main() -> int:
     check("a custom sentence box appears in the main area", custom_box is not None)
     custom_box.set_value("Mo fe gbo ohun tuntun ni ojo oni.")
     app.run()
-    button_by_label(app, "Play both samples").click()
+    button_by_label(app, "Play sample").click()
     app.run()
     custom_trial = app.session_state["trial"]
     check("no exception for a custom sentence", not app.exception, str(app.exception))
@@ -261,7 +262,7 @@ def main() -> int:
         custom_trial.sample("A").cache_key,
     )
     custom_id = custom_trial.trial_id
-    button_by_label(app, "Play both samples").click()
+    button_by_label(app, "Play sample").click()
     app.run()
     reloaded = app.session_state["trial"]
     check(
@@ -302,7 +303,7 @@ def main() -> int:
     # upload is the closest thing AppTest can simulate for a recorded clip.
     uploader.set_value(("recording.wav", REFERENCE_CLIP, "audio/wav"))
     app.run()
-    button_by_label(app, "Play both samples").click()
+    button_by_label(app, "Play sample").click()
     app.run()
     clone_trial = app.session_state["trial"]
     check("no exception in clone mode", not app.exception, str(app.exception))
@@ -368,7 +369,7 @@ def main() -> int:
             "the name field starts empty when required",
             required_app.session_state["tester_id"] == "",
         )
-        button_by_label(required_app, "Play both samples").click()
+        button_by_label(required_app, "Play sample").click()
         required_app.run()
         check(
             "a missing name blocks loading",
@@ -380,7 +381,7 @@ def main() -> int:
         )
         required_app.sidebar.text_input[0].set_value("Ada Lovelace")
         required_app.run()
-        button_by_label(required_app, "Play both samples").click()
+        button_by_label(required_app, "Play sample").click()
         required_app.run()
         check(
             "loading proceeds once a name is given",
@@ -399,7 +400,7 @@ def main() -> int:
         pinned_app.run()
         mappings = set()
         for _ in range(6):
-            button_by_label(pinned_app, "Play both samples").click()
+            button_by_label(pinned_app, "Play sample").click()
             pinned_app.run()
             pinned_trial = pinned_app.session_state["trial"]
             mappings.add((pinned_trial.assignment.model_for_A, pinned_trial.assignment.model_for_B))

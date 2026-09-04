@@ -103,6 +103,10 @@ class Settings:
         """
         return self.mock_mode or not self.endpoint_configured(system)
 
+    def hide_sample_b(self) -> bool:
+        """True while combined is a placeholder; testers then only see Sample A."""
+        return self.uses_mock("combined")
+
     def live_systems(self) -> tuple[str, ...]:
         return tuple(s for s in SYSTEMS if not self.uses_mock(s))
 

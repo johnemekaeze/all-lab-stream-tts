@@ -23,16 +23,15 @@ from services.audio_cache import AudioCache
 from services.config_loader import ConfigError, Language, TestCatalog, make_custom_sentence
 from services.evaluation import (
     CLONE_MODE,
-    INSTRUCTIONS,
     PREFERENCE_CHOICES,
     PRESET_MODE,
     RATING_SCALE,
     RATING_SCALE_HELP,
-    SAMPLE_LABELS,
     Ratings,
     ReferenceAudio,
     SampleGenerationError,
     TestCondition,
+    tester_instructions,
 )
 from services import researcher_view
 from services.settings import Settings, load_settings
@@ -250,7 +249,21 @@ def apply_styles() -> None:
         st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
 
-def render_header() -> None:
+def _hide_sample_b(context: AppContext | None = None, trial=None) -> bool:
+    if trial is not None:
+        return bool(getattr(trial, "hide_sample_b", False))
+    if context is not None:
+        return context.settings.hide_sample_b()
+    return False
+
+
+def render_header(context: AppContext) -> None:
+    hide_b = context.settings.hide_sample_b()
+    lede = (
+        "Listen to the sample and rate what you hear."
+        if hide_b
+        else f"{APP_SUBTITLE} — compare two speech samples and rate what you hear."
+    )
     st.markdown(
         '<div class="app-hero">'
         '<div class="app-hero-mark" aria-hidden="true">'
@@ -259,23 +272,24 @@ def render_header() -> None:
         '<div class="app-hero-copy">'
         '<p class="app-kicker">Listening study</p>'
         f"<h1>{escape(APP_TITLE)}</h1>"
-        f'<p class="app-lede">{escape(APP_SUBTITLE)} — compare two speech samples and rate what you hear.</p>'
+        f'<p class="app-lede">{escape(lede)}</p>'
         "</div></div>",
         unsafe_allow_html=True,
     )
     st.markdown(
         f'<div class="eval-note"><span class="eval-note-label">How it works</span>'
-        f"{escape(INSTRUCTIONS)}</div>",
+        f"{escape(tester_instructions(hide_sample_b=hide_b))}</div>",
         unsafe_allow_html=True,
     )
 
 
-def render_flow_steps(trial) -> None:
+def render_flow_steps(trial, *, hide_sample_b: bool = False) -> None:
     """Three-step progress: setup, listen, rate."""
     listen_active = trial is not None and getattr(trial, "is_ready", False)
+    listen_label = "Listen to the sample" if hide_sample_b else "Listen to both samples"
     steps = (
         ("1", "Choose language & sentence", "done" if listen_active else "active"),
-        ("2", "Listen to both samples", "active" if listen_active else "pending"),
+        ("2", listen_label, "active" if listen_active else "pending"),
         ("3", "Submit your ratings", "active" if listen_active else "pending"),
     )
     chips = "".join(
@@ -312,7 +326,11 @@ def render_tester_identity(context: AppContext) -> str:
                 placeholder="e.g. Amina O.",
             ).strip()
             if mode == "required" and not st.session_state["tester_id"]:
-                st.caption("Add your name, then play a pair.")
+                st.caption(
+                    "Add your name, then play the sample."
+                    if context.settings.hide_sample_b()
+                    else "Add your name, then play a pair."
+                )
             elif mode == "prompt":
                 st.caption("Use your name, or keep the generated ID to stay anonymous.")
 
@@ -419,7 +437,11 @@ def _render_sentence_controls(context: AppContext, selection: VoiceSelection):
             placeholder="Type one sentence in the language you picked.",
         )
         if not (text or "").strip():
-            st.caption("Type a sentence, then play both samples.")
+            st.caption(
+                "Type a sentence, then play the sample."
+                if context.settings.hide_sample_b()
+                else "Type a sentence, then play both samples."
+            )
             return None
         try:
             return make_custom_sentence(text, language.key, selection.accent_key)
@@ -443,7 +465,8 @@ def _render_sentence_controls(context: AppContext, selection: VoiceSelection):
     )
     st.markdown(
         f'<p class="sentence-nav-caption">Sentence {index + 1} of {len(ids)}. '
-        "Rate this pair, then try another sentence if you want to keep going.</p>",
+        f"{'Rate this sample' if context.settings.hide_sample_b() else 'Rate this pair'}, "
+        "then try another sentence if you want to keep going.</p>",
         unsafe_allow_html=True,
     )
     prev_col, next_col = st.columns(2)
@@ -540,8 +563,9 @@ def render_test_setup(
             st.caption(voice_error)
 
         blocked = voice_error is not None or sentence is None
+        play_label = "Play sample" if context.settings.hide_sample_b() else "Play both samples"
         load = st.button(
-            "Play both samples", type="primary", use_container_width=True, disabled=blocked
+            play_label, type="primary", use_container_width=True, disabled=blocked
         )
 
     if blocked:
@@ -572,7 +596,12 @@ def render_test_setup(
 def load_trial(context: AppContext, condition: TestCondition) -> None:
     st.session_state["saved_message"] = None
     trial = evaluation.new_trial_for(context.settings, condition)
-    with st.spinner("Preparing the samples. This can take a moment..."):
+    spinner = (
+        "Preparing the sample. This can take a moment..."
+        if trial.hide_sample_b
+        else "Preparing the samples. This can take a moment..."
+    )
+    with st.spinner(spinner):
         try:
             evaluation.prepare_samples(trial, context.clients, context.cache)
         except SampleGenerationError as exc:
@@ -628,16 +657,18 @@ def render_condition_panel(trial) -> None:
 
 
 def render_samples(trial) -> None:
-    _section_title("Listen to both samples", step="2")
-    if any(sample.mocked for sample in trial.samples.values()):
+    hide_b = trial.hide_sample_b
+    labels = trial.visible_labels
+    _section_title("Listen to the sample" if hide_b else "Listen to both samples", step="2")
+    if not hide_b and any(sample.mocked for sample in trial.samples.values()):
         st.caption(
             "One sample may use placeholder audio (a synthetic tone) until the second TTS "
             "system is deployed. The other sample should be real speech when the live "
             "endpoint is configured."
         )
     st.markdown('<div class="sample-grid">', unsafe_allow_html=True)
-    columns = st.columns(2, gap="large")
-    for column, label in zip(columns, SAMPLE_LABELS):
+    columns = st.columns(len(labels), gap="large")
+    for column, label in zip(columns, labels):
         sample = trial.sample(label)
         with column:
             with st.container(border=True):
@@ -663,21 +694,26 @@ def render_rating_form(context: AppContext, trial, tester_id: str, mode: str) ->
     trial_id = trial.trial_id
     _section_title("Your ratings", step="3")
 
+    hide_b = trial.hide_sample_b
+    labels = trial.visible_labels
+
     with st.form(key=f"evaluation_form_{trial_id}", clear_on_submit=False, border=False):
-        with st.container(border=True):
-            st.markdown(
-                '<div class="criterion-title">Which sample sounds better overall?</div>',
-                unsafe_allow_html=True,
-            )
-            preference = st.radio(
-                "Overall preference",
-                options=list(PREFERENCE_CHOICES),
-                format_func=lambda value: PREFERENCE_LABELS[value],
-                index=None,
-                horizontal=True,
-                label_visibility="collapsed",
-                key=_rating_key(trial_id, "preference"),
-            )
+        preference = None
+        if not hide_b:
+            with st.container(border=True):
+                st.markdown(
+                    '<div class="criterion-title">Which sample sounds better overall?</div>',
+                    unsafe_allow_html=True,
+                )
+                preference = st.radio(
+                    "Overall preference",
+                    options=list(PREFERENCE_CHOICES),
+                    format_func=lambda value: PREFERENCE_LABELS[value],
+                    index=None,
+                    horizontal=True,
+                    label_visibility="collapsed",
+                    key=_rating_key(trial_id, "preference"),
+                )
 
         scores: dict[str, int | None] = {}
         for title, slug, help_text in rating_criteria(trial.condition.is_clone):
@@ -688,8 +724,8 @@ def render_rating_form(context: AppContext, trial, tester_id: str, mode: str) ->
                     f'<div class="criterion-scale">{escape(SCALE_LEGEND)}</div>',
                     unsafe_allow_html=True,
                 )
-                columns = st.columns(2, gap="large")
-                for column, label in zip(columns, SAMPLE_LABELS):
+                columns = st.columns(len(labels), gap="large")
+                for column, label in zip(columns, labels):
                     with column:
                         st.markdown(
                             f'<div class="rating-side">Sample {label}</div>',
@@ -707,10 +743,14 @@ def render_rating_form(context: AppContext, trial, tester_id: str, mode: str) ->
         comments = st.text_area(
             "Additional comments (optional)",
             key=_rating_key(trial_id, "comments"),
-            placeholder="Anything you noticed about either sample.",
+            placeholder=(
+                "Anything you noticed about the sample."
+                if hide_b
+                else "Anything you noticed about either sample."
+            ),
         )
         confirmed = st.checkbox(
-            "I listened to both samples in full.",
+            "I listened to the sample in full." if hide_b else "I listened to both samples in full.",
             key=_rating_key(trial_id, "confirmed"),
         )
         submitted = st.form_submit_button(
@@ -737,6 +777,7 @@ def render_rating_form(context: AppContext, trial, tester_id: str, mode: str) ->
         voice_criterion_label=(
             CRITERIA_VOICE_CLONE[0] if trial.condition.is_clone else CRITERIA_VOICE_PRESET[0]
         ),
+        hide_sample_b=trial.hide_sample_b,
     )
     if context.settings.tester_id_mode == "required" and not tester_id:
         problems.insert(0, "Please enter your name.")
@@ -816,8 +857,9 @@ def main() -> None:
     init_session(context)
     researcher_view.render_login(context.settings)
 
-    render_header()
-    render_flow_steps(st.session_state.get("trial"))
+    hide_b = context.settings.hide_sample_b()
+    render_header(context)
+    render_flow_steps(st.session_state.get("trial"), hide_sample_b=hide_b)
 
     tester_id = render_tester_identity(context)
     selection = render_voice_selection(context)
@@ -826,7 +868,11 @@ def main() -> None:
 
     if load_requested and condition is not None:
         if context.settings.tester_id_mode == "required" and not tester_id:
-            st.warning("Please enter your name before playing the samples.")
+            st.warning(
+                "Please enter your name before playing the sample."
+                if hide_b
+                else "Please enter your name before playing the samples."
+            )
         else:
             load_trial(context, condition)
 
@@ -839,18 +885,26 @@ def main() -> None:
 
     trial = st.session_state["trial"]
     if trial is None:
+        play_label = "Play sample" if hide_b else "Play both samples"
+        idle_copy = (
+            f"Press <strong>{play_label}</strong> above when your setup is complete. "
+            + (
+                "The clip appears here before you rate it."
+                if hide_b
+                else "Both clips appear here before you rate them."
+            )
+        )
+        ghosts = '<div class="sample-ghost"><span>A</span><div class="ghost-wave"></div></div>'
+        if not hide_b:
+            ghosts += '<div class="sample-ghost"><span>B</span><div class="ghost-wave"></div></div>'
         st.markdown(
             '<div class="idle-panel">'
             '<div class="idle-icon" aria-hidden="true">'
             '<span class="app-hero-bars"><i></i><i></i><i></i><i></i><i></i></span>'
             "</div>"
             "<h2>Ready when you are</h2>"
-            "<p>Press <strong>Play both samples</strong> above when your setup is complete. "
-            "Both clips appear here before you rate them.</p>"
-            '<div class="listen-preview">'
-            '<div class="sample-ghost"><span>A</span><div class="ghost-wave"></div></div>'
-            '<div class="sample-ghost"><span>B</span><div class="ghost-wave"></div></div>'
-            "</div></div>",
+            f"<p>{idle_copy}</p>"
+            f'<div class="listen-preview">{ghosts}</div></div>',
             unsafe_allow_html=True,
         )
     elif not trial.is_ready:

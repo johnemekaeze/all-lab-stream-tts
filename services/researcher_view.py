@@ -193,6 +193,12 @@ def render_dashboard(
         )
 
         st.markdown("**A/B mapping**")
+        if settings.hide_sample_b():
+            st.info(
+                "Sample B is hidden from testers while `combined` is a placeholder. "
+                "They only hear and rate Sample A. Sample B reappears when "
+                "COMBINED_ENDPOINT is a live URL."
+            )
         if settings.randomize_ab:
             st.success("Randomised per trial (bias-controlled).")
         else:

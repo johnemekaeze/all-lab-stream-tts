@@ -408,6 +408,14 @@ def main() -> int:
         )
         check("a real URL means a live system", not one_live.uses_mock(live))
         check("the literal 'mock' means a placeholder system", one_live.uses_mock(placeholder))
+        check("Sample B is hidden while combined is a placeholder", one_live.hide_sample_b())
+        check(
+            "Sample B reappears when combined is live",
+            not replace(
+                one_live,
+                endpoints={live: "https://example.invalid/tts", placeholder: "https://example.invalid/combined"},
+            ).hide_sample_b(),
+        )
         check("an empty URL means a placeholder system", replace(one_live, endpoints={live: "", placeholder: "mock"}).uses_mock(live))
         check("live/placeholder systems are reported separately", one_live.live_systems() == (live,) and one_live.mocked_systems() == (placeholder,))
         check("placeholder status is explained for the researcher", "not deployed yet" in one_live.system_status(placeholder))

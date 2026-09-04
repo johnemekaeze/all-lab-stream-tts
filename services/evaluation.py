@@ -55,6 +55,15 @@ INSTRUCTIONS = (
     "like. Judge only speech quality, naturalness, pronunciation, and voice."
 )
 
+INSTRUCTIONS_SINGLE = (
+    "Listen to the sample before rating it. You can rate one sentence or as many as you "
+    "like. Judge only speech quality, naturalness, pronunciation, and voice."
+)
+
+
+def tester_instructions(*, hide_sample_b: bool) -> str:
+    return INSTRUCTIONS_SINGLE if hide_sample_b else INSTRUCTIONS
+
 
 class EvaluationError(RuntimeError):
     """Base class for evaluation problems."""
@@ -335,10 +344,18 @@ class Trial:
     trial_id: str = field(default_factory=lambda: uuid.uuid4().hex)
     created_at: float = field(default_factory=time.time)
     samples: dict[str, PreparedSample] = field(default_factory=dict)
+    #: When True, Sample B is a placeholder system and is not generated or shown.
+    hide_sample_b: bool = False
 
     @property
     def is_ready(self) -> bool:
-        return all(label in self.samples for label in SAMPLE_LABELS)
+        if "A" not in self.samples:
+            return False
+        return self.hide_sample_b or "B" in self.samples
+
+    @property
+    def visible_labels(self) -> tuple[str, ...]:
+        return ("A",) if self.hide_sample_b else SAMPLE_LABELS
 
     def sample(self, label: str) -> PreparedSample:
         return self.samples[label]
@@ -350,22 +367,29 @@ def new_trial(
     *,
     randomize: bool = True,
     sample_a_system: str | None = None,
+    hide_sample_b: bool = False,
 ) -> Trial:
+    if hide_sample_b:
+        randomize = False
+        sample_a_system = sample_a_system or SYSTEMS[0]
     return Trial(
         condition=condition,
         assignment=SampleAssignment.resolve(
             systems, randomize=randomize, sample_a_system=sample_a_system
         ),
+        hide_sample_b=hide_sample_b,
     )
 
 
 def new_trial_for(settings: Settings, condition: TestCondition) -> Trial:
     """Trial whose A/B mapping follows the configured randomisation policy."""
+    hide = settings.hide_sample_b()
     return new_trial(
         condition,
         SYSTEMS,
-        randomize=settings.randomize_ab,
+        randomize=settings.randomize_ab and not hide,
         sample_a_system=settings.sample_a_system,
+        hide_sample_b=hide,
     )
 
 
@@ -387,16 +411,16 @@ def prepare_samples(
     clients: Mapping[str, TTSClient],
     cache: AudioCache,
 ) -> Trial:
-    """Generate (or reuse cached) audio for both samples of a trial.
+    """Generate (or reuse cached) audio for the visible samples of a trial.
 
-    Raises :class:`SampleGenerationError` if *either* side fails, so a tester
-    never sees a half-finished comparison.
+    Raises :class:`SampleGenerationError` if a required side fails. Sample B is
+    skipped entirely while it is hidden.
     """
     request = trial.condition.synthesis_request()
     fingerprint = request.fingerprint()
     failures: list[str] = []
 
-    for label in SAMPLE_LABELS:
+    for label in trial.visible_labels:
         system = trial.assignment.system_for(label)
         client = clients.get(system)
         if client is None:
@@ -469,11 +493,12 @@ def validate_ratings(
     *,
     require_listen_confirmation: bool = True,
     voice_criterion_label: str = "Voice quality",
+    hide_sample_b: bool = False,
 ) -> list[str]:
     """Return a list of human-readable problems; empty means valid."""
     problems: list[str] = []
 
-    if ratings.preference not in PREFERENCE_CHOICES:
+    if not hide_sample_b and ratings.preference not in PREFERENCE_CHOICES:
         problems.append("Please choose which sample sounds better overall.")
 
     required = (
@@ -482,13 +507,17 @@ def validate_ratings(
         (voice_criterion_label, ratings.speaker_similarity_a, ratings.speaker_similarity_b),
     )
     for name, value_a, value_b in required:
-        missing = [label for label, value in (("A", value_a), ("B", value_b)) if value not in RATING_SCALE]
+        sides = (("A", value_a),) if hide_sample_b else (("A", value_a), ("B", value_b))
+        missing = [label for label, value in sides if value not in RATING_SCALE]
         if missing:
             samples = " and ".join(f"Sample {label}" for label in missing)
             problems.append(f"Please rate {name} for {samples}.")
 
     if require_listen_confirmation and not ratings.listened_to_both:
-        problems.append("Please confirm that you listened to both samples.")
+        if hide_sample_b:
+            problems.append("Please confirm that you listened to the sample.")
+        else:
+            problems.append("Please confirm that you listened to both samples.")
 
     return problems
 
@@ -517,15 +546,15 @@ def build_result_row(
         "A": trial.assignment.model_for_A,
         "B": trial.assignment.model_for_B,
         "same": "tie",
-    }.get(ratings.preference or "", "unknown")
+    }.get(ratings.preference or "", "")
 
     sample_a = trial.samples.get("A")
     sample_b = trial.samples.get("B")
     mocked_a = bool(sample_a.mocked) if sample_a else False
-    mocked_b = bool(sample_b.mocked) if sample_b else False
+    mocked_b = bool(sample_b.mocked) if sample_b else bool(trial.hide_sample_b)
     # Per-trial accuracy: a row is "mock" when either side came from a
     # placeholder system, whatever the global setting says.
-    trial_used_mock = mocked_a or mocked_b if (sample_a and sample_b) else bool(mock_mode)
+    trial_used_mock = mocked_a or mocked_b if sample_a else bool(mock_mode)
 
     return {
         "evaluation_id": uuid.uuid4().hex,
@@ -550,8 +579,8 @@ def build_result_row(
         "speaker_similarity_A": ratings.speaker_similarity_a,
         "speaker_similarity_B": ratings.speaker_similarity_b,
         "comments": (ratings.comments or "").strip(),
-        "sample_A_cache_key": trial.samples["A"].cache_key if trial.is_ready else "",
-        "sample_B_cache_key": trial.samples["B"].cache_key if trial.is_ready else "",
+        "sample_A_cache_key": sample_a.cache_key if sample_a else "",
+        "sample_B_cache_key": sample_b.cache_key if sample_b else "",
         "generation_mode": condition.generation_mode,
         "reference_audio": condition.reference_id,
         "reference_text": condition.reference_text or "",
