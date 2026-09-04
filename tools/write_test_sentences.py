@@ -1,9 +1,9 @@
-"""Write ten everyday preset sentences for each evaluation language.
+"""DEPRECATED generated writer — mixed-language addenda (e.g. Twi + Swahili).
 
-    python tools/write_test_sentences.py
+Use tools/sample_mono_sentences.py to sample authentic sentences from
+African-Languages-Lab/all-lab-text-mono.
 
-Overwrites config/test_sentences.csv. English lines have no accent, so every
-English accent offers the same ten sentences.
+    python tools/write_test_sentences.py --force-generated
 """
 
 from __future__ import annotations
@@ -560,6 +560,14 @@ def _clean(lines: list[str]) -> list[str]:
 
 
 def main() -> int:
+    if "--force-generated" not in sys.argv:
+        print(
+            "tools/write_test_sentences.py is deprecated; it appends mixed-language addenda.\n"
+            "Use tools/sample_mono_sentences.py to sample from all-lab-text-mono.\n"
+            "Re-run with --force-generated only if you intentionally want the old output."
+        )
+        return 1
+    sys.argv = [arg for arg in sys.argv if arg != "--force-generated"]
     problems: list[str] = []
     if set(SENTENCES) != set(CODES):
         problems.append(f"key mismatch {set(SENTENCES) ^ set(CODES)}")
