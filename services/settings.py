@@ -337,7 +337,7 @@ _LOGGING_CONFIGURED = False
 def configure_logging(settings: Settings) -> logging.Logger:
     """Send technical detail to a log file; testers only ever see friendly text."""
     global _LOGGING_CONFIGURED
-    logger = logging.getLogger("cosyvoice_eval")
+    logger = logging.getLogger("stream_tts")
     if _LOGGING_CONFIGURED:
         return logger
 

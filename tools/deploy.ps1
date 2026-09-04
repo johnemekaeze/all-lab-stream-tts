@@ -1,4 +1,4 @@
-# Push cosyvoice-eval to GitHub and open Streamlit Community Cloud deploy.
+# Push all-lab-stream-tts to GitHub and open Streamlit Community Cloud deploy.
 # Run from the project root after: gh auth login
 
 $ErrorActionPreference = "Stop"
@@ -10,7 +10,7 @@ if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
 
 gh auth status | Out-Null
 
-$repoName = "cosyvoice-eval"
+$repoName = "all-lab-stream-tts"
 $status = git status --porcelain
 if ($status) {
     Write-Host "Uncommitted changes detected. Commit or stash them first."

@@ -25,7 +25,7 @@ from typing import Any, Callable, Protocol
 import requests
 import yaml
 
-logger = logging.getLogger("cosyvoice_eval.endpoint")
+logger = logging.getLogger("stream_tts.endpoint")
 
 _TEMPLATE_FIELD = re.compile(r"^\{([a-z_]+)\}$")
 

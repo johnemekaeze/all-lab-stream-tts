@@ -36,7 +36,7 @@ from .hf_endpoint import (
 )
 from .settings import SYSTEMS, Settings
 
-logger = logging.getLogger("cosyvoice_eval.evaluation")
+logger = logging.getLogger("stream_tts.evaluation")
 
 SAMPLE_LABELS: tuple[str, ...] = ("A", "B")
 PREFERENCE_CHOICES: tuple[str, ...] = ("A", "B", "same")

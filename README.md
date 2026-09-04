@@ -63,7 +63,7 @@ the audio on local disk and stores results in SQLite.
 ## 2. Project structure
 
 ```
-cosyvoice-eval/
+all-lab-stream-tts/
 ├── app.py                        Streamlit UI (tester-facing only)
 ├── selfcheck.py                  offline verification of the whole pipeline
 ├── requirements.txt

@@ -25,7 +25,7 @@ from typing import Callable
 
 from .hf_endpoint import AudioClip
 
-logger = logging.getLogger("cosyvoice_eval.cache")
+logger = logging.getLogger("stream_tts.cache")
 
 _SAFE = re.compile(r"[^A-Za-z0-9._-]+")
 

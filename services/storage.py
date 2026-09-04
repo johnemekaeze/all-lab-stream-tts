@@ -14,7 +14,7 @@ from contextlib import contextmanager
 from pathlib import Path
 from typing import Any, Iterator, Sequence
 
-logger = logging.getLogger("cosyvoice_eval.storage")
+logger = logging.getLogger("stream_tts.storage")
 
 TABLE = "evaluations"
 
