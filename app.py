@@ -514,9 +514,9 @@ def _render_voice_mode_controls() -> tuple[str, ReferenceAudio | None, str, str 
         key="clone_upload",
     )
     transcript = st.text_input(
-        "Transcript of the recording (optional)",
+        "For a better response, add a transcript",
         key="clone_transcript",
-        placeholder="Leave blank if you do not have one.",
+        placeholder="Optional, but recommended.",
     )
 
     # A fresh recording wins over a previously uploaded file.
