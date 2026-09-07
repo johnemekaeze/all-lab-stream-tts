@@ -235,7 +235,7 @@ class EndpointAdapter:
     parameters: dict[str, Any] = field(default_factory=dict)
     content_type: str = "application/json"
     method: str = "POST"
-    path: str = ""
+    path: str = "/stream"
     wrap_in_inputs: bool = False
     omit_none: bool = False
     response_mode: str = "auto"
@@ -267,7 +267,7 @@ class EndpointAdapter:
             parameters=dict(request_cfg.get("parameters") or {}),
             content_type=str(request_cfg.get("content_type") or "application/json"),
             method=str(request_cfg.get("method") or "POST").upper(),
-            path=str(request_cfg.get("path") or "").strip(),
+            path=str(request_cfg.get("path") or "/stream").strip() or "/stream",
             wrap_in_inputs=bool(request_cfg.get("wrap_in_inputs", False)),
             omit_none=bool(request_cfg.get("omit_none", False)),
             response_mode=str(response_cfg.get("mode") or "auto").lower(),
@@ -529,11 +529,8 @@ class HFEndpointClient:
 
         payload = self._adapter.build_payload(request)
         url = self._url.rstrip("/")
-        route = (self._adapter.path or "").strip()
-        if route:
-            if not route.startswith("/"):
-                route = "/" + route
-            url = url + route
+        if not url.endswith("/stream"):
+            url = url + "/stream"
         headers = {
             "Accept": "audio/wav, application/json",
             "Content-Type": self._adapter.content_type,
@@ -550,7 +547,7 @@ class HFEndpointClient:
                     json=payload,
                     headers=headers,
                     timeout=self._timeout,
-                    stream=bool(route),
+                    stream=True,
                 )
             except requests.Timeout:
                 last_error = EndpointTimeoutError(
