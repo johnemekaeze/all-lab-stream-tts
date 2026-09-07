@@ -6,24 +6,18 @@
 # code      : short code used inside speaker IDs and audio cache paths
 # accents   : OPTIONAL. Only languages that declare accents get an accent
 #             selector in the UI. Currently only English does.
-# available : OPTIONAL, default true. Set to false for a language the deployed
-#             systems cannot speak yet. It keeps its speakers and sentences but
-#             is never offered to a tester, so no trial can be started that the
-#             model would reject. Flip it back to true (or delete the line) as
-#             soon as the systems cover it.
+# available : OPTIONAL, default true. All 38 evaluation languages are offered.
 #
 # Do not add or remove languages without updating speakers.yaml and
 # test_sentences.csv accordingly - the app validates that they agree.
 #
-# The 13 languages currently marked unavailable are the ones the deployed
-# CosyVoice3 endpoint does not accept; it serves 25 of the 38 below.
+# All 38 languages below are offered to testers. The CosyVoice3 endpoints
+# serve the matching all-lab/cosyvoice3-individual-* packs (or the combined pack).
 # ---------------------------------------------------------------------------
 languages:
   - key: afrikaans
     label: Afrikaans
     code: AF
-    available: false
-    unavailable_reason: not served by the deployed systems yet
 
   - key: amharic
     label: Amharic
@@ -36,14 +30,10 @@ languages:
   - key: bambara
     label: Bambara
     code: BM
-    available: false
-    unavailable_reason: not served by the deployed systems yet
 
   - key: bemba
     label: Bemba
     code: BEM
-    available: false
-    unavailable_reason: not served by the deployed systems yet
 
   - key: berber
     label: Berber
@@ -56,11 +46,8 @@ languages:
   - key: english
     label: English
     code: EN
-    available: false
-    unavailable_reason: not served by the deployed systems yet
     # English is the only language with accent groups. Each accent has its
-    # own pair of reference speakers (see speakers.yaml). The accent selector
-    # appears automatically once English becomes available again.
+    # own pair of reference speakers (see speakers.yaml).
     accents:
       - key: nigerian
         label: Nigerian English
@@ -85,8 +72,6 @@ languages:
   - key: fon
     label: Fon
     code: FON
-    available: false
-    unavailable_reason: not served by the deployed systems yet
 
   - key: fula
     label: Fula
@@ -103,26 +88,18 @@ languages:
   - key: kanuri
     label: Kanuri
     code: KR
-    available: false
-    unavailable_reason: not served by the deployed systems yet
 
   - key: kikuyu
     label: Kikuyu
     code: KI
-    available: false
-    unavailable_reason: not served by the deployed systems yet
 
   - key: kinyarwanda
     label: Kinyarwanda
     code: RW
-    available: false
-    unavailable_reason: not served by the deployed systems yet
 
   - key: krio
     label: Krio
     code: KRI
-    available: false
-    unavailable_reason: not served by the deployed systems yet
 
   - key: lingala
     label: Lingala
@@ -139,8 +116,6 @@ languages:
   - key: ndebele
     label: Ndebele
     code: ND
-    available: false
-    unavailable_reason: not served by the deployed systems yet
 
   - key: oromo
     label: Oromo
@@ -157,8 +132,6 @@ languages:
   - key: shona
     label: Shona
     code: SN
-    available: false
-    unavailable_reason: not served by the deployed systems yet
 
   - key: somali
     label: Somali
@@ -171,8 +144,6 @@ languages:
   - key: swati
     label: Swati
     code: SS
-    available: false
-    unavailable_reason: not served by the deployed systems yet
 
   - key: tigrinya
     label: Tigrinya
@@ -201,8 +172,6 @@ languages:
   - key: wolof
     label: Wolof
     code: WO
-    available: false
-    unavailable_reason: not served by the deployed systems yet
 
   - key: xhosa
     label: Xhosa

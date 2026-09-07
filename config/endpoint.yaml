@@ -11,7 +11,10 @@
 
 request:
   # HTTP method and content type used for the synthesis call.
+  # /stream returns chunked WAV as CosyVoice generates it (POST / waits for the
+  # whole clip). The client still plays the clip once it is complete.
   method: POST
+  path: /stream
   content_type: application/json
 
   # -----------------------------------------------------------------------

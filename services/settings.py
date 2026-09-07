@@ -298,7 +298,7 @@ def load_settings(*, env_file: Path | None = None, override: bool = False) -> Se
         mock_mode=mock_mode,
         hf_token=hf_token,
         endpoints=endpoints,
-        request_timeout=_lookup_int("REQUEST_TIMEOUT", 120),
+        request_timeout=_lookup_int("REQUEST_TIMEOUT", 300),
         max_retries=max(0, _lookup_int("MAX_RETRIES", 2)),
         tester_id_mode=tester_id_mode,
         enable_random_mode=_lookup_bool("ENABLE_RANDOM_MODE", True),

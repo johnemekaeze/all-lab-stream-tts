@@ -599,7 +599,7 @@ def load_trial(context: AppContext, condition: TestCondition) -> None:
     spinner = (
         "Preparing the sample. This can take a moment..."
         if trial.hide_sample_b
-        else "Preparing the samples. This can take a moment..."
+        else "Generating both samples. A new language can take a few minutes the first time."
     )
     with st.spinner(spinner):
         try:

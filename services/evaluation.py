@@ -13,6 +13,7 @@ trial       one condition plus a fixed sample<->system assignment plus the two
 
 from __future__ import annotations
 
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import logging
 import secrets
 import time
@@ -419,14 +420,13 @@ def prepare_samples(
     request = trial.condition.synthesis_request()
     fingerprint = request.fingerprint()
     failures: list[str] = []
+    labels = list(trial.visible_labels)
 
-    for label in trial.visible_labels:
+    def _one(label: str):
         system = trial.assignment.system_for(label)
         client = clients.get(system)
         if client is None:
-            failures.append(f"no client available for system {system!r}")
-            continue
-
+            raise EndpointError(f"no client available for system {system!r}")
         mocked = bool(getattr(client, "is_mock", False))
         cache_key = CacheKey(
             system=system,
@@ -438,30 +438,38 @@ def prepare_samples(
             generation_mode=trial.condition.generation_mode,
             reference_id=trial.condition.reference_id,
         )
-        # Tagging the fingerprint means placeholder audio is never served once
-        # that system goes live against a real endpoint.
         sample_fingerprint = f"{fingerprint}:{'mock' if mocked else 'live'}"
-        try:
-            cached = cache.get_or_generate(
-                cache_key,
-                sample_fingerprint,
-                lambda client=client, request=request: client.synthesize(request),
-            )
-        except EndpointError as exc:
-            failures.append(f"{system}: {exc}")
-            continue
-        except OSError as exc:
-            failures.append(f"{system}: cache I/O error: {exc}")
-            continue
-
-        trial.samples[label] = PreparedSample(
-            sample=label,
-            system=system,
-            clip=cached.clip,
-            cache_key=cache_key.as_string(cached.clip.extension),
-            from_cache=cached.from_cache,
-            mocked=mocked,
+        cached = cache.get_or_generate(
+            cache_key,
+            sample_fingerprint,
+            lambda client=client, request=request: client.synthesize(request),
         )
+        return label, system, cached, cache_key, mocked
+
+    workers = min(2, max(1, len(labels)))
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = {pool.submit(_one, label): label for label in labels}
+        for future in as_completed(futures):
+            label = futures[future]
+            try:
+                sample_label, system, cached, cache_key, mocked = future.result()
+            except EndpointError as exc:
+                failures.append(f"{label}: {exc}")
+                continue
+            except OSError as exc:
+                failures.append(f"{label}: cache I/O error: {exc}")
+                continue
+            except Exception as exc:
+                failures.append(f"{label}: {exc}")
+                continue
+            trial.samples[sample_label] = PreparedSample(
+                sample=sample_label,
+                system=system,
+                clip=cached.clip,
+                cache_key=cache_key.as_string(cached.clip.extension),
+                from_cache=cached.from_cache,
+                mocked=mocked,
+            )
 
     if failures:
         trial.samples.clear()
