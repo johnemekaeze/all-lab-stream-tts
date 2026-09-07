@@ -65,8 +65,8 @@ arabic:
   male:
     speaker_id: AR-M-01
     label: "Arabic male reference speaker"
-    reference_audio: []            # optional, cloning only
-    reference_text: null           # optional, cloning only
+    reference_audio: ["assets/house_prompts/arabic_male.wav"]
+    reference_text: null
   female:
     speaker_id: AR-F-01
     label: "Arabic female reference speaker"

@@ -171,8 +171,16 @@ def main() -> int:
             == {"north_african_male.wav", "north_african_female.wav"},
         )
         check(
-            "non-English speakers still use the endpoint bundled voice",
-            all(not speaker.has_reference_audio for speaker in catalog.speakers if speaker.language != "english"),
+            "Arabic male uses the conversational FLEURS house prompt",
+            catalog.speaker("AR-M-01").primary_reference_audio == "assets/house_prompts/arabic_male.wav",
+        )
+        check(
+            "other non-English speakers still use the endpoint bundled voice",
+            all(
+                not speaker.has_reference_audio
+                for speaker in catalog.speakers
+                if speaker.language not in {"english", "arabic"} or speaker.speaker_id == "AR-F-01"
+            ),
         )
         custom = make_custom_sentence("  Kedụ ka ị mere? ", "igbo")
         check("custom sentence gets a stable id", custom.sentence_id.startswith("custom-"))
@@ -299,6 +307,18 @@ def main() -> int:
             and north_payload.get("prompt_audio_base64") != ghanaian_payload.get("prompt_audio_base64")
             and "prompt_text" not in north_payload,
             str(sorted(north_payload)),
+        )
+        arabic_male = build_condition(
+            catalog, language_key="arabic", speaker_id="AR-M-01", sentence_id="AR-001"
+        )
+        arabic_payload = adapter.build_payload(arabic_male.synthesis_request())
+        check(
+            "Arabic male sends the new FLEURS house prompt",
+            bool(arabic_payload.get("prompt_audio_base64"))
+            and arabic_payload.get("voice") == "male"
+            and arabic_payload.get("prompt_audio_base64") == north_payload.get("prompt_audio_base64")
+            and "prompt_text" not in arabic_payload,
+            str(sorted(arabic_payload)),
         )
 
         clip = MockTTSClient("individual").synthesize(condition.synthesis_request())

@@ -22,7 +22,7 @@
       "female": "south_african_female.wav"
     },
     "north_african": {
-      "dataset": "vetted Arabic serving reference (out-of-domain English speaker)",
+      "dataset": "FLEURS Egyptian Arabic male (fleurs_ar_eg/1513892743255336444); female is the vetted Arabic serving reference",
       "male": "north_african_male.wav",
       "female": "north_african_female.wav"
     }
