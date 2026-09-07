@@ -361,41 +361,51 @@ class VoiceSelection:
 
 
 def render_voice_selection(context: AppContext) -> VoiceSelection:
-    """Language and male/female voice. One speaker is chosen automatically."""
+    """Language, optional accent, and male/female voice. One speaker is chosen automatically."""
     catalog = context.catalog
     st.session_state["selection_mode"] = "researcher"
 
-    language_col, voice_col = st.columns(2)
-    with language_col:
-        language_key = _stable_selectbox(
-            st,
-            "Language",
-            list(catalog.language_keys()),
-            "sel_language",
-            format_func=lambda key: catalog.language(key).label,
-        )
+    language_keys = list(catalog.language_keys())
+    preview_key = st.session_state.get("sel_language")
+    if preview_key not in language_keys:
+        preview_key = language_keys[0]
+    show_accent = catalog.language(preview_key).has_accents
+
+    if show_accent:
+        language_col, accent_col, voice_col = st.columns(3)
+    else:
+        language_col, voice_col = st.columns(2)
+        accent_col = None
+
+    language_key = _stable_selectbox(
+        language_col,
+        "Language",
+        language_keys,
+        "sel_language",
+        format_func=lambda key: catalog.language(key).label,
+    )
     language = catalog.language(language_key)
 
     accent_key = None
-    with voice_col:
-        if language.has_accents:
-            accent_key = _stable_selectbox(
-                st,
-                "Accent",
-                [accent.key for accent in language.accents],
-                "sel_accent",
-                format_func=lambda key: language.accent(key).label,
-            )
-            speakers = catalog.speakers_for(language.key, accent=accent_key)
-        else:
-            gender = _stable_selectbox(
-                st,
-                "Voice",
-                list(catalog.genders(language.key)),
-                "sel_gender",
-                format_func=str.capitalize,
-            )
-            speakers = catalog.speakers_for(language.key, gender=gender)
+    if language.has_accents:
+        accent_host = accent_col if accent_col is not None else voice_col
+        accent_key = _stable_selectbox(
+            accent_host,
+            "Accent",
+            [accent.key for accent in language.accents],
+            "sel_accent",
+            format_func=lambda key: language.accent(key).label,
+        )
+
+    genders = list(catalog.genders(language.key, accent=accent_key))
+    gender = _stable_selectbox(
+        voice_col,
+        "Voice",
+        genders,
+        "sel_gender",
+        format_func=str.capitalize,
+    )
+    speakers = catalog.speakers_for(language.key, accent=accent_key, gender=gender)
 
     if not speakers:
         message = "No voice is configured for this language yet."

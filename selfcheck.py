@@ -118,6 +118,13 @@ def main() -> int:
             and all(len(catalog.speakers_for("english", accent=a.key)) == 2 for a in catalog.accents("english")),
         )
         check(
+            "every English accent has a male and a female voice",
+            all(
+                catalog.genders("english", accent=accent.key) == ("male", "female")
+                for accent in catalog.accents("english")
+            ),
+        )
+        check(
             "37 non-English languages have exactly 1 male + 1 female speaker",
             all(
                 len(catalog.speakers_for(language.key, gender="male")) == 1

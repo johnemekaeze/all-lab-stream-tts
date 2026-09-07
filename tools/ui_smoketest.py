@@ -229,9 +229,47 @@ def main() -> int:
     check("preference is omitted while Sample B is hidden", row["preferred_sample"] in ("", None))
     check("sentence advanced for the next test", app.session_state["sel_sentence"] != row["sentence_id"])
 
-    # English is withheld until the endpoint supports it.
+    # English: accent and gender are both selectable.
     language_box = widget_by_key_suffix(app.selectbox, "sel_language")
-    check("English is not offered yet", "english" not in language_box.options, str(language_box.options))
+    check("English is offered", "english" in language_box.options, str(language_box.options))
+    app.session_state["sel_language"] = "english"
+    app.run()
+    accent_box = widget_by_key_suffix(app.selectbox, "sel_accent")
+    gender_box = widget_by_key_suffix(app.selectbox, "sel_gender")
+    check("English shows an accent picker", accent_box is not None)
+    check(
+        "English accents are listed",
+        accent_box is not None and "ghanaian" in accent_box.options and "nigerian" in accent_box.options,
+        str(getattr(accent_box, "options", None)),
+    )
+    check("English still shows a gender picker", gender_box is not None)
+    check(
+        "English gender options are male and female",
+        gender_box is not None and list(gender_box.options) == ["male", "female"],
+        str(getattr(gender_box, "options", None)),
+    )
+    app.session_state["sel_accent"] = "ghanaian"
+    app.session_state["sel_gender"] = "male"
+    app.run()
+    button_by_label(app, "Play sample").click()
+    app.run()
+    english_trial = app.session_state["trial"]
+    check("no exception for English accent + gender", not app.exception, str(app.exception))
+    check("an English trial loads", english_trial is not None and english_trial.is_ready)
+    if english_trial is not None:
+        check(
+            "Ghanaian male maps to the Ghanaian male speaker",
+            english_trial.condition.speaker.speaker_id == "EN-GH-01"
+            and english_trial.condition.gender == "male"
+            and english_trial.condition.accent_key == "ghanaian",
+            str(
+                (
+                    english_trial.condition.speaker.speaker_id,
+                    english_trial.condition.gender,
+                    english_trial.condition.accent_key,
+                )
+            ),
+        )
 
     # --- Custom sentence typed in the main area ---------------------------
     app.session_state["sel_language"] = "igbo"
