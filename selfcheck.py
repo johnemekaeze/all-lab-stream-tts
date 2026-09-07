@@ -157,21 +157,18 @@ def main() -> int:
         except ConfigError:
             check("missing configuration raises ConfigError", True)
 
-        english_with_prompts = [
-            s for s in catalog.speakers if s.language == "english" and s.accent != "north_african"
-        ]
-        english_without = [
-            s for s in catalog.speakers if s.language == "english" and s.accent == "north_african"
-        ]
+        english_speakers = [s for s in catalog.speakers if s.language == "english"]
         check(
-            "English accent house prompts are configured (except North African)",
-            all(speaker.has_reference_audio for speaker in english_with_prompts)
-            and len(english_with_prompts) == 8,
-            str(len(english_with_prompts)),
+            "every English accent has a house prompt",
+            all(speaker.has_reference_audio for speaker in english_speakers)
+            and len(english_speakers) == 10,
+            str(len(english_speakers)),
         )
+        north = catalog.speakers_for("english", accent="north_african")
         check(
-            "North African English has no house prompt (no corpus in the candidate set)",
-            all(not speaker.has_reference_audio for speaker in english_without),
+            "North African English clones the Arabic speaker clips",
+            {Path(s.primary_reference_audio or "").name for s in north}
+            == {"north_african_male.wav", "north_african_female.wav"},
         )
         check(
             "non-English speakers still use the endpoint bundled voice",
@@ -286,6 +283,22 @@ def main() -> int:
             "Nigerian and Ghanaian house prompts are different clips",
             ghanaian_payload.get("prompt_audio_base64") != nigerian_payload.get("prompt_audio_base64")
             and nigerian_payload.get("accent") == "nigerian",
+        )
+        north = build_condition(
+            catalog,
+            language_key="english",
+            speaker_id="EN-NA-01",
+            sentence_id="EN-001",
+            accent_key="north_african",
+        )
+        north_payload = adapter.build_payload(north.synthesis_request())
+        check(
+            "North African English sends the Arabic speaker clip",
+            bool(north_payload.get("prompt_audio_base64"))
+            and north_payload.get("accent") == "north_african"
+            and north_payload.get("prompt_audio_base64") != ghanaian_payload.get("prompt_audio_base64")
+            and "prompt_text" not in north_payload,
+            str(sorted(north_payload)),
         )
 
         clip = MockTTSClient("individual").synthesize(condition.synthesis_request())

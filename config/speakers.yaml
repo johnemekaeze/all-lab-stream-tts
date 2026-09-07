@@ -9,7 +9,7 @@
 # These speakers are house voices. Non-English languages send only language +
 # gender; the endpoint clones its bundled male/female prompt.
 # English accents that have a candidate clip send that wav as prompt_audio so
-# the accent actually changes. North African has no clip in the candidate set.
+# the accent actually changes. North African clones the vetted Arabic speaker.
 #
 # Replace the placeholders:
 #   speaker_id      -> your real reference-speaker identifier (REQUIRED)
@@ -124,7 +124,7 @@ chichewa:
 english:
   # House prompts from the Sep 4 english_accents candidate set.
   # Preset English sends the clip (no transcript: those corpus texts collapse
-  # zero-shot). North African has no usable English corpus in that set.
+  # zero-shot). North African uses the vetted Arabic speaker.
   nigerian:
     - speaker_id: EN-NG-01
       gender: male
@@ -164,13 +164,13 @@ english:
   north_african:
     - speaker_id: EN-NA-01
       gender: male
-      label: "North African English reference speaker 1"
-      reference_audio: []
+      label: "North African English (Arabic speaker) 1"
+      reference_audio: ["assets/english_accents/north_african_male.wav"]
       reference_text: null
     - speaker_id: EN-NA-02
       gender: female
-      label: "North African English reference speaker 2"
-      reference_audio: []
+      label: "North African English (Arabic speaker) 2"
+      reference_audio: ["assets/english_accents/north_african_female.wav"]
       reference_text: null
 
   south_african:

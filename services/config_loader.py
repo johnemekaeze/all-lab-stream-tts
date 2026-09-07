@@ -63,8 +63,8 @@ class Speaker:
     `reference_audio` is the house prompt clip for this speaker. Non-English
     languages leave it empty and use the endpoint's bundled male/female voice.
     English accents that have a candidate clip send that file on every preset
-    request so Nigerian / Ghanaian / East African / South African actually
-    clone different speakers. Placeholder values are discarded at load time.
+    request so each English accent clones a different speaker. Placeholder
+    values are discarded at load time.
     """
 
     speaker_id: str
