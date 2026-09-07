@@ -161,6 +161,10 @@ def main() -> int:
     # Select Igbo / female and play the samples.
     app.session_state["sel_language"] = "igbo"
     app.run()
+    check(
+        "Accent is hidden for non-English languages",
+        widget_by_key_suffix(app.selectbox, "sel_accent") is None,
+    )
     button_by_label(app, "Play sample").click()
     app.run()
 
