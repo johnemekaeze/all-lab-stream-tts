@@ -6,9 +6,10 @@
 #                                                          ----
 #                                                            84
 #
-# These speakers are PRESETS that already exist inside the model, so the
-# default generation path sends nothing but the speaker selection: NO
-# reference audio and NO reference text.
+# These speakers are house voices. Non-English languages send only language +
+# gender; the endpoint clones its bundled male/female prompt.
+# English accents that have a candidate clip send that wav as prompt_audio so
+# the accent actually changes. North African has no clip in the candidate set.
 #
 # Replace the placeholders:
 #   speaker_id      -> your real reference-speaker identifier (REQUIRED)
@@ -121,70 +122,68 @@ chichewa:
     reference_text: null           # optional, cloning only
 
 english:
-  # Nigerian English
+  # House prompts from the Sep 4 english_accents candidate set.
+  # Preset English sends the clip (no transcript: those corpus texts collapse
+  # zero-shot). North African has no usable English corpus in that set.
   nigerian:
     - speaker_id: EN-NG-01
-      gender: male        # PLACEHOLDER - set the real speaker gender
+      gender: male
       label: "Nigerian English reference speaker 1"
-      reference_audio: []       # optional, cloning only
-      reference_text: null      # optional, cloning only
+      reference_audio: ["assets/english_accents/nigerian_male.wav"]
+      reference_text: null
     - speaker_id: EN-NG-02
-      gender: female        # PLACEHOLDER - set the real speaker gender
+      gender: female
       label: "Nigerian English reference speaker 2"
-      reference_audio: []       # optional, cloning only
-      reference_text: null      # optional, cloning only
+      reference_audio: ["assets/english_accents/nigerian_female.wav"]
+      reference_text: null
 
-  # Ghanaian English
   ghanaian:
     - speaker_id: EN-GH-01
-      gender: male        # PLACEHOLDER - set the real speaker gender
+      gender: male
       label: "Ghanaian English reference speaker 1"
-      reference_audio: []       # optional, cloning only
-      reference_text: null      # optional, cloning only
+      reference_audio: ["assets/english_accents/ghanaian_male.wav"]
+      reference_text: null
     - speaker_id: EN-GH-02
-      gender: female        # PLACEHOLDER - set the real speaker gender
+      gender: female
       label: "Ghanaian English reference speaker 2"
-      reference_audio: []       # optional, cloning only
-      reference_text: null      # optional, cloning only
+      reference_audio: ["assets/english_accents/ghanaian_female.wav"]
+      reference_text: null
 
-  # East African English
   east_african:
     - speaker_id: EN-EA-01
-      gender: male        # PLACEHOLDER - set the real speaker gender
+      gender: male
       label: "East African English reference speaker 1"
-      reference_audio: []       # optional, cloning only
-      reference_text: null      # optional, cloning only
+      reference_audio: ["assets/english_accents/east_african_male.wav"]
+      reference_text: null
     - speaker_id: EN-EA-02
-      gender: female        # PLACEHOLDER - set the real speaker gender
+      gender: female
       label: "East African English reference speaker 2"
-      reference_audio: []       # optional, cloning only
-      reference_text: null      # optional, cloning only
+      reference_audio: ["assets/english_accents/east_african_female.wav"]
+      reference_text: null
 
-  # North African English
   north_african:
     - speaker_id: EN-NA-01
-      gender: male        # PLACEHOLDER - set the real speaker gender
+      gender: male
       label: "North African English reference speaker 1"
-      reference_audio: []       # optional, cloning only
-      reference_text: null      # optional, cloning only
+      reference_audio: []
+      reference_text: null
     - speaker_id: EN-NA-02
-      gender: female        # PLACEHOLDER - set the real speaker gender
+      gender: female
       label: "North African English reference speaker 2"
-      reference_audio: []       # optional, cloning only
-      reference_text: null      # optional, cloning only
+      reference_audio: []
+      reference_text: null
 
-  # South African English
   south_african:
     - speaker_id: EN-SA-01
-      gender: male        # PLACEHOLDER - set the real speaker gender
+      gender: male
       label: "South African English reference speaker 1"
-      reference_audio: []       # optional, cloning only
-      reference_text: null      # optional, cloning only
+      reference_audio: ["assets/english_accents/south_african_male.wav"]
+      reference_text: null
     - speaker_id: EN-SA-02
-      gender: female        # PLACEHOLDER - set the real speaker gender
+      gender: female
       label: "South African English reference speaker 2"
-      reference_audio: []       # optional, cloning only
-      reference_text: null      # optional, cloning only
+      reference_audio: ["assets/english_accents/south_african_female.wav"]
+      reference_text: null
 
 ewe:
   male:

@@ -270,6 +270,13 @@ def main() -> int:
                 )
             ),
         )
+        check(
+            "Ghanaian preset clones the Ghanaian house prompt",
+            english_trial.condition.generation_mode == "preset"
+            and english_trial.condition.reference_audio is not None
+            and "ghanaian_male" in english_trial.condition.reference_audio.name,
+            str(getattr(english_trial.condition.reference_audio, "name", None)),
+        )
 
     # --- Custom sentence typed in the main area ---------------------------
     app.session_state["sel_language"] = "igbo"

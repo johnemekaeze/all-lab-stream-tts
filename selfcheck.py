@@ -90,7 +90,7 @@ class _StubSession:
         self._exception = exception
         self.calls = 0
 
-    def request(self, method, url, json=None, headers=None, timeout=None):
+    def request(self, method, url, json=None, headers=None, timeout=None, **_kwargs):
         self.calls += 1
         if self._exception is not None:
             raise self._exception
@@ -157,9 +157,25 @@ def main() -> int:
         except ConfigError:
             check("missing configuration raises ConfigError", True)
 
+        english_with_prompts = [
+            s for s in catalog.speakers if s.language == "english" and s.accent != "north_african"
+        ]
+        english_without = [
+            s for s in catalog.speakers if s.language == "english" and s.accent == "north_african"
+        ]
         check(
-            "speaker reference audio is optional (presets need none)",
-            all(not speaker.has_reference_audio for speaker in catalog.speakers),
+            "English accent house prompts are configured (except North African)",
+            all(speaker.has_reference_audio for speaker in english_with_prompts)
+            and len(english_with_prompts) == 8,
+            str(len(english_with_prompts)),
+        )
+        check(
+            "North African English has no house prompt (no corpus in the candidate set)",
+            all(not speaker.has_reference_audio for speaker in english_without),
+        )
+        check(
+            "non-English speakers still use the endpoint bundled voice",
+            all(not speaker.has_reference_audio for speaker in catalog.speakers if speaker.language != "english"),
         )
         custom = make_custom_sentence("  Kedụ ka ị mere? ", "igbo")
         check("custom sentence gets a stable id", custom.sentence_id.startswith("custom-"))
@@ -240,6 +256,37 @@ def main() -> int:
         check("payload carries the language the endpoint expects", payload["language"] == "igbo")
         check("payload carries the selected voice", payload["voice"] == "female")
         check("preset is the default generation mode", condition.generation_mode == PRESET_MODE)
+
+        ghanaian = build_condition(
+            catalog,
+            language_key="english",
+            speaker_id="EN-GH-01",
+            sentence_id="EN-001",
+            accent_key="ghanaian",
+        )
+        ghanaian_payload = adapter.build_payload(ghanaian.synthesis_request())
+        nigerian = build_condition(
+            catalog,
+            language_key="english",
+            speaker_id="EN-NG-01",
+            sentence_id="EN-001",
+            accent_key="nigerian",
+        )
+        nigerian_payload = adapter.build_payload(nigerian.synthesis_request())
+        check("English preset stays preset (testers do not see clone mode)", ghanaian.generation_mode == PRESET_MODE)
+        check(
+            "Ghanaian English sends its own house prompt",
+            bool(ghanaian_payload.get("prompt_audio_base64"))
+            and ghanaian_payload.get("accent") == "ghanaian"
+            and ghanaian_payload.get("voice") == "male"
+            and "prompt_text" not in ghanaian_payload,
+            str(sorted(ghanaian_payload)),
+        )
+        check(
+            "Nigerian and Ghanaian house prompts are different clips",
+            ghanaian_payload.get("prompt_audio_base64") != nigerian_payload.get("prompt_audio_base64")
+            and nigerian_payload.get("accent") == "nigerian",
+        )
 
         clip = MockTTSClient("individual").synthesize(condition.synthesis_request())
         check("mock mode produces WAV audio", clip.data.startswith(b"RIFF") and clip.size_bytes > 1000)

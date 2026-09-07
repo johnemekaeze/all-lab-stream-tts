@@ -1,0 +1,28 @@
+{
+  "note": "House prompts for English accents. Sent as prompt_audio_base64 without prompt_text (cross-lingual). Corpus transcripts collapsed zero-shot on several of these clips.",
+  "accents": {
+    "nigerian": {
+      "dataset": "Crowdsourced high-quality Nigerian English speech data set",
+      "male": "nigerian_male.wav",
+      "female": "nigerian_female.wav"
+    },
+    "ghanaian": {
+      "dataset": "ghana-english-asr-2700hrs",
+      "male": "ghanaian_male.wav",
+      "female": "ghanaian_female.wav"
+    },
+    "east_african": {
+      "dataset": "salt (Sunbird AI, Ugandan English)",
+      "male": "east_african_male.wav",
+      "female": "east_african_female.wav"
+    },
+    "south_african": {
+      "dataset": "Afrikaans speaker (SA English corpus is 8 kHz and unusable)",
+      "male": "south_african_male.wav",
+      "female": "south_african_female.wav"
+    }
+  },
+  "missing": {
+    "north_african": "No usable North African English corpus was in the candidate set."
+  }
+}

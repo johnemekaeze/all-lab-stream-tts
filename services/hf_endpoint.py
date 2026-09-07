@@ -150,9 +150,10 @@ class SynthesisRequest:
     def template_fields(self) -> dict[str, Any]:
         """Values available to the payload templates in endpoint.yaml.
 
-        Reference fields are always None outside clone mode.
+        House-voice clips (English accents) travel as reference_audio even in
+        preset mode. User clone mode also sends optional reference_text.
         """
-        reference = self.reference_audio if self.is_clone else None
+        reference = self.reference_audio
         return {
             "text": self.text,
             "language": self.language,
@@ -172,7 +173,7 @@ class SynthesisRequest:
 
     def fingerprint(self) -> str:
         """Stable hash of the request content (used for cache invalidation)."""
-        reference = self.reference_audio if self.is_clone else None
+        reference = self.reference_audio
         payload = json.dumps(
             {
                 "text": self.text,
@@ -191,7 +192,7 @@ class SynthesisRequest:
         return hashlib.sha256(payload.encode("utf-8")).hexdigest()[:16]
 
     def reference_identifier(self) -> str:
-        reference = self.reference_audio if self.is_clone else None
+        reference = self.reference_audio
         return reference.identifier if reference else ""
 
 

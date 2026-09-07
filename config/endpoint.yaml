@@ -61,6 +61,10 @@ request:
     inputs: "{text}"
     language: "{language}"
     voice: "{gender}"
+    accent: "{accent}"
+    # Present only for English house-voice accents (and any speaker that has a
+    # bundled clip). Dropped automatically when the speaker has no file.
+    prompt_audio_base64: "{reference_audio}"
 
   payload_clone:
     inputs: "{text}"
@@ -84,7 +88,7 @@ request:
   parameters: {}
 
   # Drop keys whose rendered value is None instead of sending nulls.
-  omit_none: false
+  omit_none: true
 
 response:
   # auto   -> decide from the Content-Type header (recommended)

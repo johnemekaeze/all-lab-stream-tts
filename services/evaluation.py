@@ -14,7 +14,9 @@ trial       one condition plus a fixed sample<->system assignment plus the two
 from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from functools import lru_cache
 import logging
+from pathlib import Path
 import secrets
 import time
 import uuid
@@ -165,6 +167,23 @@ def _clean_reference_text(value: str | None) -> str | None:
     return cleaned or None
 
 
+@lru_cache(maxsize=32)
+def _read_house_prompt_bytes(path: str) -> bytes:
+    data = Path(path).read_bytes()
+    if len(data) < 64:
+        raise EvaluationError(f"House prompt {path} is too small to be audio")
+    return data
+
+
+def load_house_prompt(catalog: TestCatalog, speaker: Speaker) -> ReferenceAudio | None:
+    """Load the speaker's bundled clip, if speakers.yaml points at one."""
+    rel = speaker.primary_reference_audio
+    if not rel:
+        return None
+    path = (catalog.source_dir.parent / rel).resolve()
+    return ReferenceAudio.from_upload(_read_house_prompt_bytes(str(path)), path.name)
+
+
 def build_condition(
     catalog: TestCatalog,
     *,
@@ -195,6 +214,12 @@ def build_condition(
         raise EvaluationError(
             "Voice cloning needs reference audio - upload a clip or give a URL."
         )
+    if generation_mode == PRESET_MODE:
+        # English accents (and any speaker with a house clip) clone that file.
+        # Do not send the corpus transcript: several of those texts collapse
+        # zero-shot. Cross-lingual keeps the accent and avoids the collapse.
+        reference_audio = load_house_prompt(catalog, speaker)
+        reference_text = None
 
     if not language.available:
         raise EvaluationError(
@@ -227,7 +252,7 @@ def build_condition(
         sentence=sentence,
         accent=accent,
         generation_mode=generation_mode,
-        reference_audio=reference_audio if generation_mode == CLONE_MODE else None,
+        reference_audio=reference_audio,
         reference_text=_clean_reference_text(reference_text) if generation_mode == CLONE_MODE else None,
     )
 
@@ -246,14 +271,15 @@ def pick_random_condition(
     this session.
     """
     conditions = [
-        TestCondition(
-            language=language,
-            speaker=speaker,
+        build_condition(
+            catalog,
+            language_key=language.key,
+            speaker_id=speaker.speaker_id,
             sentence=sentence,
-            accent=accent,
+            accent_key=accent.key if accent else None,
             generation_mode=generation_mode,
-            reference_audio=reference_audio if generation_mode == CLONE_MODE else None,
-            reference_text=_clean_reference_text(reference_text) if generation_mode == CLONE_MODE else None,
+            reference_audio=reference_audio,
+            reference_text=reference_text,
         )
         for language, accent, speaker, sentence in catalog.iter_conditions()
     ]

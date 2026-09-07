@@ -361,21 +361,12 @@ class VoiceSelection:
 
 
 def render_voice_selection(context: AppContext) -> VoiceSelection:
-    """Language, optional accent, and male/female voice. One speaker is chosen automatically."""
+    """Language, then English accent if needed, then gender. Gender is never replaced."""
     catalog = context.catalog
     st.session_state["selection_mode"] = "researcher"
 
     language_keys = list(catalog.language_keys())
-    preview_key = st.session_state.get("sel_language")
-    if preview_key not in language_keys:
-        preview_key = language_keys[0]
-    show_accent = catalog.language(preview_key).has_accents
-
-    if show_accent:
-        language_col, accent_col, voice_col = st.columns(3)
-    else:
-        language_col, voice_col = st.columns(2)
-        accent_col = None
+    language_col, accent_col, gender_col = st.columns(3)
 
     language_key = _stable_selectbox(
         language_col,
@@ -388,19 +379,21 @@ def render_voice_selection(context: AppContext) -> VoiceSelection:
 
     accent_key = None
     if language.has_accents:
-        accent_host = accent_col if accent_col is not None else voice_col
         accent_key = _stable_selectbox(
-            accent_host,
+            accent_col,
             "Accent",
             [accent.key for accent in language.accents],
             "sel_accent",
             format_func=lambda key: language.accent(key).label,
         )
+    else:
+        accent_col.caption("Accent")
+        accent_col.markdown("—")
 
     genders = list(catalog.genders(language.key, accent=accent_key))
     gender = _stable_selectbox(
-        voice_col,
-        "Voice",
+        gender_col,
+        "Gender",
         genders,
         "sel_gender",
         format_func=str.capitalize,

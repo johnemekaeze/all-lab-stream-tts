@@ -60,10 +60,11 @@ class Language:
 class Speaker:
     """A reference speaker preset that already exists inside the model.
 
-    `reference_audio` is OPTIONAL and unused by the default (preset) generation
-    path: the speaker prompt is baked into the model, so `speaker_id` is all
-    that gets sent. It only serves as a convenient default cloning prompt.
-    Placeholder values are discarded at load time so they can never be sent.
+    `reference_audio` is the house prompt clip for this speaker. Non-English
+    languages leave it empty and use the endpoint's bundled male/female voice.
+    English accents that have a candidate clip send that file on every preset
+    request so Nigerian / Ghanaian / East African / South African actually
+    clone different speakers. Placeholder values are discarded at load time.
     """
 
     speaker_id: str
@@ -473,6 +474,15 @@ def _validate(catalog: TestCatalog) -> None:
                 problems.append(f"no speakers configured for {language.key}")
             if not catalog.sentences_for(language.key):
                 problems.append(f"no test sentences configured for {language.key}")
+
+    root = catalog.source_dir.parent
+    for speaker in catalog.speakers:
+        for rel in speaker.reference_audio:
+            path = (root / rel).resolve()
+            if not path.is_file():
+                problems.append(
+                    f"missing house prompt for {speaker.speaker_id}: {rel}"
+                )
 
     if problems:
         raise ConfigError("Invalid test configuration:\n  - " + "\n  - ".join(problems))
