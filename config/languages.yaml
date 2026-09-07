@@ -15,8 +15,8 @@
 # Do not add or remove languages without updating speakers.yaml and
 # test_sentences.csv accordingly - the app validates that they agree.
 #
-# The 14 languages currently marked unavailable are the ones the deployed
-# CosyVoice3 endpoint does not accept; it serves 24 of the 38 below.
+# The 13 languages currently marked unavailable are the ones the deployed
+# CosyVoice3 endpoint does not accept; it serves 25 of the 38 below.
 # ---------------------------------------------------------------------------
 languages:
   - key: afrikaans
@@ -211,8 +211,6 @@ languages:
   - key: yoruba
     label: Yoruba
     code: YO
-    available: false
-    unavailable_reason: not served by the deployed systems yet
 
   - key: zulu
     label: Zulu
