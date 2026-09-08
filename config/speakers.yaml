@@ -122,7 +122,8 @@ chichewa:
     reference_text: null           # optional, cloning only
 
 english:
-  # House prompts from the Sep 4 english_accents candidate set.
+  # English house prompts from the llm150k__flow160k listen-set _refs
+# (Nigerian male/female replaced after listening).
   # Preset English sends the clip (no transcript: those corpus texts collapse
   # zero-shot). North African uses the vetted Arabic speaker.
   nigerian:
