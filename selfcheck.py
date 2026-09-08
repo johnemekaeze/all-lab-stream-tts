@@ -283,7 +283,7 @@ def main() -> int:
             "Ghanaian English sends its own house prompt",
             bool(ghanaian_payload.get("prompt_audio_base64"))
             and ghanaian_payload.get("accent") == "ghanaian"
-            and ghanaian_payload.get("voice") == "male"
+            and ghanaian_payload.get("voice") == "ghanaian_male"
             and "prompt_text" not in ghanaian_payload,
             str(sorted(ghanaian_payload)),
         )

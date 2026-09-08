@@ -60,7 +60,7 @@ request:
   payload:
     inputs: "{text}"
     language: "{language}"
-    voice: "{gender}"
+    voice: "{voice}"
     accent: "{accent}"
     # Present only for English house-voice accents (and any speaker that has a
     # bundled clip). Dropped automatically when the speaker has no file.

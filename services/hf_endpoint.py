@@ -161,6 +161,11 @@ class SynthesisRequest:
             "language_code": self.language_code,
             "speaker_id": self.speaker_id,
             "gender": self.gender,
+            "voice": (
+                f"{self.accent}_{self.gender}"
+                if self.language == "english" and self.accent
+                else self.gender
+            ),
             "sentence_id": self.sentence_id,
             "accent": self.accent,
             "accent_label": self.accent_label,
@@ -216,7 +221,7 @@ class AudioClip:
 DEFAULT_PRESET_PAYLOAD: dict[str, Any] = {
     "inputs": "{text}",
     "language": "{language}",
-    "voice": "{gender}",
+    "voice": "{voice}",
 }
 
 DEFAULT_CLONE_PAYLOAD: dict[str, Any] = {
