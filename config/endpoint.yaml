@@ -65,6 +65,7 @@ request:
     # Present only for English house-voice accents (and any speaker that has a
     # bundled clip). Dropped automatically when the speaker has no file.
     prompt_audio_base64: "{reference_audio}"
+    prompt_text: "{reference_text}"
 
   payload_clone:
     inputs: "{text}"

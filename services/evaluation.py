@@ -216,11 +216,10 @@ def build_condition(
             "Voice cloning needs reference audio - upload a clip or give a URL."
         )
     if generation_mode == PRESET_MODE:
-        # English accents (and any speaker with a house clip) clone that file.
-        # Do not send the corpus transcript: several of those texts collapse
-        # zero-shot. Cross-lingual keeps the accent and avoids the collapse.
+        # English house clips clone with the matching _refs transcript (zero-shot).
         reference_audio = load_house_prompt(catalog, speaker)
-        reference_text = None
+        if not reference_text:
+            reference_text = speaker.reference_text
 
     if not language.available:
         raise EvaluationError(
@@ -254,7 +253,7 @@ def build_condition(
         accent=accent,
         generation_mode=generation_mode,
         reference_audio=reference_audio,
-        reference_text=_clean_reference_text(reference_text) if generation_mode == CLONE_MODE else None,
+        reference_text=_clean_reference_text(reference_text),
     )
 
 

@@ -280,17 +280,19 @@ def main() -> int:
         nigerian_payload = adapter.build_payload(nigerian.synthesis_request())
         check("English preset stays preset (testers do not see clone mode)", ghanaian.generation_mode == PRESET_MODE)
         check(
-            "Ghanaian English sends its own house prompt",
+            "Ghanaian English sends its house prompt as zero-shot",
             bool(ghanaian_payload.get("prompt_audio_base64"))
             and ghanaian_payload.get("accent") == "ghanaian"
             and ghanaian_payload.get("voice") == "ghanaian_male"
-            and "prompt_text" not in ghanaian_payload,
-            str(sorted(ghanaian_payload)),
+            and ghanaian_payload.get("prompt_text") == "Koko yɛ aduan a yɛtae di no anɔpa.",
+            str({k: ghanaian_payload.get(k) for k in ("voice", "accent", "prompt_text")}),
         )
         check(
             "Nigerian and Ghanaian house prompts are different clips",
             ghanaian_payload.get("prompt_audio_base64") != nigerian_payload.get("prompt_audio_base64")
-            and nigerian_payload.get("accent") == "nigerian",
+            and nigerian_payload.get("accent") == "nigerian"
+            and nigerian_payload.get("prompt_text")
+            == "Onye egwuregwu nke taa a na-akwanyere ugwu Taa bụ Alex Ovechkin nke Washington Capitals.",
         )
         north = build_condition(
             catalog,
@@ -301,22 +303,22 @@ def main() -> int:
         )
         north_payload = adapter.build_payload(north.synthesis_request())
         check(
-            "North African English sends the Arabic speaker clip",
+            "North African English sends the Arabic speaker clip as zero-shot",
             bool(north_payload.get("prompt_audio_base64"))
             and north_payload.get("accent") == "north_african"
             and north_payload.get("prompt_audio_base64") != ghanaian_payload.get("prompt_audio_base64")
-            and "prompt_text" not in north_payload,
-            str(sorted(north_payload)),
+            and "التزلج" in (north_payload.get("prompt_text") or ""),
+            str(north_payload.get("prompt_text")),
         )
         arabic_male = build_condition(
             catalog, language_key="arabic", speaker_id="AR-M-01", sentence_id="AR-001"
         )
         arabic_payload = adapter.build_payload(arabic_male.synthesis_request())
         check(
-            "Arabic male sends the new FLEURS house prompt",
+            "Arabic language male stays on its own house clip, not North African English",
             bool(arabic_payload.get("prompt_audio_base64"))
             and arabic_payload.get("voice") == "male"
-            and arabic_payload.get("prompt_audio_base64") == north_payload.get("prompt_audio_base64")
+            and arabic_payload.get("prompt_audio_base64") != north_payload.get("prompt_audio_base64")
             and "prompt_text" not in arabic_payload,
             str(sorted(arabic_payload)),
         )

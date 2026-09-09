@@ -182,7 +182,7 @@ class SynthesisRequest:
             "reference_audio": reference,
             "reference_audio_list": [reference] if reference else [],
             "reference_audio_name": reference.name if reference else None,
-            "reference_text": (self.reference_text or None) if self.is_clone else None,
+            "reference_text": self.reference_text or None,
         }
 
     def fingerprint(self) -> str:
@@ -198,7 +198,7 @@ class SynthesisRequest:
                 "sentence_id": self.sentence_id,
                 "generation_mode": self.generation_mode,
                 "reference_audio": reference.identifier if reference else None,
-                "reference_text": (self.reference_text or None) if self.is_clone else None,
+                "reference_text": self.reference_text or None,
             },
             sort_keys=True,
             default=str,

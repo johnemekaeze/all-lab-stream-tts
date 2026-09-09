@@ -1,34 +1,10 @@
 {
-  "note": "House prompts for English accents from the llm150k__flow160k listen-set _refs. Sent as prompt_audio_base64 without prompt_text (cross-lingual).",
+  "note": "Current _refs English-accent house prompts. Zero-shot with matching transcripts (wav language, not English corpus text).",
   "accents": {
-    "nigerian": {
-      "dataset": "Crowdsourced high-quality Nigerian English speech data set",
-      "male": "nigerian_male.wav",
-      "female": "nigerian_female.wav",
-      "speakers": {
-        "male": "ngm_12484",
-        "female": "ngf_02484"
-      }
-    },
-    "ghanaian": {
-      "dataset": "ghana-english-asr-2700hrs",
-      "male": "ghanaian_male.wav",
-      "female": "ghanaian_female.wav"
-    },
-    "east_african": {
-      "dataset": "salt (Sunbird AI, Ugandan English)",
-      "male": "east_african_male.wav",
-      "female": "east_african_female.wav"
-    },
-    "south_african": {
-      "dataset": "Afrikaans speaker (SA English corpus is 8 kHz and unusable)",
-      "male": "south_african_male.wav",
-      "female": "south_african_female.wav"
-    },
-    "north_african": {
-      "dataset": "FLEURS Egyptian Arabic male (fleurs_ar_eg/3554917680734348580); female is the vetted Arabic serving reference",
-      "male": "north_african_male.wav",
-      "female": "north_african_female.wav"
-    }
+    "nigerian": {"male": "nigerian_male.wav", "female": "nigerian_female.wav"},
+    "ghanaian": {"male": "ghanaian_male.wav", "female": "ghanaian_female.wav"},
+    "east_african": {"male": "east_african_male.wav", "female": "east_african_female.wav"},
+    "south_african": {"male": "south_african_male.wav", "female": "south_african_female.wav"},
+    "north_african": {"male": "north_african_male.wav", "female": "north_african_female.wav"}
   }
 }

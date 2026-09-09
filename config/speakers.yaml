@@ -122,69 +122,66 @@ chichewa:
     reference_text: null           # optional, cloning only
 
 english:
-  # English house prompts from the llm150k__flow160k listen-set _refs
-# (Nigerian male/female replaced after listening).
-  # Preset English sends the clip (no transcript: those corpus texts collapse
-  # zero-shot). North African uses the vetted Arabic speaker.
+  # Current _refs house prompts. Transcripts match the wav language.
   nigerian:
     - speaker_id: EN-NG-01
       gender: male
       label: "Nigerian English reference speaker 1"
       reference_audio: ["assets/english_accents/nigerian_male.wav"]
-      reference_text: null
+      reference_text: "Onye egwuregwu nke taa a na-akwanyere ugwu Taa bụ Alex Ovechkin nke Washington Capitals."
     - speaker_id: EN-NG-02
       gender: female
       label: "Nigerian English reference speaker 2"
       reference_audio: ["assets/english_accents/nigerian_female.wav"]
-      reference_text: null
+      reference_text: "Yàrá ìkẹ́kọ̀ọ́ jẹ́ ààyè fún ìtọ́ni ẹ̀kọ́ àti ẹ̀kọ́."
 
   ghanaian:
     - speaker_id: EN-GH-01
       gender: male
       label: "Ghanaian English reference speaker 1"
       reference_audio: ["assets/english_accents/ghanaian_male.wav"]
-      reference_text: null
+      reference_text: "Koko yɛ aduan a yɛtae di no anɔpa."
     - speaker_id: EN-GH-02
       gender: female
       label: "Ghanaian English reference speaker 2"
       reference_audio: ["assets/english_accents/ghanaian_female.wav"]
-      reference_text: null
+      reference_text: "Adɛn nti na akuafoɔ nkɔ afuom Fiada biara?"
 
   east_african:
     - speaker_id: EN-EA-01
       gender: male
       label: "East African English reference speaker 1"
       reference_audio: ["assets/english_accents/east_african_male.wav"]
-      reference_text: null
+      reference_text: "Kituo cha Usimamizi wa Fedha na utawala kipo upande wa Kaskazini mwa Benki Kuu ya Tanzania."
     - speaker_id: EN-EA-02
       gender: female
       label: "East African English reference speaker 2"
       reference_audio: ["assets/english_accents/east_african_female.wav"]
-      reference_text: null
+      reference_text: "Usiku wa leo tutashuhudia selsiasi ishirini na tano za joto."
 
   north_african:
     - speaker_id: EN-NA-01
       gender: male
       label: "North African English (Arabic speaker) 1"
       reference_audio: ["assets/english_accents/north_african_male.wav"]
-      reference_text: null
+      reference_text: "التزلج بحقيبة الظهر: يسمى هذا النشاط أيضاً التزلج في المناطق غير المأهولة، أو رحلات التزلج أو المشي لمسافات طويلة على الجليد."
     - speaker_id: EN-NA-02
       gender: female
       label: "North African English (Arabic speaker) 2"
       reference_audio: ["assets/english_accents/north_african_female.wav"]
-      reference_text: null
+      reference_text: "في الواقع، لا يوجد شيء واحد جيد يمكن تعلمه، فالتعلم يحدث في التجربة بين المُتعلم والمعرفة المُقدَمة."
 
   south_african:
     - speaker_id: EN-SA-01
       gender: male
       label: "South African English reference speaker 1"
       reference_audio: ["assets/english_accents/south_african_male.wav"]
-      reference_text: null
+      reference_text: "Uphoxekile ngenxa yeli hlazo."
     - speaker_id: EN-SA-02
       gender: female
       label: "South African English reference speaker 2"
       reference_audio: ["assets/english_accents/south_african_female.wav"]
-      reference_text: null
+      reference_text: "Umphakathi wale ngqayi uxhaphe umqombothi."
 
 ewe:
   male:
