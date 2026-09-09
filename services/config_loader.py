@@ -96,7 +96,10 @@ class Speaker:
 
 
 CUSTOM_SENTENCE_PREFIX = "custom-"
-MAX_SENTENCE_LENGTH = 600
+# No cap on custom text. Listeners asked to try passages, not just single sentences, and a
+# hard limit rejected them outright. Long input costs generation time (roughly a second of
+# audio per second of wall clock), which REQUEST_TIMEOUT now allows for, rather than being
+# a correctness problem.
 
 
 @dataclass(frozen=True)
@@ -127,11 +130,6 @@ def make_custom_sentence(text: str, language: str, accent: str | None = None) ->
     cleaned = " ".join((text or "").split())
     if not cleaned:
         raise ConfigError("Enter the sentence you want the systems to speak.")
-    if len(cleaned) > MAX_SENTENCE_LENGTH:
-        raise ConfigError(
-            f"That sentence is {len(cleaned)} characters long; please keep it under "
-            f"{MAX_SENTENCE_LENGTH}."
-        )
     digest = hashlib.sha256(cleaned.encode("utf-8")).hexdigest()[:10]
     return Sentence(
         sentence_id=f"{CUSTOM_SENTENCE_PREFIX}{digest}",
