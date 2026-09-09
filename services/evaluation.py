@@ -16,11 +16,12 @@ from __future__ import annotations
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from functools import lru_cache
 import logging
+import re
 from pathlib import Path
 import secrets
 import time
 import uuid
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from typing import Iterable, Mapping, Sequence
 
 from .audio_cache import AudioCache, CacheKey
@@ -352,6 +353,50 @@ class SampleAssignment:
 # ---------------------------------------------------------------------------
 # Trial
 # ---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
+# Chunked playback
+# ---------------------------------------------------------------------------
+#
+# st.audio() takes a finished byte string, so Streamlit cannot play a growing
+# stream the way a browser can. The endpoint itself streams well -- first byte in
+# under a second -- but none of that reaches a listener here, who waits for the
+# whole passage before anything sounds.
+#
+# What Streamlit CAN do is render as the script runs. So the text is split into
+# sentences and synthesised one at a time: each finished sentence is played as
+# soon as it exists, while the rest are still generating. First audio then arrives
+# after one sentence rather than after the whole passage.
+#
+# Each chunk is cached under its own key (the sentence id gains a "#cN" suffix),
+# so a repeat listen is instant and a half-finished trial is not wasted.
+_SENTENCE_END = re.compile(r"(?<=[.!?;:])\s+|\n+")
+
+
+def split_for_playback(text, min_chars=45):
+    """One chunk per sentence, so the first one lands quickly.
+
+    Sentences are the natural unit: they end on a pause, so consecutive clips join
+    without an audible seam. An over-long sentence is left whole rather than cut
+    mid-clause, which would sound worse than a slightly later start.
+
+    min_chars is a FLOOR, not a target: a fragment shorter than it (a heading, "Yes.",
+    a poem's title line) is joined to what precedes it, because a one-second clip of
+    its own is both wasteful to request and jarring to hear. Anything at or above the
+    floor stands alone -- building chunks UP to a character target would merge the
+    whole passage back into one request and defeat the point.
+    """
+    parts = [p.strip() for p in _SENTENCE_END.split(text or "") if p and p.strip()]
+    if not parts:
+        return [text.strip()] if (text or "").strip() else []
+    out = []
+    for part in parts:
+        if out and len(out[-1]) < min_chars:
+            out[-1] = f"{out[-1]} {part}"
+        else:
+            out.append(part)
+    return out
+
+
 @dataclass(frozen=True)
 class PreparedSample:
     sample: str  # "A" / "B"
@@ -375,6 +420,10 @@ class Trial:
     hide_sample_b: bool = False
     #: Why a visible sample is missing, keyed by label. Shown to the listener.
     failures: dict[str, str] = field(default_factory=dict)
+    #: The text split into playback chunks; chunk 0 is prepared before rendering.
+    chunks: list = field(default_factory=list)
+    #: Finished chunk audio, keyed by "<label>:<index>".
+    chunk_audio: dict = field(default_factory=dict)
 
     @property
     def is_ready(self) -> bool:
@@ -449,6 +498,45 @@ def build_clients_for(
     return build_clients(settings, adapter, SYSTEMS)
 
 
+
+def generate_chunk(trial, label, index, clients, cache):
+    """Synthesise one playback chunk, reusing the cache.
+
+    Each chunk is a separate request carrying only that sentence, and is cached
+    under its own key so nothing is regenerated on a rerun. The system behind a
+    label stays hidden: the caller only ever sees audio.
+    """
+    key_name = f"{label}:{index}"
+    if key_name in trial.chunk_audio:
+        return trial.chunk_audio[key_name]
+
+    system = trial.assignment.system_for(label)
+    client = clients.get(system)
+    if client is None:
+        raise EndpointError(f"no client available for system {system!r}")
+
+    base = trial.condition.synthesis_request()
+    chunk_text = trial.chunks[index]
+    request = replace(base, text=chunk_text,
+                      sentence_id=f"{base.sentence_id}#c{index}")
+    cache_key = CacheKey(
+        system=system,
+        language=trial.condition.language.key,
+        accent=trial.condition.accent_key,
+        gender=trial.condition.gender,
+        speaker_id=trial.condition.speaker.speaker_id,
+        sentence_id=request.sentence_id,
+        generation_mode=trial.condition.generation_mode,
+        reference_id=trial.condition.reference_id,
+    )
+    mocked = bool(getattr(client, "is_mock", False))
+    fingerprint = f"{request.fingerprint()}:{'mock' if mocked else 'live'}"
+    cached = cache.get_or_generate(
+        cache_key, fingerprint,
+        lambda client=client, request=request: client.synthesize(request))
+    trial.chunk_audio[key_name] = cached.clip
+    return cached.clip
+
 def prepare_samples(
     trial: Trial,
     clients: Mapping[str, TTSClient],
@@ -460,6 +548,8 @@ def prepare_samples(
     skipped entirely while it is hidden.
     """
     request = trial.condition.synthesis_request()
+    if not trial.chunks:
+        trial.chunks = split_for_playback(request.text)
     fingerprint = request.fingerprint()
     failures: list[str] = []
     labels = list(trial.visible_labels)
