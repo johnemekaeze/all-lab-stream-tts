@@ -32,6 +32,7 @@ from .hf_endpoint import (
     AudioClip,
     EndpointAdapter,
     EndpointError,
+    EndpointLoadingError,
     ReferenceAudio,
     SynthesisRequest,
     TTSClient,
@@ -373,16 +374,32 @@ class Trial:
     samples: dict[str, PreparedSample] = field(default_factory=dict)
     #: When True, Sample B is a placeholder system and is not generated or shown.
     hide_sample_b: bool = False
+    #: Why a visible sample is missing, keyed by label. Shown to the listener.
+    failures: dict[str, str] = field(default_factory=dict)
 
     @property
     def is_ready(self) -> bool:
-        if "A" not in self.samples:
-            return False
-        return self.hide_sample_b or "B" in self.samples
+        """True when there is something to listen to.
+
+        Deliberately not "every sample succeeded". One endpoint waking from scale-to-zero
+        used to withhold the sample that had already been generated, which wastes the work
+        and leaves the listener with nothing while the other side boots.
+        """
+        return any(label in self.samples for label in self.visible_labels)
 
     @property
     def visible_labels(self) -> tuple[str, ...]:
         return ("A",) if self.hide_sample_b else SAMPLE_LABELS
+
+    @property
+    def available_labels(self) -> tuple[str, ...]:
+        """Visible samples that actually have audio."""
+        return tuple(l for l in self.visible_labels if l in self.samples)
+
+    @property
+    def is_complete(self) -> bool:
+        """Every visible sample was produced -- the precondition for an A/B comparison."""
+        return all(label in self.samples for label in self.visible_labels)
 
     def sample(self, label: str) -> PreparedSample:
         return self.samples[label]
@@ -479,14 +496,24 @@ def prepare_samples(
             label = futures[future]
             try:
                 sample_label, system, cached, cache_key, mocked = future.result()
+            except EndpointLoadingError as exc:
+                failures.append(f"{label}: {exc}")
+                trial.failures[label] = (
+                    f"The Sample {label} model is loading. Wait a minute, then press "
+                    f"Play again."
+                )
+                continue
             except EndpointError as exc:
                 failures.append(f"{label}: {exc}")
+                trial.failures[label] = f"Sample {label} could not be generated. Try again."
                 continue
             except OSError as exc:
                 failures.append(f"{label}: cache I/O error: {exc}")
+                trial.failures[label] = f"Sample {label} could not be saved. Try again."
                 continue
             except Exception as exc:
                 failures.append(f"{label}: {exc}")
+                trial.failures[label] = f"Sample {label} could not be generated. Try again."
                 continue
             trial.samples[sample_label] = PreparedSample(
                 sample=sample_label,
@@ -498,10 +525,13 @@ def prepare_samples(
             )
 
     if failures:
-        trial.samples.clear()
         detail = f"trial {trial.trial_id} condition {trial.condition.key}: " + "; ".join(failures)
         logger.error("Sample generation failed - %s", detail)
-        raise SampleGenerationError(detail)
+        # Only give up when NOTHING was produced. If one side is ready it is kept and played;
+        # the other reports why it is missing.
+        if not trial.samples:
+            trial.samples.clear()
+            raise SampleGenerationError(detail)
 
     return trial
 
@@ -528,11 +558,19 @@ def validate_ratings(
     require_listen_confirmation: bool = True,
     voice_criterion_label: str = "Voice quality",
     hide_sample_b: bool = False,
+    available_labels: tuple[str, ...] | None = None,
 ) -> list[str]:
-    """Return a list of human-readable problems; empty means valid."""
-    problems: list[str] = []
+    """Return a list of human-readable problems; empty means valid.
 
-    if not hide_sample_b and ratings.preference not in PREFERENCE_CHOICES:
+    `available_labels` names the samples that were actually produced. A side that failed to
+    generate cannot be rated, so it is not required -- and a preference between two samples
+    is only meaningful when both exist.
+    """
+    problems: list[str] = []
+    avail = available_labels if available_labels is not None else (
+        ("A",) if hide_sample_b else ("A", "B"))
+
+    if not hide_sample_b and len(avail) > 1 and ratings.preference not in PREFERENCE_CHOICES:
         problems.append("Please choose which sample sounds better overall.")
 
     required = (
@@ -542,13 +580,14 @@ def validate_ratings(
     )
     for name, value_a, value_b in required:
         sides = (("A", value_a),) if hide_sample_b else (("A", value_a), ("B", value_b))
+        sides = tuple((l, v) for l, v in sides if l in avail)
         missing = [label for label, value in sides if value not in RATING_SCALE]
         if missing:
             samples = " and ".join(f"Sample {label}" for label in missing)
             problems.append(f"Please rate {name} for {samples}.")
 
     if require_listen_confirmation and not ratings.listened_to_both:
-        if hide_sample_b:
+        if hide_sample_b or len(avail) < 2:
             problems.append("Please confirm that you listened to the sample.")
         else:
             problems.append("Please confirm that you listened to both samples.")

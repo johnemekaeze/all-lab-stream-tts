@@ -63,6 +63,15 @@ class EndpointNotConfiguredError(EndpointError):
     pass
 
 
+class EndpointLoadingError(EndpointError):
+    """The endpoint answered 503: the replica is still starting.
+
+    Distinct from a generic failure because it is temporary and self-resolving -- a
+    scale-to-zero endpoint takes a few minutes to boot, and the right thing to tell a
+    listener is to wait rather than that something broke.
+    """
+
+
 # ---------------------------------------------------------------------------
 # Value objects
 # ---------------------------------------------------------------------------
@@ -570,9 +579,15 @@ class HFEndpointClient:
                         content_type=response.headers.get("Content-Type", ""),
                     )
                 detail, retry_hint = _error_detail(response.text)
-                last_error = EndpointError(
-                    f"[{self.system}] HTTP {response.status_code}: {detail}"
-                )
+                if response.status_code == 503:
+                    # scale-to-zero replica still booting, or the model still loading
+                    last_error = EndpointLoadingError(
+                        f"[{self.system}] HTTP 503: {detail}"
+                    )
+                else:
+                    last_error = EndpointError(
+                        f"[{self.system}] HTTP {response.status_code}: {detail}"
+                    )
                 # 503 usually means a scale-to-zero endpoint is still starting.
                 retryable = response.status_code in {408, 429, 500, 502, 503, 504}
                 if retry_hint is False:

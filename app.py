@@ -678,6 +678,24 @@ def render_samples(trial) -> None:
     st.markdown('<div class="sample-grid">', unsafe_allow_html=True)
     columns = st.columns(len(labels), gap="large")
     for column, label in zip(columns, labels):
+        if label not in trial.samples:
+            # One side missing is no longer fatal, so say why and let the ready sample play.
+            with column:
+                with st.container(border=True):
+                    st.markdown(
+                        f'<div class="sample-card">'
+                        f'<div class="sample-card-head">'
+                        f'<span class="sample-badge">{label}</span>'
+                        f'<div class="sample-card-copy">'
+                        f'<span class="sample-card-kicker">Not ready</span>'
+                        f'<span class="sample-card-title">Sample {label}</span>'
+                        f"</div></div></div>",
+                        unsafe_allow_html=True,
+                    )
+                    st.info(trial.failures.get(
+                        label,
+                        f"Sample {label} is not available yet. Try again in a moment."))
+            continue
         sample = trial.sample(label)
         with column:
             with st.container(border=True):
@@ -787,6 +805,7 @@ def render_rating_form(context: AppContext, trial, tester_id: str, mode: str) ->
             CRITERIA_VOICE_CLONE[0] if trial.condition.is_clone else CRITERIA_VOICE_PRESET[0]
         ),
         hide_sample_b=trial.hide_sample_b,
+        available_labels=trial.available_labels,
     )
     if context.settings.tester_id_mode == "required" and not tester_id:
         problems.insert(0, "Please enter your name.")
