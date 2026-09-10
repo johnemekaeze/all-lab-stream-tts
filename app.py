@@ -665,7 +665,7 @@ def render_condition_panel(trial) -> None:
         )
 
 
-def render_samples(trial, context: AppContext) -> None:
+def render_samples(trial) -> None:
     hide_b = trial.hide_sample_b
     labels = trial.visible_labels
     _section_title("Listen to the sample" if hide_b else "Listen to both samples", step="2")
@@ -712,31 +712,7 @@ def render_samples(trial, context: AppContext) -> None:
                     f"</div>",
                     unsafe_allow_html=True,
                 )
-                # Chunked playback. The whole clip is already in sample.clip, but a
-                # long passage is split into sentences so the first one can sound
-                # while the rest are still being made -- Streamlit renders as the
-                # script runs, so each st.audio below appears the moment its chunk
-                # exists. A single-chunk trial behaves exactly as before.
-                chunks = getattr(trial, "chunks", None) or []
-                if len(chunks) <= 1:
-                    st.audio(sample.clip.data, format=sample.clip.mime_type)
-                else:
-                    st.audio(sample.clip.data, format=sample.clip.mime_type)
-                    st.caption(f"Part 1 of {len(chunks)}")
-                    for i in range(1, len(chunks)):
-                        slot = st.empty()
-                        with slot:
-                            st.caption(f"Part {i + 1} of {len(chunks)} - preparing...")
-                        try:
-                            clip = evaluation.generate_chunk(
-                                trial, label, i, context.clients, context.cache)
-                        except Exception:  # one bad chunk must not lose the others
-                            with slot:
-                                st.caption(f"Part {i + 1} could not be generated.")
-                            continue
-                        with slot:
-                            st.audio(clip.data, format=clip.mime_type)
-                            st.caption(f"Part {i + 1} of {len(chunks)}")
+                st.audio(sample.clip.data, format=sample.clip.mime_type)
                 st.caption("Replay as often as you like. Nothing plays automatically.")
     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -964,7 +940,7 @@ def main() -> None:
         st.warning("The samples are no longer available. Please load the test again.")
     else:
         render_condition_panel(trial)
-        render_samples(trial, context)
+        render_samples(trial)
         if condition is not None and condition.selection_key != trial.condition.selection_key:
             st.warning(
                 "Your setup above has changed. You are still rating the samples shown here - "
